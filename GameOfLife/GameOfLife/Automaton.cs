@@ -13,11 +13,14 @@ namespace GameOfLife
         // Constructor
         public Automaton(int sizeX, int sizeY, List<CoordSet> initLiveCells)
         {
+            // Set size of universe
             this.sizeX = sizeX;
             this.sizeY = sizeY;
 
+            // Create universe and initialize cell states
 
 
+            // Initialize age of universe
             age = 0;
         }
 
