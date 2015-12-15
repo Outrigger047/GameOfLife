@@ -2,7 +2,8 @@
 
 namespace GameOfLife
 {
-    class Automaton
+    public class Automaton
     {
+
     }
 }
