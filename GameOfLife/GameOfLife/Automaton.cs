@@ -3,24 +3,11 @@ using System.Collections.Generic;
 
 namespace GameOfLife
 {
-    public struct CoordSet
-    {
-        public int X { get; }
-        public int Y { get; }
-
-        public CoordSet(int x, int y)
-        {
-            X = x;
-            Y = y;
-        }
-    }
-
     public class Automaton
     {
         // Fields
         private Cell[,] universe;
         private int sizeX, sizeY;
-        private int age;
 
         // Constructor
         public Automaton(int sizeXIn, int sizeYIn, List<CoordSet> initLiveCells)
@@ -43,7 +30,7 @@ namespace GameOfLife
             }
 
             // Initialize age of universe
-            age = 0;
+            Age = 0;
         }
 
         // Enums
@@ -53,11 +40,12 @@ namespace GameOfLife
         }
 
         // Properties
-        public int Age { get { return age; } }
+        public int Age { get; private set; }
         public int SizeX { get { return sizeX; } }
         public int SizeY { get { return sizeY; } }
 
         // Methods
+
 
         // Nested classes
         class Cell
@@ -69,6 +57,18 @@ namespace GameOfLife
                 Dead = 0x0,
                 Alive = 0x1
             }
+        }
+    }
+
+    public struct CoordSet
+    {
+        public int X { get; }
+        public int Y { get; }
+
+        public CoordSet(int x, int y)
+        {
+            X = x;
+            Y = y;
         }
     }
 }
