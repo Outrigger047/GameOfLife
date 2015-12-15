@@ -8,21 +8,27 @@ namespace GameOfLife
         // Fields
         private Cell[,] universe;
         private int sizeX, sizeY;
+        private int age;
 
         // Constructor
         public Automaton(int sizeX, int sizeY, List<CoordSet> initLiveCells)
         {
             this.sizeX = sizeX;
             this.sizeY = sizeY;
+
+
+
+            age = 0;
         }
 
         // Enums
-        public enum Cardinals
+        enum Cardinals
         {
             N, NE, E, SE, S, SW, W, NW
         }
 
         // Properties
+        public int Age { get { return age; } }
 
         // Methods
 
