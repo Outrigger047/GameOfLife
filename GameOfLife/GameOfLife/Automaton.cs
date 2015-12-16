@@ -98,10 +98,12 @@ namespace GameOfLife
         #endregion
 
         #region Methods
-        // TODO Implement public Iterate method to advance the age of the universe by 1
+        /// <summary>
+        /// Advances the age of the universe by 1
+        /// </summary>
         public void Iterate()
         {
-
+            // TODO Implement public Iterate method to advance the age of the universe by 1
         }
 
         /// <summary>
