@@ -109,12 +109,78 @@ namespace GameOfLife
                 cell.State = Cell.CellStateTypes.Invalid;
             }
 
+            for (int i = 0; i < sizeX - 1; i++)
+            {
+                for (int j = 0; j < sizeY; j++)
+                {
+                    CoordSet currentPos = new CoordSet(i, j);
+                    int numLiveNeighbors = CountLiveNeighbors(currentPos);
+                    switch (numLiveNeighbors)
+                    {
+                        case 2:
+                            if (universe[i, j].State == Cell.CellStateTypes.Alive)
+                            {
+                                nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                            }
+                            else
+                            {
+                                nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
+                            }
+                            break;
+                        case 3:
+                            if (universe[i, j].State == Cell.CellStateTypes.Alive)
+                            {
+                                nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                            }
+                            else if (universe[i, j].State == Cell.CellStateTypes.Dead)
+                            {
+                                nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                            }
+                            else
+                            {
+                                nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
+                            }
+                            break;
+                        default:
+                            /* I am dumb...
+                            if (numLiveNeighbors > 3 & universe[i, j].State == Cell.CellStateTypes.Alive)
+                            {
+                                nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
+                            }
+                            */
+                            nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
+                            break;
+                    }
+                }
+            }
+
+            universe = nextUniverse;
         }
         #endregion
 
         #region Private methods
         /// <summary>
-        /// Private method for Tick to use to find states of nearby cells.
+        /// Counts the number of live neighbor cells for a given cell
+        /// </summary>
+        /// <param name="currentPos">Coordinate set indicating the cell in question</param>
+        /// <returns>Number of live cells adjacent to specified cell</returns>
+        private int CountLiveNeighbors(CoordSet currentPos)
+        {
+            int numLiveCells = 0;
+
+            foreach (Cardinals cardinal in Enum.GetValues(typeof(Cardinals)))
+            {
+                if (GetNeighborState(currentPos, cardinal) == Cell.CellStateTypes.Alive)
+                {
+                    numLiveCells++;
+                }
+            }
+
+            return numLiveCells;
+        }
+        
+        /// <summary>
+        /// Private method for CountLiveNeighbors to use to find states of nearby cells.
         /// </summary>
         /// <param name="currentPos">Coordinates of current position</param>
         /// <param name="target">Cardinal direction</param>
@@ -142,20 +208,6 @@ namespace GameOfLife
                 default:
                     return Cell.CellStateTypes.Invalid;
             }
-        }
-
-        /// <summary>
-        /// Counts the number of live neighbor cells for a given cell
-        /// </summary>
-        /// <param name="currentPos">Coordinate set indicating the cell in question</param>
-        /// <returns>Number of live cells adjacent to specified cell</returns>
-        private int CountLiveNeighbors(CoordSet currentPos)
-        {
-            int numLiveCells = 0;
-
-
-
-            return numLiveCells;
         }
         #endregion
 
