@@ -97,19 +97,22 @@ namespace GameOfLife
         }
         #endregion
 
-        #region Methods
+        #region Public methods
         /// <summary>
         /// Advances the age of the universe by 1
         /// </summary>
         public void Tick()
         {
-            // For each cell, count the number of its live neighbors
-            // Any live cell with fewer than two live neighbours dies, as if caused by under-population.
-            // Any live cell with two or three live neighbours lives on to the next generation.
-            // Any live cell with more than three live neighbours dies, as if by over - population.
-            // Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
-        }
+            Cell[,] nextUniverse = new Cell[sizeX, sizeY];
+            foreach (var cell in nextUniverse)
+            {
+                cell.State = Cell.CellStateTypes.Invalid;
+            }
 
+        }
+        #endregion
+
+        #region Private methods
         /// <summary>
         /// Private method for Tick to use to find states of nearby cells.
         /// </summary>
@@ -141,6 +144,19 @@ namespace GameOfLife
             }
         }
 
+        /// <summary>
+        /// Counts the number of live neighbor cells for a given cell
+        /// </summary>
+        /// <param name="currentPos">Coordinate set indicating the cell in question</param>
+        /// <returns>Number of live cells adjacent to specified cell</returns>
+        private int CountLiveNeighbors(CoordSet currentPos)
+        {
+            int numLiveCells = 0;
+
+
+
+            return numLiveCells;
+        }
         #endregion
 
 
