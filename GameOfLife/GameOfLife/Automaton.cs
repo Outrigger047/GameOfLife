@@ -13,7 +13,7 @@ namespace GameOfLife
         /// <summary>
         /// Dimensions of the universe
         /// </summary>
-        private int sizeX, sizeY;
+        private readonly int sizeX, sizeY;
         #endregion
 
         #region Constructor
@@ -81,14 +81,14 @@ namespace GameOfLife
             {
                 List<CoordSet> universeOut = new List<CoordSet>();
 
-                foreach(var cell in universe)
+                for (int i = 0; i < sizeX - 1; i++)
                 {
-                    if(cell.State == CellStateTypes.Alive)
+                    for (int j = 0; j < sizeY - 1; j++)
                     {
-                        universeOut.Add(cell.)
-                        /*Cannot recall how exactly to derive an index when using
-                        foreach, but regardless, how is a 2D array traversed? Right
-                        now I'm not sure how to determine where we are...*/
+                        if (universe[i,j].State == Cell.CellStateTypes.Alive)
+                        {
+                            universeOut.Add(new CoordSet(i, j));
+                        }
                     }
                 }
 
@@ -104,9 +104,13 @@ namespace GameOfLife
 
         }
 
-        // TODO Implement private GetNeighborState method to be used by Iterate to determine
-        // states of nearby cells
-        private CellStateTypes GetNeighborState(CoordSet currentPos, Cardinals target)
+        /// <summary>
+        /// Private method for Iterate to use to find states of nearby cells.
+        /// </summary>
+        /// <param name="currentPos">Coordinates of current position</param>
+        /// <param name="target">Cardinal direction</param>
+        /// <returns>Current state of targeted cell</returns>
+        private Cell.CellStateTypes GetNeighborState(CoordSet currentPos, Cardinals target)
         {
             switch(target)
             {
@@ -127,7 +131,7 @@ namespace GameOfLife
                 case Cardinals.NW:
                     return universe[currentPos.X - 1, currentPos.Y - 1].State;
                 default:
-                    break;
+                    return Cell.CellStateTypes.Invalid;
             }
         }
 
@@ -141,6 +145,7 @@ namespace GameOfLife
 
             public enum CellStateTypes
             {
+                Invalid = -0x1,
                 Dead = 0x0,
                 Alive = 0x1
             }
