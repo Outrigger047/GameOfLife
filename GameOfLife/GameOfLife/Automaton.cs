@@ -211,7 +211,6 @@ namespace GameOfLife
         }
         #endregion
 
-
         #region Nested classes
         class Cell
         {
