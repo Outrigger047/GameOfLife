@@ -101,13 +101,17 @@ namespace GameOfLife
         /// <summary>
         /// Advances the age of the universe by 1
         /// </summary>
-        public void Iterate()
+        public void Tick()
         {
-            // TODO Implement public Iterate method to advance the age of the universe by 1
+            // For each cell, count the number of its live neighbors
+            // Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+            // Any live cell with two or three live neighbours lives on to the next generation.
+            // Any live cell with more than three live neighbours dies, as if by over - population.
+            // Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
         }
 
         /// <summary>
-        /// Private method for Iterate to use to find states of nearby cells.
+        /// Private method for Tick to use to find states of nearby cells.
         /// </summary>
         /// <param name="currentPos">Coordinates of current position</param>
         /// <param name="target">Cardinal direction</param>
