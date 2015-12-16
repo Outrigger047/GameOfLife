@@ -75,7 +75,16 @@ namespace GameOfLife
 
             Automaton a = new Automaton(sizeX, sizeY, liveCells);
 
+            Console.WriteLine("Q quits. Press any other key to start/advance the state of the simulation.");
+            Console.WriteLine();
 
+            ConsoleKeyInfo advanceKp = Console.ReadKey();
+            while (advanceKp.Key != ConsoleKey.Q)
+            {
+                Console.Clear();
+
+                UniversePrinter.DisplayUniverse(sizeX, sizeY, a.Universe);
+            }
         }
     }
 }
