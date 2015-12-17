@@ -215,7 +215,7 @@ namespace GameOfLife
         class Cell
         {
             public CellStateTypes State { get; set; }
-
+            
             public enum CellStateTypes
             {
                 Invalid = -0x1,
