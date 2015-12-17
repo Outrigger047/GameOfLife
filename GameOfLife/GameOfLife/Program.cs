@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Preprocessor directives
+#define DEBUG
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -72,6 +75,8 @@ namespace GameOfLife
                     break;
             }
             #endregion
+
+
 
             Automaton a = new Automaton(sizeX, sizeY, liveCells);
 
