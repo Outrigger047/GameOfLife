@@ -226,7 +226,7 @@ namespace GameOfLife
         #endregion
     }
 
-    public struct CoordSet
+    public class CoordSet
     {
         public int X { get; private set; }
         public int Y { get; private set; }
