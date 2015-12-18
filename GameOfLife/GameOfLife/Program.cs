@@ -22,6 +22,7 @@ namespace GameOfLife
             Console.Write("Input max age: ");
             int maxAge = Convert.ToInt32(Console.ReadLine());
 
+#if !DEBUG
             Console.WriteLine("Specify live cell coordinate input mode:");
             Console.WriteLine("1   External text file");
             Console.WriteLine("2   Manual list input");
@@ -42,7 +43,7 @@ namespace GameOfLife
                             {
                                 liveCells.Add(
                                     new CoordSet(
-                                        Convert.ToInt32(line.Split(',')[0]), 
+                                        Convert.ToInt32(line.Split(',')[0]),
                                         Convert.ToInt32(line.Split(',')[1])));
                             }
                         }
@@ -67,16 +68,30 @@ namespace GameOfLife
                         int y = Convert.ToInt32(Console.ReadLine());
                         liveCells.Add(new CoordSet(x, y));
                         Console.Write("More? (Y/N) ");
-                        moreCoordsKeyPress = Console.ReadKey(); 
+                        moreCoordsKeyPress = Console.ReadKey();
                     } while (moreCoordsKeyPress.Key == ConsoleKey.Y);
-                    
+
                     break;
                 default:
                     break;
-            }
+            } 
+#endif
             #endregion
 
+#if DEBUG
+            List<CoordSet> liveCells = new List<CoordSet>
+            {
+                new CoordSet(2, 2),
+                new CoordSet(3, 2),
+                new CoordSet(2, 3),
+                new CoordSet(3, 3),
+                new CoordSet(4, 3),
+                new CoordSet(4, 4),
+                new CoordSet(4, 5),
+                new CoordSet(6, 2)
+            };
 
+#endif
 
             Automaton a = new Automaton(sizeX, sizeY, liveCells);
 
