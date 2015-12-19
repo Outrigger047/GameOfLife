@@ -9,7 +9,7 @@ namespace GameOfLife
         /// <summary>
         /// Stores the current state of the universe
         /// </summary>
-        private Cell[,] universe = new Cell[]();
+        private Cell[,] universe;
         /// <summary>
         /// Dimensions of the universe
         /// </summary>
