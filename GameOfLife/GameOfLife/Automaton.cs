@@ -9,7 +9,7 @@ namespace GameOfLife
         /// <summary>
         /// Stores the current state of the universe
         /// </summary>
-        private Cell[,] universe;
+        private Cell[,] universe = new Cell[]();
         /// <summary>
         /// Dimensions of the universe
         /// </summary>
@@ -30,10 +30,12 @@ namespace GameOfLife
             sizeY = sizeYIn;
 
             // Create universe and initialize cell states to dead
-            universe = new Cell[sizeX, sizeY];
-            foreach (var cell in universe)
+            for (int i = 0; i < sizeX - 1; i++)
             {
-                cell.State = Cell.CellStateTypes.Dead;
+                for (int j = 0; j < sizeY - 1; j++)
+                {
+                    universe[i, j] = new Cell() { State = Cell.CellStateTypes.Dead };
+                }
             }
 
             // Set live cells from argument
@@ -216,6 +218,16 @@ namespace GameOfLife
         {
             public CellStateTypes State { get; set; }
             
+            public Cell(CellStateTypes state)
+            {
+                State = state;
+            }
+
+            public Cell()
+            {
+                State = CellStateTypes.Dead;
+            }
+
             public enum CellStateTypes
             {
                 Invalid = -0x1,
