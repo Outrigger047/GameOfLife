@@ -8,7 +8,10 @@ namespace GameOfLife
     /// </summary>
     public static class UniversePrinter
     {
-        public static void DisplayUniverse(int sizeX, int sizeY, List<Automaton.CoordSet> liveCells)
+        public static void DisplayUniverse(int sizeX, 
+            int sizeY, 
+            List<Automaton.CoordSet> liveCells,
+            DisplayModes displayMode)
         {
             for (int i = 0; i < sizeX; i++)
             {
@@ -25,12 +28,28 @@ namespace GameOfLife
                     }
                     if (!foundLiveCell)
                     {
-                        Console.Write(".");
+                        switch (displayMode)
+                        {
+                            case DisplayModes.Normal:
+                                Console.Write(".");
+                                break;
+                            case DisplayModes.HideDead:
+                                Console.Write(" ");
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 }
 
                 Console.WriteLine();
             }
+        }
+
+        public enum DisplayModes
+        {
+            Normal,
+            HideDead
         }
     }
 }

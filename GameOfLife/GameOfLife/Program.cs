@@ -5,6 +5,26 @@ namespace GameOfLife
 {
     class Program
     {
+        static object[] CheckArgs(string[] args)
+        {
+            object[] argsGeneric = new object[args.Length];
+
+            if (args.Length > 1)
+            {
+                string arg1 = args[1];
+                switch (arg1)
+                {
+                    case "-h":
+                        argsGeneric = new object[]
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return argsGeneric;
+        }
+
         static void Main(string[] args)
         {
             #region Get console input
@@ -18,6 +38,7 @@ namespace GameOfLife
             #region Initialize simulation
             List<Automaton.CoordSet> liveCells = new List<Automaton.CoordSet>
             {
+                //Cool infinite loop at end
                 new Automaton.CoordSet(2, 2),
                 new Automaton.CoordSet(3, 2),
                 new Automaton.CoordSet(2, 3),
@@ -35,12 +56,19 @@ namespace GameOfLife
                 new Automaton.CoordSet(7, 6),
                 new Automaton.CoordSet(7, 7),
                 new Automaton.CoordSet(7, 8)
+                
+
             };
 
             Automaton a = new Automaton(sizeX, sizeY, liveCells);
 
             Console.Clear();
-            UniversePrinter.DisplayUniverse(sizeX, sizeY, a.Universe);
+            UniversePrinter.DisplayUniverse(sizeX, 
+                sizeY, 
+                a.Universe, 
+                UniversePrinter.DisplayModes.Normal);
+            Console.WriteLine();
+            Console.WriteLine(string.Concat("Population: ", a.NumLiveCells));
             Console.WriteLine();
             Console.WriteLine("Press any key to start simulation. Q quits.");
 
@@ -56,9 +84,14 @@ namespace GameOfLife
                 Console.Clear();
 
                 a.Tick();
-                UniversePrinter.DisplayUniverse(sizeX, sizeY, a.Universe);
+                UniversePrinter.DisplayUniverse(sizeX, 
+                    sizeY, 
+                    a.Universe, 
+                    UniversePrinter.DisplayModes.Normal);
                 Console.WriteLine();
+                Console.WriteLine(string.Concat("Population: ", a.NumLiveCells));
                 Console.WriteLine(string.Concat("Iteration: ", a.Age));
+                Console.WriteLine();
                 Console.WriteLine("Press any key to advance simulation. Q quits.");
                 advanceKp = newAdvanceKp;
             }
