@@ -9,7 +9,7 @@ namespace GameOfLife
         /// <summary>
         /// Stores the current state of the universe
         /// </summary>
-        private Cell[,] universe = new Cell[]();
+        private Cell[,] universe;
         /// <summary>
         /// Dimensions of the universe
         /// </summary>
@@ -30,6 +30,7 @@ namespace GameOfLife
             sizeY = sizeYIn;
 
             // Create universe and initialize cell states to dead
+            universe = new Cell[sizeX, sizeY];
             for (int i = 0; i < sizeX - 1; i++)
             {
                 for (int j = 0; j < sizeY - 1; j++)
@@ -214,7 +215,7 @@ namespace GameOfLife
         #endregion
 
         #region Nested classes
-        class Cell
+        public class Cell
         {
             public CellStateTypes State { get; set; }
             
