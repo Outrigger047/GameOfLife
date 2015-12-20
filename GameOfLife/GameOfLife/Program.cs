@@ -8,10 +8,10 @@ namespace GameOfLife
         static void Main(string[] args)
         {
             #region Get console input
-            Console.Write("Horiz size of universe: ");
+            Console.Write("Horizontal size of universe: ");
             int sizeX = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Vert size of universe: ");
+            Console.Write("Vertical size of universe: ");
             int sizeY = Convert.ToInt32(Console.ReadLine());
             #endregion
 
