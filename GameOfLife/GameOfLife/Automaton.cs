@@ -205,21 +205,37 @@ namespace GameOfLife
             switch(target)
             {
                 case Cardinals.N:
-                    return universe[currentPos.X, currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
+                    return universe[
+                        currentPos.X, 
+                        currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
                 case Cardinals.NE:
-                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
+                    return universe[
+                        currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, 
+                        currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
                 case Cardinals.E:
-                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, currentPos.Y].State;
+                    return universe[
+                        currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, 
+                        currentPos.Y].State;
                 case Cardinals.SE:
-                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
+                    return universe[
+                        currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, 
+                        currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
                 case Cardinals.S:
-                    return universe[currentPos.X, currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
+                    return universe[
+                        currentPos.X, 
+                        currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
                 case Cardinals.SW:
-                    return universe[currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
+                    return universe[
+                        currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, 
+                        currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
                 case Cardinals.W:
-                    return universe[currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, currentPos.Y].State;
+                    return universe[
+                        currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, 
+                        currentPos.Y].State;
                 case Cardinals.NW:
-                    return universe[currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
+                    return universe[
+                        currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, 
+                        currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
                 default:
                     return Cell.CellStateTypes.Invalid;
             }
