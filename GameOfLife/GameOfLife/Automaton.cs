@@ -18,11 +18,13 @@ namespace GameOfLife
 
         #region Constructor
         /// <summary>
-        /// Parameterized constructor to instantiate Automaton and initialize member fields and properties
+        /// Parameterized constructor to instantiate Automaton and initialize 
+        /// member fields and properties
         /// </summary>
         /// <param name="sizeXIn">Horizontal dimension of the universe</param>
         /// <param name="sizeYIn">Vertical dimension of the universe</param>
-        /// <param name="initLiveCells">List of coordinates indicating which cells are alive initially</param>
+        /// <param name="initLiveCells">List of coordinates indicating which 
+        /// cells are alive initially</param>
         public Automaton(int sizeXIn, int sizeYIn, List<CoordSet> initLiveCells)
         {
             // Set size of universe
@@ -133,7 +135,7 @@ namespace GameOfLife
                     switch (numLiveNeighbors)
                     {
                         case 2:
-                            // Living cells with 2 adjacent living cells continue living in the next generation
+                            // Living cells with 2 adjacent living cells continue living
                             if (universe[i, j].State == Cell.CellStateTypes.Alive)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
@@ -145,7 +147,7 @@ namespace GameOfLife
                             }
                             break;
                         case 3:
-                            // Living cells with 3 adjacent living cells continue living in the next generation
+                            // Living cells with 3 adjacent living cells continue living
                             if (universe[i, j].State == Cell.CellStateTypes.Alive)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
