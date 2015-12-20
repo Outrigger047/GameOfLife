@@ -13,9 +13,6 @@ namespace GameOfLife
 
             Console.Write("Vert size of universe: ");
             int sizeY = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Input max age: ");
-            int maxAge = Convert.ToInt32(Console.ReadLine());
             #endregion
 
             #region Initialize simulation
