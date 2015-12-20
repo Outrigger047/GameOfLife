@@ -96,6 +96,7 @@ namespace GameOfLife
 
                 return universeOut;
             }
+            set;
         }
         #endregion
 
@@ -214,7 +215,7 @@ namespace GameOfLife
         #endregion
 
         #region Nested classes
-        class Cell
+        public class Cell
         {
             public CellStateTypes State { get; set; }
             
