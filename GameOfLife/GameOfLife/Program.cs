@@ -37,6 +37,7 @@ namespace GameOfLife
                 new Automaton.CoordSet(7, 8)
             };
 
+
             Automaton a = new Automaton(sizeX, sizeY, liveCells);
 
             Console.Clear();
