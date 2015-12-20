@@ -18,9 +18,9 @@ namespace GameOfLife
 
             Console.Write("Input max age: ");
             int maxAge = Convert.ToInt32(Console.ReadLine());
-
             #endregion
 
+            #region Initialize simulation
             List<CoordSet> liveCells = new List<CoordSet>
             {
                 new CoordSet(2, 2),
@@ -44,8 +44,10 @@ namespace GameOfLife
 
             Automaton a = new Automaton(sizeX, sizeY, liveCells);
 
-            Console.WriteLine("Q quits. Press any other key to start/advance the state of the simulation.");
+            Console.Clear();
+            UniversePrinter.DisplayUniverse(sizeX, sizeY, a.Universe);
             Console.WriteLine();
+            Console.WriteLine("Press any key to start simulation. Q quits.");
 
             ConsoleKeyInfo advanceKp = new ConsoleKeyInfo();
             while (a.NumLiveCells > 0 && advanceKp.Key != ConsoleKey.Q)
@@ -57,8 +59,10 @@ namespace GameOfLife
                 UniversePrinter.DisplayUniverse(sizeX, sizeY, a.Universe);
                 Console.WriteLine();
                 Console.WriteLine(string.Concat("Iteration: ", a.Age));
+                Console.WriteLine("Press any key to advance simulation. Q quits.");
                 advanceKp = newAdvanceKp;
             }
+            #endregion
         }
     }
 }
