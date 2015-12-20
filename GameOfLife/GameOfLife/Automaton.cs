@@ -6,10 +6,12 @@ namespace GameOfLife
     public class Automaton
     {
         #region Fields
+        /*
         /// <summary>
         /// Stores the current state of the universe
         /// </summary>
         private Cell[,] universe;
+        */
         /// <summary>
         /// Dimensions of the universe
         /// </summary>
@@ -34,14 +36,14 @@ namespace GameOfLife
             {
                 for (int j = 0; j < sizeY - 1; j++)
                 {
-                    universe[i, j] = new Cell() { State = Cell.CellStateTypes.Dead };
+                    Universe[i, j] = new Cell() { State = Cell.CellStateTypes.Dead };
                 }
             }
 
             // Set live cells from argument
             foreach (var coords in initLiveCells)
             {
-                universe[coords.X, coords.Y].State = Cell.CellStateTypes.Alive;
+                Universe[coords.X, coords.Y].State = Cell.CellStateTypes.Alive;
             }
 
             // Initialize age of universe
@@ -74,6 +76,7 @@ namespace GameOfLife
         /// </summary>
         public int SizeY { get { return sizeY; } }
 
+        /*
         /// <summary>
         /// Returns a list of live cells in the universe
         /// </summary>
@@ -98,6 +101,10 @@ namespace GameOfLife
             }
             set;
         }
+        */
+
+        public Cell[,] Universe { get; private set; }
+
         #endregion
 
         #region Public methods
@@ -121,7 +128,7 @@ namespace GameOfLife
                     switch (numLiveNeighbors)
                     {
                         case 2:
-                            if (universe[i, j].State == Cell.CellStateTypes.Alive)
+                            if (Universe[i, j].State == Cell.CellStateTypes.Alive)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
                             }
@@ -131,11 +138,11 @@ namespace GameOfLife
                             }
                             break;
                         case 3:
-                            if (universe[i, j].State == Cell.CellStateTypes.Alive)
+                            if (Universe[i, j].State == Cell.CellStateTypes.Alive)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
                             }
-                            else if (universe[i, j].State == Cell.CellStateTypes.Dead)
+                            else if (Universe[i, j].State == Cell.CellStateTypes.Dead)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
                             }
@@ -157,7 +164,7 @@ namespace GameOfLife
                 }
             }
 
-            universe = nextUniverse;
+            Universe = nextUniverse;
         }
         #endregion
 
@@ -193,21 +200,21 @@ namespace GameOfLife
             switch(target)
             {
                 case Cardinals.N:
-                    return universe[currentPos.X, currentPos.Y - 1].State;
+                    return Universe[currentPos.X, currentPos.Y - 1].State;
                 case Cardinals.NE:
-                    return universe[currentPos.X + 1, currentPos.Y - 1].State;
+                    return Universe[currentPos.X + 1, currentPos.Y - 1].State;
                 case Cardinals.E:
-                    return universe[currentPos.X + 1, currentPos.Y].State;
+                    return Universe[currentPos.X + 1, currentPos.Y].State;
                 case Cardinals.SE:
-                    return universe[currentPos.X + 1, currentPos.Y + 1].State;
+                    return Universe[currentPos.X + 1, currentPos.Y + 1].State;
                 case Cardinals.S:
-                    return universe[currentPos.X, currentPos.Y + 1].State;
+                    return Universe[currentPos.X, currentPos.Y + 1].State;
                 case Cardinals.SW:
-                    return universe[currentPos.X - 1, currentPos.Y + 1].State;
+                    return Universe[currentPos.X - 1, currentPos.Y + 1].State;
                 case Cardinals.W:
-                    return universe[currentPos.X - 1, currentPos.Y].State;
+                    return Universe[currentPos.X - 1, currentPos.Y].State;
                 case Cardinals.NW:
-                    return universe[currentPos.X - 1, currentPos.Y - 1].State;
+                    return Universe[currentPos.X - 1, currentPos.Y - 1].State;
                 default:
                     return Cell.CellStateTypes.Invalid;
             }
