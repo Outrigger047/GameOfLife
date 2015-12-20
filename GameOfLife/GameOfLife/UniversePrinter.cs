@@ -7,9 +7,9 @@ namespace GameOfLife
     {
         public static void DisplayUniverse(int sizeX, int sizeY, List<CoordSet> liveCells)
         {
-            for (int i = 0; i < sizeX - 1; i++)
+            for (int i = 0; i < sizeX; i++)
             {
-                for (int j = 0; j < sizeY - 1; j++)
+                for (int j = 0; j < sizeY; j++)
                 {
                     bool foundLiveCell = false;
                     foreach (var cell in liveCells)
