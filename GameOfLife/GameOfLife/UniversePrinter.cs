@@ -11,16 +11,18 @@ namespace GameOfLife
             {
                 for (int j = 0; j < sizeY - 1; j++)
                 {
+                    bool foundLiveCell = false;
                     foreach (var cell in liveCells)
                     {
                         if (cell.X == i & cell.Y == j)
                         {
                             Console.Write("X");
+                            foundLiveCell = true;
                         }
-                        else
-                        {
-                            Console.Write(".");
-                        }
+                    }
+                    if (!foundLiveCell)
+                    {
+                        Console.Write(".");
                     }
                 }
 

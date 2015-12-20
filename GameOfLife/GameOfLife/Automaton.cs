@@ -31,11 +31,11 @@ namespace GameOfLife
 
             // Create universe and initialize cell states to dead
             universe = new Cell[sizeX, sizeY];
-            for (int i = 0; i < sizeX - 1; i++)
+            for (int i = 0; i < sizeX; i++)
             {
-                for (int j = 0; j < sizeY - 1; j++)
+                for (int j = 0; j < sizeY; j++)
                 {
-                    universe[i, j] = new Cell() { State = Cell.CellStateTypes.Dead };
+                    universe[i, j] = new Cell(Cell.CellStateTypes.Dead);
                 }
             }
 
@@ -84,9 +84,9 @@ namespace GameOfLife
             {
                 List<CoordSet> universeOut = new List<CoordSet>();
 
-                for (int i = 0; i < sizeX - 1; i++)
+                for (int i = 0; i < sizeX; i++)
                 {
-                    for (int j = 0; j < sizeY - 1; j++)
+                    for (int j = 0; j < sizeY; j++)
                     {
                         if (universe[i,j].State == Cell.CellStateTypes.Alive)
                         {
@@ -107,12 +107,15 @@ namespace GameOfLife
         public void Tick()
         {
             Cell[,] nextUniverse = new Cell[sizeX, sizeY];
-            foreach (var cell in nextUniverse)
+            for (int i = 0; i < sizeX; i++)
             {
-                cell.State = Cell.CellStateTypes.Invalid;
+                for (int j = 0; j < sizeY; j++)
+                {
+                    nextUniverse[i, j] = new Cell(Cell.CellStateTypes.Invalid);
+                }
             }
 
-            for (int i = 0; i < sizeX - 1; i++)
+            for (int i = 0; i < sizeX; i++)
             {
                 for (int j = 0; j < sizeY; j++)
                 {
@@ -222,11 +225,6 @@ namespace GameOfLife
             public Cell(CellStateTypes state)
             {
                 State = state;
-            }
-
-            public Cell()
-            {
-                State = CellStateTypes.Dead;
             }
 
             public enum CellStateTypes

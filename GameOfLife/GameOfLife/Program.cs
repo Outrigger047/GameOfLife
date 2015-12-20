@@ -98,12 +98,17 @@ namespace GameOfLife
             Console.WriteLine("Q quits. Press any other key to start/advance the state of the simulation.");
             Console.WriteLine();
 
-            ConsoleKeyInfo advanceKp = Console.ReadKey();
+            ConsoleKeyInfo advanceKp = new ConsoleKeyInfo();
             while (advanceKp.Key != ConsoleKey.Q)
             {
+                ConsoleKeyInfo newAdvanceKp = Console.ReadKey();
                 Console.Clear();
 
+                a.Tick();
                 UniversePrinter.DisplayUniverse(sizeX, sizeY, a.Universe);
+                Console.WriteLine();
+                Console.WriteLine(string.Concat("Iteration: ", a.Age));
+                advanceKp = newAdvanceKp;
             }
         }
     }
