@@ -183,17 +183,17 @@ namespace GameOfLife
         /// <returns>Number of live cells adjacent to specified cell</returns>
         private int CountLiveNeighbors(CoordSet currentPos)
         {
-            int numLiveCells = 0;
+            int numLiveNeighbors = 0;
 
             foreach (Cardinals cardinal in Enum.GetValues(typeof(Cardinals)))
             {
                 if (GetNeighborState(currentPos, cardinal) == Cell.CellStateTypes.Alive)
                 {
-                    numLiveCells++;
+                    numLiveNeighbors++;
                 }
             }
 
-            return numLiveCells;
+            return numLiveNeighbors;
         }
         
         /// <summary>
@@ -264,21 +264,23 @@ namespace GameOfLife
                 Alive = 0x1
             }
         }
+
+        /// <summary>
+        /// Ordered pair for 2D coordinates
+        /// </summary>
+        public class CoordSet
+        {
+            public int X { get; private set; }
+            public int Y { get; private set; }
+
+            public CoordSet(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+        }
         #endregion
     }
 
-    /// <summary>
-    /// Ordered pair for 2D coordinates
-    /// </summary>
-    public class CoordSet
-    {
-        public int X { get; private set; }
-        public int Y { get; private set; }
 
-        public CoordSet(int x, int y)
-        {
-            X = x;
-            Y = y;
-        }
-    }
 }

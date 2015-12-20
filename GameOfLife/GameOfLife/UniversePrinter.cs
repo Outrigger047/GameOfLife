@@ -8,7 +8,7 @@ namespace GameOfLife
     /// </summary>
     public static class UniversePrinter
     {
-        public static void DisplayUniverse(int sizeX, int sizeY, List<CoordSet> liveCells)
+        public static void DisplayUniverse(int sizeX, int sizeY, List<Automaton.CoordSet> liveCells)
         {
             for (int i = 0; i < sizeX; i++)
             {
