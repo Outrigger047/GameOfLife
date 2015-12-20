@@ -5,9 +5,9 @@ namespace GameOfLife
 {
     class Program
     {
-        static object[] CheckArgs(string[] args)
+        static List<object> CheckArgs(string[] args)
         {
-            object[] argsGeneric = new object[args.Length];
+            List<object> argsGeneric = new List<object>();
 
             if (args.Length > 1)
             {
@@ -15,7 +15,7 @@ namespace GameOfLife
                 switch (arg1)
                 {
                     case "-h":
-                        argsGeneric = new object[]
+                        argsGeneric.Add()
                         break;
                     default:
                         break;
