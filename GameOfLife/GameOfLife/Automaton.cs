@@ -45,6 +45,9 @@ namespace GameOfLife
                 universe[coords.X, coords.Y].State = Cell.CellStateTypes.Alive;
             }
 
+            // Set number of live cells in the universe
+            NumLiveCells = initLiveCells.Count;
+
             // Initialize age of universe
             Age = 0;
         }
@@ -65,6 +68,7 @@ namespace GameOfLife
         /// Auto-implemented property to store, track, and return the current age of the universe
         /// </summary>
         public int Age { get; private set; }
+        public int NumLiveCells { get; private set; }
 
         /// <summary>
         /// Returns horizontal dimension of the universe
@@ -106,6 +110,7 @@ namespace GameOfLife
         /// </summary>
         public void Tick()
         {
+            NumLiveCells = 0;
             Age++;
             Cell[,] nextUniverse = new Cell[sizeX, sizeY];
             for (int i = 0; i < sizeX; i++)
@@ -128,6 +133,7 @@ namespace GameOfLife
                             if (universe[i, j].State == Cell.CellStateTypes.Alive)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                                NumLiveCells++;
                             }
                             else
                             {
@@ -138,10 +144,12 @@ namespace GameOfLife
                             if (universe[i, j].State == Cell.CellStateTypes.Alive)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                                NumLiveCells++;
                             }
                             else if (universe[i, j].State == Cell.CellStateTypes.Dead)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                                NumLiveCells++;
                             }
                             else
                             {
@@ -199,11 +207,11 @@ namespace GameOfLife
                 case Cardinals.N:
                     return universe[currentPos.X, currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
                 case Cardinals.NE:
-                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X, currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
+                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
                 case Cardinals.E:
-                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X, currentPos.Y].State;
+                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, currentPos.Y].State;
                 case Cardinals.SE:
-                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X, currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
+                    return universe[currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
                 case Cardinals.S:
                     return universe[currentPos.X, currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
                 case Cardinals.SW:

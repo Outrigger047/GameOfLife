@@ -88,7 +88,16 @@ namespace GameOfLife
                 new CoordSet(4, 3),
                 new CoordSet(4, 4),
                 new CoordSet(4, 5),
-                new CoordSet(6, 2)
+                new CoordSet(6, 2),
+                new CoordSet(6, 3),
+                new CoordSet(6, 4),
+                new CoordSet(6, 5),
+                new CoordSet(6, 6),
+                new CoordSet(6, 7),
+                new CoordSet(6, 8),
+                new CoordSet(7, 6),
+                new CoordSet(7, 7),
+                new CoordSet(7, 8)
             };
 
 #endif
@@ -99,7 +108,7 @@ namespace GameOfLife
             Console.WriteLine();
 
             ConsoleKeyInfo advanceKp = new ConsoleKeyInfo();
-            while (advanceKp.Key != ConsoleKey.Q)
+            while (a.NumLiveCells > 0 && advanceKp.Key != ConsoleKey.Q)
             {
                 ConsoleKeyInfo newAdvanceKp = Console.ReadKey();
                 Console.Clear();
