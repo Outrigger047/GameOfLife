@@ -48,6 +48,11 @@ namespace GameOfLife
             while (a.NumLiveCells > 0 && advanceKp.Key != ConsoleKey.Q)
             {
                 ConsoleKeyInfo newAdvanceKp = Console.ReadKey();
+                if (newAdvanceKp.Key == ConsoleKey.Q)
+                {
+                    Console.WriteLine();
+                    break;
+                }
                 Console.Clear();
 
                 a.Tick();
