@@ -281,6 +281,4 @@ namespace GameOfLife
         }
         #endregion
     }
-
-
 }
