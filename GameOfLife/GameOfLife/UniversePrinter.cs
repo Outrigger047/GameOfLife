@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace GameOfLife
 {
+    /// <summary>
+    /// Helper class for printing the universe to the console
+    /// </summary>
     public static class UniversePrinter
     {
         public static void DisplayUniverse(int sizeX, int sizeY, List<CoordSet> liveCells)

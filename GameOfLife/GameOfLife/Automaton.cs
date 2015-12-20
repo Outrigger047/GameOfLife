@@ -65,9 +65,12 @@ namespace GameOfLife
 
         #region Properties
         /// <summary>
-        /// Auto-implemented property to store, track, and return the current age of the universe
+        /// Stores, tracks, and returns the current age of the universe
         /// </summary>
         public int Age { get; private set; }
+        /// <summary>
+        /// Stores and returns the current number of live cells in the universe
+        /// </summary>
         public int NumLiveCells { get; private set; }
 
         /// <summary>
@@ -87,7 +90,6 @@ namespace GameOfLife
             get
             {
                 List<CoordSet> universeOut = new List<CoordSet>();
-
                 for (int i = 0; i < sizeX; i++)
                 {
                     for (int j = 0; j < sizeY; j++)
@@ -98,7 +100,6 @@ namespace GameOfLife
                         }
                     }
                 }
-
                 return universeOut;
             }
         }
@@ -110,8 +111,9 @@ namespace GameOfLife
         /// </summary>
         public void Tick()
         {
+            // Reset running track of current living cells
             NumLiveCells = 0;
-            Age++;
+            // Store/initialize data for the next iteration
             Cell[,] nextUniverse = new Cell[sizeX, sizeY];
             for (int i = 0; i < sizeX; i++)
             {
@@ -121,6 +123,7 @@ namespace GameOfLife
                 }
             }
 
+            // Run core game logic
             for (int i = 0; i < sizeX; i++)
             {
                 for (int j = 0; j < sizeY; j++)
@@ -130,6 +133,7 @@ namespace GameOfLife
                     switch (numLiveNeighbors)
                     {
                         case 2:
+                            // Living cells with 2 adjacent living cells continue living in the next generation
                             if (universe[i, j].State == Cell.CellStateTypes.Alive)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
@@ -141,11 +145,13 @@ namespace GameOfLife
                             }
                             break;
                         case 3:
+                            // Living cells with 3 adjacent living cells continue living in the next generation
                             if (universe[i, j].State == Cell.CellStateTypes.Alive)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
                                 NumLiveCells++;
                             }
+                            // Dead cells with 3 adjacent living cells come to life
                             else if (universe[i, j].State == Cell.CellStateTypes.Dead)
                             {
                                 nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
@@ -157,19 +163,13 @@ namespace GameOfLife
                             }
                             break;
                         default:
-                            /* I am dumb...
-                            if (numLiveNeighbors > 3 & universe[i, j].State == Cell.CellStateTypes.Alive)
-                            {
-                                nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
-                            }
-                            */
                             nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
                             break;
                     }
                 }
             }
-
             universe = nextUniverse;
+            Age++;
         }
         #endregion
 
@@ -227,6 +227,9 @@ namespace GameOfLife
         #endregion
 
         #region Nested classes
+        /// <summary>
+        /// A single cell in the universe
+        /// </summary>
         public class Cell
         {
             public CellStateTypes State { get; set; }
@@ -246,6 +249,9 @@ namespace GameOfLife
         #endregion
     }
 
+    /// <summary>
+    /// Ordered pair for 2D coordinates
+    /// </summary>
     public class CoordSet
     {
         public int X { get; private set; }
