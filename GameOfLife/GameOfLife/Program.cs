@@ -13,6 +13,7 @@ namespace GameOfLife
         static void Main(string[] args)
         {
             #region Get console input
+#if !DEBUG
             Console.Write("Horiz size of universe: ");
             int sizeX = Convert.ToInt32(Console.ReadLine());
 
@@ -22,7 +23,7 @@ namespace GameOfLife
             Console.Write("Input max age: ");
             int maxAge = Convert.ToInt32(Console.ReadLine());
 
-#if !DEBUG
+
             Console.WriteLine("Specify live cell coordinate input mode:");
             Console.WriteLine("1   External text file");
             Console.WriteLine("2   Manual list input");
@@ -79,6 +80,8 @@ namespace GameOfLife
             #endregion
 
 #if DEBUG
+            int sizeX = 25, sizeY = 25;
+
             List<CoordSet> liveCells = new List<CoordSet>
             {
                 new CoordSet(2, 2),
