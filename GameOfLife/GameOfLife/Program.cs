@@ -5,26 +5,6 @@ namespace GameOfLife
 {
     class Program
     {
-        static List<object> CheckArgs(string[] args)
-        {
-            List<object> argsGeneric = new List<object>();
-
-            if (args.Length > 1)
-            {
-                string arg1 = args[1];
-                switch (arg1)
-                {
-                    case "-h":
-                        argsGeneric.Add()
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-            return argsGeneric;
-        }
-
         static void Main(string[] args)
         {
             #region Get console input
@@ -66,7 +46,7 @@ namespace GameOfLife
             UniversePrinter.DisplayUniverse(sizeX, 
                 sizeY, 
                 a.Universe, 
-                UniversePrinter.DisplayModes.Normal);
+                args[1].Contains("-h") ? UniversePrinter.DisplayModes.HideDead : UniversePrinter.DisplayModes.Normal);
             Console.WriteLine();
             Console.WriteLine(string.Concat("Population: ", a.NumLiveCells));
             Console.WriteLine();
@@ -86,8 +66,8 @@ namespace GameOfLife
                 a.Tick();
                 UniversePrinter.DisplayUniverse(sizeX, 
                     sizeY, 
-                    a.Universe, 
-                    UniversePrinter.DisplayModes.Normal);
+                    a.Universe,
+                    args[1].Contains("-h") ? UniversePrinter.DisplayModes.HideDead : UniversePrinter.DisplayModes.Normal);
                 Console.WriteLine();
                 Console.WriteLine(string.Concat("Population: ", a.NumLiveCells));
                 Console.WriteLine(string.Concat("Iteration: ", a.Age));
