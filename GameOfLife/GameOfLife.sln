@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife", "GameOfLife\GameOfLife.csproj", "{C6748086-68F2-4574-83BF-3622DD2D7D1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsGameOfLife", "WinFormsGameOfLife\WinFormsGameOfLife.csproj", "{3530CF36-6029-40A8-A5A4-BB2EADF51CB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.Automaton", "GameOfLife.Automaton\GameOfLife.Automaton.csproj", "{90469B70-720F-46F0-A735-34D37056B5EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3530CF36-6029-40A8-A5A4-BB2EADF51CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3530CF36-6029-40A8-A5A4-BB2EADF51CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3530CF36-6029-40A8-A5A4-BB2EADF51CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90469B70-720F-46F0-A735-34D37056B5EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90469B70-720F-46F0-A735-34D37056B5EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90469B70-720F-46F0-A735-34D37056B5EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90469B70-720F-46F0-A735-34D37056B5EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
