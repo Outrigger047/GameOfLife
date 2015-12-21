@@ -7,6 +7,14 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
+            #region Handle command line args
+            bool runHidden = false;
+            if (args.Length > 0 && args[0].Contains("-h"))
+            {
+                runHidden = true;
+            }
+            #endregion
+
             #region Get console input
             Console.Write("Horizontal size of universe: ");
             int sizeX = Convert.ToInt32(Console.ReadLine());
@@ -15,7 +23,7 @@ namespace GameOfLife
             int sizeY = Convert.ToInt32(Console.ReadLine());
             #endregion
 
-            #region Initialize simulation
+            #region Initialize and run simulation
             List<Automaton.CoordSet> liveCells = new List<Automaton.CoordSet>
             {
                 //Cool infinite loop at end
@@ -46,7 +54,7 @@ namespace GameOfLife
             UniversePrinter.DisplayUniverse(sizeX, 
                 sizeY, 
                 a.Universe, 
-                args[1].Contains("-h") ? UniversePrinter.DisplayModes.HideDead : UniversePrinter.DisplayModes.Normal);
+                runHidden ? UniversePrinter.DisplayModes.HideDead : UniversePrinter.DisplayModes.Normal);
             Console.WriteLine();
             Console.WriteLine(string.Concat("Population: ", a.NumLiveCells));
             Console.WriteLine();
@@ -64,10 +72,10 @@ namespace GameOfLife
                 Console.Clear();
 
                 a.Tick();
-                UniversePrinter.DisplayUniverse(sizeX, 
-                    sizeY, 
+                UniversePrinter.DisplayUniverse(sizeX,
+                    sizeY,
                     a.Universe,
-                    args[1].Contains("-h") ? UniversePrinter.DisplayModes.HideDead : UniversePrinter.DisplayModes.Normal);
+                    runHidden ? UniversePrinter.DisplayModes.HideDead : UniversePrinter.DisplayModes.Normal);
                 Console.WriteLine();
                 Console.WriteLine(string.Concat("Population: ", a.NumLiveCells));
                 Console.WriteLine(string.Concat("Iteration: ", a.Age));
