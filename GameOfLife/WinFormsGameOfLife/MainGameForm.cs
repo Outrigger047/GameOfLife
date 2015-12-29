@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameOfLife;
 
 namespace WinFormsGameOfLife
 {
     public partial class MainGameForm : Form
     {
-        public MainGameForm()
+        public MainGameForm(int sizeX, int sizeY)
         {
+            GameUniverseSizeX = sizeX;
+            GameUniverseSizeY = sizeY;
+            List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
+            Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
+
             InitializeComponent();
+            InitGameGui();
         }
     }
 }
