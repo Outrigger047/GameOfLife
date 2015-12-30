@@ -66,6 +66,8 @@ namespace WinFormsGameOfLife
         /// </summary>
         private void SetCheckboxesFromUniverse()
         {
+            this.SuspendLayout();
+
             List<Automaton.CoordSet> liveCells = Universe.Universe;
             for (int i = 0; i < GameUniverseSizeX; i++)
             {
@@ -86,6 +88,8 @@ namespace WinFormsGameOfLife
                     }
                 }
             }
+
+            this.ResumeLayout(false);
         }
     }
 }
