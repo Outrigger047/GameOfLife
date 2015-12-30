@@ -16,10 +16,6 @@ namespace WinFormsGameOfLife
         /// Vertical size of the universe
         /// </summary>
         public int GameUniverseSizeY { get; private set; }
-        /// <summary>
-        /// Universe
-        /// </summary>
-        public Automaton Universe { get; private set; }
 
         /// <summary>
         /// Initializes game-related GUI elements on the main form
