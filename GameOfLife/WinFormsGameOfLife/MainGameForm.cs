@@ -34,6 +34,18 @@ namespace WinFormsGameOfLife
         private List<Automaton.CoordSet> GetInitLiveCellListFromCheckboxArray()
         {
             List<Automaton.CoordSet> liveCells = new List<Automaton.CoordSet>();
+
+            for (int i = 0; i < GameUniverseSizeX; i++)
+            {
+                for (int j = 0; j < GameUniverseSizeY; j++)
+                {
+                    if (UniverseGui[i, j].Checked)
+                    {
+                        liveCells.Add(new Automaton.CoordSet(i, j));
+                    }
+                }
+            }
+
             return liveCells;
         }
 
@@ -44,7 +56,7 @@ namespace WinFormsGameOfLife
             this.startButton.Enabled = false;
             this.incrementButton.Enabled = true;
 
-            // NEED TO ADD METHOD TO AUTOMATON TO TAKE A LIST AND SET THE STATE
+            // Sets state of the universe based on checkboxes
             Universe.ForceState(GetInitLiveCellListFromCheckboxArray());
         }
     }
