@@ -61,6 +61,7 @@ namespace WinFormsGameOfLife
                 SetCheckboxesFromUniverse();
 
                 // End game if everything is dead or stuck
+                // TODO Need to sort for comparison first...
                 if (Universe.NumLiveCells == 0 | currentUniverse.Sort() == Universe.Universe.Sort())
                 {
                     this.incrementButton.Enabled = false;
