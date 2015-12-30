@@ -69,24 +69,14 @@ namespace WinFormsGameOfLife
             this.SuspendLayout();
 
             List<Automaton.CoordSet> liveCells = Universe.Universe;
-            for (int i = 0; i < GameUniverseSizeX; i++)
+            foreach (var cb in UniverseGui)
             {
-                for (int j = 0; j < GameUniverseSizeY; j++)
-                {
-                    Automaton.CoordSet currentPosition = new Automaton.CoordSet(i, j);
-                    foreach (var cell in liveCells)
-                    {
-                        if (cell == currentPosition)
-                        {
-                            UniverseGui[i, j].Checked = true;
-                            liveCells.Remove(cell);
-                        }
-                        else
-                        {
-                            UniverseGui[i, j].Checked = false;
-                        }
-                    }
-                }
+                cb.Checked = false;
+            }
+
+            foreach (var cell in liveCells)
+            {
+                UniverseGui[cell.X, cell.Y].Checked = true;
             }
 
             this.ResumeLayout(false);
