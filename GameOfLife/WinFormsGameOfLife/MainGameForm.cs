@@ -53,13 +53,15 @@ namespace WinFormsGameOfLife
         {
             if (gameRunning)
             {
+                // Capture universe state prior to incrementing
+                List<Automaton.CoordSet> currentUniverse = Universe.Universe;
                 // Increment state of the universe
                 Universe.Tick();
                 // Update GUI based on new universe state
                 SetCheckboxesFromUniverse();
 
-                // End game if everything is dead
-                if (Universe.NumLiveCells == 0)
+                // End game if everything is dead or stuck
+                if (Universe.NumLiveCells == 0 | currentUniverse.Sort() == Universe.Universe.Sort())
                 {
                     this.incrementButton.Enabled = false;
                 }
