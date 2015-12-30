@@ -70,7 +70,10 @@
             this.Controls.Add(this.incrementButton);
             this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.startButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainGameForm";
+            this.ShowIcon = false;
             this.Text = "MainGameForm";
             this.ResumeLayout(false);
 

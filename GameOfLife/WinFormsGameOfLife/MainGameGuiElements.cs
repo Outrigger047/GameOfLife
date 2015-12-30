@@ -28,10 +28,13 @@ namespace WinFormsGameOfLife
         {
             this.SuspendLayout();
 
+            int winXSize = (13 * GameUniverseSizeY) + 30;
+            int winYSize = (13 * GameUniverseSizeX) + 90;
+
             // Resize the window to accommodate the grid
             this.ClientSize = new System.Drawing.Size(
-                (13 * GameUniverseSizeY) + 30, 
-                (13 * GameUniverseSizeX) + 90);
+                winXSize < 280 ? 280 : winXSize, 
+                winYSize);
 
             // Set up the grid of checkboxes
             UniverseGui = new System.Windows.Forms.CheckBox[GameUniverseSizeX, GameUniverseSizeY];
