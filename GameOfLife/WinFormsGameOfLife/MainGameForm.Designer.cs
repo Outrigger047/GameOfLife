@@ -43,9 +43,11 @@
             this.startButton.TabIndex = 1;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // pauseButton
             // 
+            this.pauseButton.Enabled = false;
             this.pauseButton.Location = new System.Drawing.Point(93, 12);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(75, 23);
@@ -55,6 +57,7 @@
             // 
             // incrementButton
             // 
+            this.incrementButton.Enabled = false;
             this.incrementButton.Location = new System.Drawing.Point(174, 12);
             this.incrementButton.Name = "incrementButton";
             this.incrementButton.Size = new System.Drawing.Size(75, 23);
