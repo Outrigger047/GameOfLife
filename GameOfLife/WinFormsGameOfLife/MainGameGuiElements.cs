@@ -62,6 +62,28 @@ namespace WinFormsGameOfLife
         }
 
         /// <summary>
+        /// Returns a list of checkboxes that are checked
+        /// </summary>
+        /// <returns>List of coordinates</returns>
+        private List<Automaton.CoordSet> GetInitLiveCellListFromCheckboxArray()
+        {
+            List<Automaton.CoordSet> liveCells = new List<Automaton.CoordSet>();
+
+            for (int i = 0; i < GameUniverseSizeX; i++)
+            {
+                for (int j = 0; j < GameUniverseSizeY; j++)
+                {
+                    if (UniverseGui[i, j].Checked)
+                    {
+                        liveCells.Add(new Automaton.CoordSet(i, j));
+                    }
+                }
+            }
+
+            return liveCells;
+        }
+
+        /// <summary>
         /// Sets game GUI elements based on the current state of the universe
         /// </summary>
         private void SetCheckboxesFromUniverse()
