@@ -58,6 +58,7 @@ namespace WinFormsGameOfLife
                 // Update GUI based on new universe state
                 SetCheckboxesFromUniverse();
 
+                // End game if everything is dead
                 if (Universe.NumLiveCells == 0)
                 {
                     this.incrementButton.Enabled = false;
