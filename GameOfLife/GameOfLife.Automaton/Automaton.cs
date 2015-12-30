@@ -184,9 +184,11 @@ namespace GameOfLife
             {
                 for (int j = 0; j < sizeY; j++)
                 {
-                    if (liveCells.Contains(new CoordSet(i, j)))
+                    Automaton.CoordSet currentPosition = new CoordSet(i, j);
+                    if (liveCells.Contains(currentPosition))
                     {
                         universe[i, j].State = Cell.CellStateTypes.Alive;
+                        liveCells.Remove(currentPosition);
                     }
                     else
                     {
