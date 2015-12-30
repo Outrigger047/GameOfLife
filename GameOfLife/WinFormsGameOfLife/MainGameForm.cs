@@ -57,6 +57,11 @@ namespace WinFormsGameOfLife
                 Universe.Tick();
                 // Update GUI based on new universe state
                 SetCheckboxesFromUniverse();
+
+                if (Universe.NumLiveCells == 0)
+                {
+                    this.incrementButton.Enabled = false;
+                }
             }
         }
     }
