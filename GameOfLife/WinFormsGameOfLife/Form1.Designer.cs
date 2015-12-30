@@ -40,15 +40,15 @@
             // xLabel
             // 
             this.xLabel.AutoSize = true;
-            this.xLabel.Location = new System.Drawing.Point(60, 27);
+            this.xLabel.Location = new System.Drawing.Point(40, 54);
             this.xLabel.Name = "xLabel";
-            this.xLabel.Size = new System.Drawing.Size(14, 13);
+            this.xLabel.Size = new System.Drawing.Size(42, 13);
             this.xLabel.TabIndex = 0;
-            this.xLabel.Text = "X";
+            this.xLabel.Text = "Vertical";
             // 
             // xUpDown
             // 
-            this.xUpDown.Location = new System.Drawing.Point(80, 25);
+            this.xUpDown.Location = new System.Drawing.Point(88, 52);
             this.xUpDown.Maximum = new decimal(new int[] {
             50,
             0,
@@ -71,15 +71,15 @@
             // yLabel
             // 
             this.yLabel.AutoSize = true;
-            this.yLabel.Location = new System.Drawing.Point(60, 61);
+            this.yLabel.Location = new System.Drawing.Point(28, 28);
             this.yLabel.Name = "yLabel";
-            this.yLabel.Size = new System.Drawing.Size(14, 13);
+            this.yLabel.Size = new System.Drawing.Size(54, 13);
             this.yLabel.TabIndex = 2;
-            this.yLabel.Text = "Y";
+            this.yLabel.Text = "Horizontal";
             // 
             // yUpDown
             // 
-            this.yUpDown.Location = new System.Drawing.Point(80, 59);
+            this.yUpDown.Location = new System.Drawing.Point(88, 26);
             this.yUpDown.Maximum = new decimal(new int[] {
             50,
             0,
@@ -107,6 +107,7 @@
             this.generateButton.TabIndex = 4;
             this.generateButton.Text = "Generate";
             this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
             // SizeInputForm
             // 

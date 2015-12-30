@@ -16,5 +16,11 @@ namespace WinFormsGameOfLife
         {
             InitializeComponent();
         }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+            Form gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value), Convert.ToInt32(this.yUpDown.Value));
+            gameForm.Show();
+        }
     }
 }
