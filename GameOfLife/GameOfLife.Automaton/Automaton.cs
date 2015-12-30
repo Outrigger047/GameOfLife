@@ -185,6 +185,7 @@ namespace GameOfLife
                 for (int j = 0; j < sizeY; j++)
                 {
                     // TODO Rewrite this inner loop
+                    /*
                     Automaton.CoordSet currentPosition = new CoordSet(i, j);
                     if (liveCells.Contains(currentPosition))
                     {
@@ -195,6 +196,8 @@ namespace GameOfLife
                     {
                         universe[i, j].State = Cell.CellStateTypes.Dead;
                     }
+                    */
+
                 }
             }
         }
