@@ -197,8 +197,13 @@ namespace GameOfLife
                         universe[i, j].State = Cell.CellStateTypes.Dead;
                     }
                     */
-
+                    universe[i, j].State = Cell.CellStateTypes.Dead;
                 }
+            }
+
+            foreach (var cell in liveCells)
+            {
+                universe[cell.X, cell.Y].State = Cell.CellStateTypes.Alive;
             }
         }
         #endregion
