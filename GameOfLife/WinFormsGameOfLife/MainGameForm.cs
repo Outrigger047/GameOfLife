@@ -65,7 +65,7 @@ namespace WinFormsGameOfLife
             if (gameRunning)
             {
                 Universe.Tick();
-
+                SetCheckboxesFromUniverse();
             }
         }
     }
