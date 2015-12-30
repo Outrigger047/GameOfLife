@@ -180,25 +180,9 @@ namespace GameOfLife
         /// <param name="liveCells">List of cells that should be alive</param>
         public void ForceState(List<Automaton.CoordSet> liveCells)
         {
-            for (int i = 0; i < sizeX; i++)
+            foreach (var cell in universe)
             {
-                for (int j = 0; j < sizeY; j++)
-                {
-                    // TODO Rewrite this inner loop
-                    /*
-                    Automaton.CoordSet currentPosition = new CoordSet(i, j);
-                    if (liveCells.Contains(currentPosition))
-                    {
-                        universe[i, j].State = Cell.CellStateTypes.Alive;
-                        liveCells.Remove(currentPosition);
-                    }
-                    else
-                    {
-                        universe[i, j].State = Cell.CellStateTypes.Dead;
-                    }
-                    */
-                    universe[i, j].State = Cell.CellStateTypes.Dead;
-                }
+                cell.State = Cell.CellStateTypes.Dead;
             }
 
             foreach (var cell in liveCells)
