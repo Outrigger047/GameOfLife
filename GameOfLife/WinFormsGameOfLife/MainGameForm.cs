@@ -59,5 +59,14 @@ namespace WinFormsGameOfLife
             // Sets state of the universe based on checkboxes
             Universe.ForceState(GetInitLiveCellListFromCheckboxArray());
         }
+
+        private void incrementButton_Click(object sender, EventArgs e)
+        {
+            if (gameRunning)
+            {
+                Universe.Tick();
+
+            }
+        }
     }
 }

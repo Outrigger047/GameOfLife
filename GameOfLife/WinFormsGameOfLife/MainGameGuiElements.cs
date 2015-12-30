@@ -1,4 +1,5 @@
-﻿using GameOfLife;
+﻿using System.Collections.Generic;
+using GameOfLife;
 
 namespace WinFormsGameOfLife
 {
@@ -58,6 +59,33 @@ namespace WinFormsGameOfLife
             }
 
             this.ResumeLayout(false);
+        }
+
+        /// <summary>
+        /// Sets game GUI elements based on the current state of the universe
+        /// </summary>
+        private void SetCheckboxesFromUniverse()
+        {
+            List<Automaton.CoordSet> liveCells = Universe.Universe;
+            for (int i = 0; i < GameUniverseSizeX; i++)
+            {
+                for (int j = 0; j < GameUniverseSizeY; j++)
+                {
+                    Automaton.CoordSet currentPosition = new Automaton.CoordSet(i, j);
+                    foreach (var cell in liveCells)
+                    {
+                        if (cell == currentPosition)
+                        {
+                            UniverseGui[i, j].Checked = true;
+                            liveCells.Remove(cell);
+                        }
+                        else
+                        {
+                            UniverseGui[i, j].Checked = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }

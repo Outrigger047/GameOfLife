@@ -64,6 +64,7 @@
             this.incrementButton.TabIndex = 3;
             this.incrementButton.Text = "Increment";
             this.incrementButton.UseVisualStyleBackColor = true;
+            this.incrementButton.Click += new System.EventHandler(this.incrementButton_Click);
             // 
             // MainGameForm
             // 
