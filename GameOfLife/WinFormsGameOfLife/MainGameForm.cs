@@ -31,24 +31,6 @@ namespace WinFormsGameOfLife
             InitGameGui();
         }
 
-        private List<Automaton.CoordSet> GetInitLiveCellListFromCheckboxArray()
-        {
-            List<Automaton.CoordSet> liveCells = new List<Automaton.CoordSet>();
-
-            for (int i = 0; i < GameUniverseSizeX; i++)
-            {
-                for (int j = 0; j < GameUniverseSizeY; j++)
-                {
-                    if (UniverseGui[i, j].Checked)
-                    {
-                        liveCells.Add(new Automaton.CoordSet(i, j));
-                    }
-                }
-            }
-
-            return liveCells;
-        }
-
         private void startButton_Click(object sender, EventArgs e)
         {
             gameRunning = true;
