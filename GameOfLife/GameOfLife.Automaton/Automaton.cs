@@ -173,6 +173,15 @@ namespace GameOfLife
             universe = nextUniverse;
             Age++;
         }
+
+        /// <summary>
+        /// Sets the Universe to a forced state
+        /// </summary>
+        /// <param name="liveCells">List of cells that should be alive</param>
+        public void ForceState(List<Automaton.CoordSet> liveCells)
+        {
+
+        }
         #endregion
 
         #region Private methods
