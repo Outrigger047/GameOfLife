@@ -45,7 +45,7 @@ namespace WinFormsGameOfLife
             this.incrementButton.Enabled = true;
 
             // NEED TO ADD METHOD TO AUTOMATON TO TAKE A LIST AND SET THE STATE
-            Universe.
+            
         }
     }
 }
