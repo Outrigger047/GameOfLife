@@ -43,7 +43,8 @@ namespace GameOfLife
                 new Automaton.CoordSet(6, 8),
                 new Automaton.CoordSet(7, 6),
                 new Automaton.CoordSet(7, 7),
-                new Automaton.CoordSet(7, 8)
+                new Automaton.CoordSet(7, 8),
+                new Automaton.CoordSet(9, 2)
                 
 
             };
