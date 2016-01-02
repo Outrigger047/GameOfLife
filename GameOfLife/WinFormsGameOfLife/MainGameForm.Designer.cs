@@ -51,7 +51,7 @@
             // pauseButton
             // 
             this.pauseButton.Enabled = false;
-            this.pauseButton.Location = new System.Drawing.Point(250, 12);
+            this.pauseButton.Location = new System.Drawing.Point(212, 12);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(25, 23);
             this.pauseButton.TabIndex = 2;
@@ -62,7 +62,7 @@
             // incrementButton
             // 
             this.incrementButton.Enabled = false;
-            this.incrementButton.Location = new System.Drawing.Point(93, 12);
+            this.incrementButton.Location = new System.Drawing.Point(243, 12);
             this.incrementButton.Name = "incrementButton";
             this.incrementButton.Size = new System.Drawing.Size(75, 23);
             this.incrementButton.TabIndex = 3;
@@ -91,7 +91,7 @@
             // playButton
             // 
             this.playButton.Enabled = false;
-            this.playButton.Location = new System.Drawing.Point(219, 12);
+            this.playButton.Location = new System.Drawing.Point(181, 12);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(25, 23);
             this.playButton.TabIndex = 6;

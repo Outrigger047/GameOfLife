@@ -79,6 +79,7 @@ namespace WinFormsGameOfLife
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            this.incrementButton.Enabled = false;
             this.playButton.Enabled = false;
             this.pauseButton.Enabled = true;
         }
@@ -87,6 +88,7 @@ namespace WinFormsGameOfLife
         {
             this.pauseButton.Enabled = false;
             this.playButton.Enabled = true;
+            this.incrementButton.Enabled = true;
         }
     }
 }
