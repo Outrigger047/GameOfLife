@@ -35,6 +35,7 @@
             this.incrementButton = new System.Windows.Forms.Button();
             this.iterationsLabel = new System.Windows.Forms.Label();
             this.populationLabel = new System.Windows.Forms.Label();
+            this.playButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // startButton
@@ -50,17 +51,17 @@
             // pauseButton
             // 
             this.pauseButton.Enabled = false;
-            this.pauseButton.Location = new System.Drawing.Point(93, 12);
+            this.pauseButton.Location = new System.Drawing.Point(250, 12);
             this.pauseButton.Name = "pauseButton";
-            this.pauseButton.Size = new System.Drawing.Size(75, 23);
+            this.pauseButton.Size = new System.Drawing.Size(25, 23);
             this.pauseButton.TabIndex = 2;
-            this.pauseButton.Text = "Pause";
+            this.pauseButton.Text = "❚❚";
             this.pauseButton.UseVisualStyleBackColor = true;
             // 
             // incrementButton
             // 
             this.incrementButton.Enabled = false;
-            this.incrementButton.Location = new System.Drawing.Point(174, 12);
+            this.incrementButton.Location = new System.Drawing.Point(93, 12);
             this.incrementButton.Name = "incrementButton";
             this.incrementButton.Size = new System.Drawing.Size(75, 23);
             this.incrementButton.TabIndex = 3;
@@ -71,7 +72,7 @@
             // iterationsLabel
             // 
             this.iterationsLabel.AutoSize = true;
-            this.iterationsLabel.Location = new System.Drawing.Point(270, 9);
+            this.iterationsLabel.Location = new System.Drawing.Point(351, 9);
             this.iterationsLabel.Name = "iterationsLabel";
             this.iterationsLabel.Size = new System.Drawing.Size(36, 13);
             this.iterationsLabel.TabIndex = 4;
@@ -80,17 +81,27 @@
             // populationLabel
             // 
             this.populationLabel.AutoSize = true;
-            this.populationLabel.Location = new System.Drawing.Point(270, 25);
+            this.populationLabel.Location = new System.Drawing.Point(324, 25);
             this.populationLabel.Name = "populationLabel";
             this.populationLabel.Size = new System.Drawing.Size(63, 13);
             this.populationLabel.TabIndex = 5;
             this.populationLabel.Text = "Population: ";
+            // 
+            // playButton
+            // 
+            this.playButton.Location = new System.Drawing.Point(219, 12);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(25, 23);
+            this.playButton.TabIndex = 6;
+            this.playButton.Text = "▶";
+            this.playButton.UseVisualStyleBackColor = true;
             // 
             // MainGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 50);
+            this.Controls.Add(this.playButton);
             this.Controls.Add(this.populationLabel);
             this.Controls.Add(this.iterationsLabel);
             this.Controls.Add(this.incrementButton);
@@ -113,5 +124,6 @@
         private System.Windows.Forms.Button incrementButton;
         private System.Windows.Forms.Label iterationsLabel;
         private System.Windows.Forms.Label populationLabel;
+        private System.Windows.Forms.Button playButton;
     }
 }
