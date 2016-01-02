@@ -101,6 +101,9 @@ namespace WinFormsGameOfLife
                 UniverseGui[cell.X, cell.Y].Checked = true;
             }
 
+            iterationsLabel.Text = "Time: " + Universe.Age;
+            populationLabel.Text = "Population: " + Universe.NumLiveCells;
+
             this.ResumeLayout(false);
         }
     }

@@ -37,16 +37,21 @@ namespace WinFormsGameOfLife
 
             // Update GUI elements that the user no longer needs to interact with
             this.SuspendLayout();
+
             this.startButton.Enabled = false;
             this.incrementButton.Enabled = true;
             foreach (var cb in UniverseGui)
             {
                 cb.Enabled = false;
             }
-            this.ResumeLayout(false);
 
             // Sets state of the universe based on checkboxes
             Universe.ForceState(GetInitLiveCellListFromCheckboxArray());
+
+            iterationsLabel.Text = "Time: " + Universe.Age;
+            populationLabel.Text = "Population: " + Universe.NumLiveCells;
+
+            this.ResumeLayout(false);
         }
 
         private void incrementButton_Click(object sender, EventArgs e)
