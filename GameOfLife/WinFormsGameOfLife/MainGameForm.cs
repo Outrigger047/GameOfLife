@@ -24,6 +24,7 @@ namespace WinFormsGameOfLife
         {
             GameUniverseSizeX = sizeX;
             GameUniverseSizeY = sizeY;
+            this.Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
             Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
 

@@ -100,7 +100,7 @@
             this.MaximizeBox = false;
             this.Name = "MainGameForm";
             this.ShowIcon = false;
-            this.Text = "MainGameForm";
+            this.Text = "Game of Life";
             this.ResumeLayout(false);
             this.PerformLayout();
 
