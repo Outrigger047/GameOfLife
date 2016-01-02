@@ -33,6 +33,8 @@
             this.startButton = new System.Windows.Forms.Button();
             this.pauseButton = new System.Windows.Forms.Button();
             this.incrementButton = new System.Windows.Forms.Button();
+            this.iterationsLabel = new System.Windows.Forms.Label();
+            this.populationLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // startButton
@@ -66,11 +68,31 @@
             this.incrementButton.UseVisualStyleBackColor = true;
             this.incrementButton.Click += new System.EventHandler(this.incrementButton_Click);
             // 
+            // iterationsLabel
+            // 
+            this.iterationsLabel.AutoSize = true;
+            this.iterationsLabel.Location = new System.Drawing.Point(270, 9);
+            this.iterationsLabel.Name = "iterationsLabel";
+            this.iterationsLabel.Size = new System.Drawing.Size(36, 13);
+            this.iterationsLabel.TabIndex = 4;
+            this.iterationsLabel.Text = "Time: ";
+            // 
+            // populationLabel
+            // 
+            this.populationLabel.AutoSize = true;
+            this.populationLabel.Location = new System.Drawing.Point(270, 25);
+            this.populationLabel.Name = "populationLabel";
+            this.populationLabel.Size = new System.Drawing.Size(63, 13);
+            this.populationLabel.TabIndex = 5;
+            this.populationLabel.Text = "Population: ";
+            // 
             // MainGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 50);
+            this.ClientSize = new System.Drawing.Size(442, 50);
+            this.Controls.Add(this.populationLabel);
+            this.Controls.Add(this.iterationsLabel);
             this.Controls.Add(this.incrementButton);
             this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.startButton);
@@ -80,6 +102,7 @@
             this.ShowIcon = false;
             this.Text = "MainGameForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -88,5 +111,7 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button pauseButton;
         private System.Windows.Forms.Button incrementButton;
+        private System.Windows.Forms.Label iterationsLabel;
+        private System.Windows.Forms.Label populationLabel;
     }
 }
