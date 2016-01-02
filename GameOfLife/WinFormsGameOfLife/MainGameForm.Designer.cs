@@ -57,6 +57,7 @@
             this.pauseButton.TabIndex = 2;
             this.pauseButton.Text = "❚❚";
             this.pauseButton.UseVisualStyleBackColor = true;
+            this.pauseButton.Click += new System.EventHandler(this.pauseButton_Click);
             // 
             // incrementButton
             // 
@@ -96,6 +97,7 @@
             this.playButton.TabIndex = 6;
             this.playButton.Text = "▶";
             this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // MainGameForm
             // 

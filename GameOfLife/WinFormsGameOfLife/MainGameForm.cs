@@ -52,6 +52,8 @@ namespace WinFormsGameOfLife
             iterationsLabel.Text = "Time: " + Universe.Age;
             populationLabel.Text = "Population: " + Universe.NumLiveCells;
 
+            this.playButton.Enabled = true;
+
             this.ResumeLayout(false);
         }
 
@@ -73,6 +75,18 @@ namespace WinFormsGameOfLife
                     this.incrementButton.Enabled = false;
                 }
             }
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            this.playButton.Enabled = false;
+            this.pauseButton.Enabled = true;
+        }
+
+        private void pauseButton_Click(object sender, EventArgs e)
+        {
+            this.pauseButton.Enabled = false;
+            this.playButton.Enabled = true;
         }
     }
 }
