@@ -189,6 +189,8 @@ namespace GameOfLife
             {
                 universe[cell.X, cell.Y].State = Cell.CellStateTypes.Alive;
             }
+
+            NumLiveCells = liveCells.Count;
         }
         #endregion
 
