@@ -30,7 +30,7 @@ namespace WinFormsGameOfLife
 
             // Resize the window to accommodate the grid
             this.ClientSize = new System.Drawing.Size(
-                winXSize < 280 ? 280 : winXSize, 
+                winXSize < 480 ? 480 : winXSize, 
                 winYSize);
 
             // Set up the grid of checkboxes
