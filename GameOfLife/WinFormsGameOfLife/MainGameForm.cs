@@ -21,6 +21,7 @@ namespace WinFormsGameOfLife
         /// Used to track whether the game should auto increment the state of the universe
         /// </summary>
         private bool isAutoPlaying = false;
+        private BackgroundWorker autoPlayer;
 
         /// <summary>
         /// Universe
@@ -47,7 +48,7 @@ namespace WinFormsGameOfLife
         /// <summary>
         /// Automatically runs the game
         /// </summary>
-        private void AutoIterate()
+        private void AutoIterate(object sender, RunWorkerCompletedEventArgs e)
         {
             while (isAutoPlaying)
             {
@@ -110,8 +111,8 @@ namespace WinFormsGameOfLife
             this.playButton.Enabled = false;
             this.pauseButton.Enabled = true;
             this.isAutoPlaying = true;
-            System.Threading.Thread autoplayThread = new System.Threading.Thread(AutoIterate);
-            autoplayThread.Start();
+            this.autoPlayer = new BackgroundWorker();
+            this.autoPlayer.RunWorkerAsync();
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
