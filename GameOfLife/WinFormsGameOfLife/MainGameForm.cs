@@ -110,6 +110,8 @@ namespace WinFormsGameOfLife
             this.playButton.Enabled = false;
             this.pauseButton.Enabled = true;
             this.isAutoPlaying = true;
+            System.Threading.Thread autoplayThread = new System.Threading.Thread(AutoIterate);
+            autoplayThread.Start();
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
