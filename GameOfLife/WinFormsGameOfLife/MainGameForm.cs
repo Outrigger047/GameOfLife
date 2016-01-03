@@ -52,7 +52,10 @@ namespace WinFormsGameOfLife
             while (isAutoPlaying)
             {
                 System.Threading.Thread.Sleep(500);
-
+                // Increment state of the universe
+                Universe.Tick();
+                // Update GUI based on new universe state
+                SetCheckboxesFromUniverse();
             }
         }
 
