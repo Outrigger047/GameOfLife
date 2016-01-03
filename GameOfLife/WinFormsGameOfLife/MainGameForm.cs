@@ -13,13 +13,25 @@ namespace WinFormsGameOfLife
 {
     public partial class MainGameForm : Form
     {
+        /// <summary>
+        /// Used to track whether or not the user has clicked the Start button
+        /// </summary>
         private bool gameRunning = false;
+        /// <summary>
+        /// Used to track whether the game should auto increment the state of the universe
+        /// </summary>
+        private bool isAutoPlaying = false;
 
         /// <summary>
         /// Universe
         /// </summary>
         public Automaton Universe { get; private set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="sizeX">Horizontal number of cells in the universe</param>
+        /// <param name="sizeY">Vertical number of cells in the universe</param>
         public MainGameForm(int sizeX, int sizeY)
         {
             GameUniverseSizeX = sizeX;
@@ -30,6 +42,18 @@ namespace WinFormsGameOfLife
 
             InitializeComponent();
             InitGameGui();
+        }
+
+        /// <summary>
+        /// Automatically runs the game
+        /// </summary>
+        private void AutoIterate()
+        {
+            while (isAutoPlaying)
+            {
+                System.Threading.Thread.Sleep(500);
+
+            }
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -82,6 +106,7 @@ namespace WinFormsGameOfLife
             this.incrementButton.Enabled = false;
             this.playButton.Enabled = false;
             this.pauseButton.Enabled = true;
+            this.isAutoPlaying = true;
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
@@ -89,6 +114,7 @@ namespace WinFormsGameOfLife
             this.pauseButton.Enabled = false;
             this.playButton.Enabled = true;
             this.incrementButton.Enabled = true;
+            this.isAutoPlaying = false;
         }
     }
 }
