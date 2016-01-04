@@ -107,37 +107,29 @@ namespace WinFormsGameOfLife
 
             this.ResumeLayout(false);
         }
+
         /// <summary>
         /// Thread-safe: Sets game GUI elements based on the current state of the universe
         /// </summary>
-        private void SetCheckboxesFromUniverse(object sender, DoWorkEventArgs e)
+        private void SetCheckboxesFromUniverse_Async(object sender, RunWorkerCompletedEventArgs e)
         {
-            BackgroundWorker bg = sender as BackgroundWorker;
+            this.SuspendLayout();
 
-            if (!bg.CancellationPending)
+            List<Automaton.CoordSet> liveCells = Universe.Universe;
+            foreach (var cb in UniverseGui)
             {
-                this.SuspendLayout();
-
-                List<Automaton.CoordSet> liveCells = Universe.Universe;
-                foreach (var cb in UniverseGui)
-                {
-                    cb.Checked = false;
-                }
-
-                foreach (var cell in liveCells)
-                {
-                    UniverseGui[cell.X, cell.Y].Checked = true;
-                }
-
-                iterationsLabel.Text = "Time: " + Universe.Age;
-                populationLabel.Text = "Population: " + Universe.NumLiveCells;
-
-                this.ResumeLayout(false); 
+                cb.Checked = false;
             }
-            else
+
+            foreach (var cell in liveCells)
             {
-                bg.CancelAsync();
+                UniverseGui[cell.X, cell.Y].Checked = true;
             }
+
+            iterationsLabel.Text = "Time: " + Universe.Age;
+            populationLabel.Text = "Population: " + Universe.NumLiveCells;
+
+            this.ResumeLayout(false);
         }
     }
 }

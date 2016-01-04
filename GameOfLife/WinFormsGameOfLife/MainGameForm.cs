@@ -23,6 +23,7 @@ namespace WinFormsGameOfLife
         /// </summary>
         public Automaton Universe { get; private set; }
 
+        private bool autoPlay = false;
         private BackgroundWorker uiUpdater;
 
         /// <summary>
@@ -38,7 +39,9 @@ namespace WinFormsGameOfLife
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
             Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
 
-            uiUpdater.DoWork += new DoWorkEventHandler(SetCheckboxesFromUniverse);
+            uiUpdater = new BackgroundWorker();
+            uiUpdater.DoWork += new DoWorkEventHandler(AutoIterate);
+            uiUpdater.RunWorkerCompleted += new RunWorkerCompletedEventHandler(SetCheckboxesFromUniverse_Async);
 
             InitializeComponent();
             this.Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
@@ -49,16 +52,12 @@ namespace WinFormsGameOfLife
         /// <summary>
         /// Automatically runs the game
         /// </summary>
-        private void AutoIterate()
+        private void AutoIterate(object sender, DoWorkEventArgs e)
         {
-            while (uiUpdater.IsBusy)
-            {
-                System.Threading.Thread.Sleep(500);
-                // Increment state of the universe
-                Universe.Tick();
-                // Update GUI based on new universe state
-                SetCheckboxesFromUniverse();
-            }
+            // Wait
+            System.Threading.Thread.Sleep(500);
+            // Increment state of the universe
+            Universe.Tick();
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -116,12 +115,14 @@ namespace WinFormsGameOfLife
             this.pauseButton.Enabled = true;
             this.ResumeLayout(false);
 
-            gameRunning = true;
-            AutoIterate();
+            autoPlay = true;
+            uiUpdater.RunWorkerAsync();
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
         {
+            autoPlay = false;
+
             this.SuspendLayout();
             this.incrementButton.Enabled = true;
             this.playButton.Enabled = true;
