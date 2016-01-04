@@ -129,7 +129,7 @@ namespace WinFormsGameOfLife
             iterationsLabel.Text = "Time: " + Universe.Age;
             populationLabel.Text = "Population: " + Universe.NumLiveCells;
 
-            this.ResumeLayout(false);
+            this.ResumeLayout(false);  
         }
     }
 }

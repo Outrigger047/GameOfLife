@@ -24,7 +24,7 @@ namespace WinFormsGameOfLife
         public Automaton Universe { get; private set; }
 
         private bool autoPlay = false;
-        private BackgroundWorker uiUpdater;
+        //private BackgroundWorker uiUpdater;
 
         /// <summary>
         /// Constructor
@@ -39,14 +39,25 @@ namespace WinFormsGameOfLife
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
             Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
 
-            uiUpdater = new BackgroundWorker();
-            uiUpdater.DoWork += new DoWorkEventHandler(AutoIterate);
-            uiUpdater.RunWorkerCompleted += new RunWorkerCompletedEventHandler(SetCheckboxesFromUniverse_Async);
-
             InitializeComponent();
             this.Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
 
+
+
             InitGameGui();
+        }
+
+        private void StartAutomation()
+        {
+            while (autoPlay)
+            {
+                BackgroundWorker uiUpdater = new BackgroundWorker();
+                uiUpdater.DoWork += new DoWorkEventHandler(AutoIterate);
+                uiUpdater.RunWorkerCompleted += new RunWorkerCompletedEventHandler(SetCheckboxesFromUniverse_Async);
+                var workerDone = new AutoResetEvent(false);
+                uiUpdater.RunWorkerAsync(workerDone);
+                workerDone.WaitOne();
+            }
         }
 
         /// <summary>
@@ -58,13 +69,12 @@ namespace WinFormsGameOfLife
             System.Threading.Thread.Sleep(500);
             // Increment state of the universe
             Universe.Tick();
+            (e.Argument as AutoResetEvent).Set();
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
             gameRunning = true;
-
-            uiUpdater = new BackgroundWorker();
 
             // Update GUI elements that the user no longer needs to interact with
             this.SuspendLayout();
@@ -116,7 +126,7 @@ namespace WinFormsGameOfLife
             this.ResumeLayout(false);
 
             autoPlay = true;
-            uiUpdater.RunWorkerAsync();
+            StartAutomation();
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
