@@ -18,9 +18,8 @@ namespace WinFormsGameOfLife
         /// </summary>
         private bool gameRunning = false;
         /// <summary>
-        /// Used to track whether the game should auto increment the state of the universe
+        /// Used to automatically increment state of the universe when the Play button is pressed
         /// </summary>
-        private bool isAutoPlaying = false;
         private BackgroundWorker autoPlayer;
 
         /// <summary>
@@ -37,6 +36,7 @@ namespace WinFormsGameOfLife
         {
             GameUniverseSizeX = sizeX;
             GameUniverseSizeY = sizeY;
+            autoPlayer = new BackgroundWorker();
             this.Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
             Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
@@ -48,9 +48,11 @@ namespace WinFormsGameOfLife
         /// <summary>
         /// Automatically runs the game
         /// </summary>
-        private void AutoIterate(object sender, RunWorkerCompletedEventArgs e)
+        private void AutoIterate(object sender, DoWorkEventArgs e)
         {
-            while (isAutoPlaying)
+            BackgroundWorker bg = sender as BackgroundWorker;
+
+            while (bg.IsBusy)
             {
                 System.Threading.Thread.Sleep(500);
                 // Increment state of the universe
@@ -59,6 +61,13 @@ namespace WinFormsGameOfLife
                 SetCheckboxesFromUniverse();
             }
         }
+
+        /*
+        private void AutoPlayer_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+        */
 
         private void startButton_Click(object sender, EventArgs e)
         {
@@ -110,9 +119,9 @@ namespace WinFormsGameOfLife
             this.incrementButton.Enabled = false;
             this.playButton.Enabled = false;
             this.pauseButton.Enabled = true;
-            this.isAutoPlaying = true;
-            this.autoPlayer = new BackgroundWorker();
-            this.autoPlayer.RunWorkerAsync();
+
+            
+            autoPlayer.RunWorkerAsync();
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
@@ -120,7 +129,7 @@ namespace WinFormsGameOfLife
             this.pauseButton.Enabled = false;
             this.playButton.Enabled = true;
             this.incrementButton.Enabled = true;
-            this.isAutoPlaying = false;
+
         }
     }
 }
