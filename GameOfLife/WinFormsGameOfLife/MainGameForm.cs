@@ -18,14 +18,12 @@ namespace WinFormsGameOfLife
         /// Used to track whether or not the user has clicked the Start button
         /// </summary>
         private bool gameRunning = false;
-
-        private Thread universeGuiInitializer;
-        private Thread universeGuiAutoRunner;
-
         /// <summary>
         /// Universe
         /// </summary>
         public Automaton Universe { get; private set; }
+
+        private BackgroundWorker uiUpdater;
 
         /// <summary>
         /// Constructor
@@ -40,10 +38,12 @@ namespace WinFormsGameOfLife
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
             Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
 
+            uiUpdater.DoWork += new DoWorkEventHandler(SetCheckboxesFromUniverse);
+
             InitializeComponent();
             this.Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
 
-            universeGuiInitializer = new Thread(InitGameGui);
+            InitGameGui();
         }
 
         /// <summary>
@@ -51,13 +51,7 @@ namespace WinFormsGameOfLife
         /// </summary>
         private void AutoIterate()
         {
-            this.SuspendLayout();
-            this.incrementButton.Enabled = false;
-            this.playButton.Enabled = false;
-            this.pauseButton.Enabled = true;
-            this.ResumeLayout(false);
-
-            while (1 == 1)
+            while (uiUpdater.IsBusy)
             {
                 System.Threading.Thread.Sleep(500);
                 // Increment state of the universe
@@ -67,19 +61,11 @@ namespace WinFormsGameOfLife
             }
         }
 
-        private void AutoIterateStop()
-        {
-            if (1 == 1)
-            {
-                this.pauseButton.Enabled = false;
-                this.playButton.Enabled = true;
-                this.incrementButton.Enabled = true; 
-            }
-        }
-
         private void startButton_Click(object sender, EventArgs e)
         {
             gameRunning = true;
+
+            uiUpdater = new BackgroundWorker();
 
             // Update GUI elements that the user no longer needs to interact with
             this.SuspendLayout();
@@ -124,12 +110,23 @@ namespace WinFormsGameOfLife
 
         private void playButton_Click(object sender, EventArgs e)
         {
-            autoPlayer.RunWorkerAsync();
+            this.SuspendLayout();
+            this.incrementButton.Enabled = false;
+            this.playButton.Enabled = false;
+            this.pauseButton.Enabled = true;
+            this.ResumeLayout(false);
+
+            gameRunning = true;
+            AutoIterate();
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
         {
-            autoPlayer.CancelAsync();
+            this.SuspendLayout();
+            this.incrementButton.Enabled = true;
+            this.playButton.Enabled = true;
+            this.pauseButton.Enabled = false;
+            this.ResumeLayout(false);
         }
     }
 }

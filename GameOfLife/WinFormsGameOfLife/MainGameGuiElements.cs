@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using GameOfLife;
+﻿using GameOfLife;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace WinFormsGameOfLife
 {
@@ -105,6 +106,38 @@ namespace WinFormsGameOfLife
             populationLabel.Text = "Population: " + Universe.NumLiveCells;
 
             this.ResumeLayout(false);
+        }
+        /// <summary>
+        /// Thread-safe: Sets game GUI elements based on the current state of the universe
+        /// </summary>
+        private void SetCheckboxesFromUniverse(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker bg = sender as BackgroundWorker;
+
+            if (!bg.CancellationPending)
+            {
+                this.SuspendLayout();
+
+                List<Automaton.CoordSet> liveCells = Universe.Universe;
+                foreach (var cb in UniverseGui)
+                {
+                    cb.Checked = false;
+                }
+
+                foreach (var cell in liveCells)
+                {
+                    UniverseGui[cell.X, cell.Y].Checked = true;
+                }
+
+                iterationsLabel.Text = "Time: " + Universe.Age;
+                populationLabel.Text = "Population: " + Universe.NumLiveCells;
+
+                this.ResumeLayout(false); 
+            }
+            else
+            {
+                bg.CancelAsync();
+            }
         }
     }
 }
