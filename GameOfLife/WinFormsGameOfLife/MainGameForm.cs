@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using GameOfLife;
 
@@ -17,10 +18,9 @@ namespace WinFormsGameOfLife
         /// Used to track whether or not the user has clicked the Start button
         /// </summary>
         private bool gameRunning = false;
-        /// <summary>
-        /// Used to automatically increment state of the universe when the Play button is pressed
-        /// </summary>
-        private BackgroundWorker autoPlayer;
+
+        private Thread universeGuiInitializer;
+        private Thread universeGuiAutoRunner;
 
         /// <summary>
         /// Universe
@@ -36,23 +36,28 @@ namespace WinFormsGameOfLife
         {
             GameUniverseSizeX = sizeX;
             GameUniverseSizeY = sizeY;
-            autoPlayer = new BackgroundWorker();
-            this.Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
+
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
             Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
 
             InitializeComponent();
-            InitGameGui();
+            this.Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
+
+            universeGuiInitializer = new Thread(InitGameGui);
         }
 
         /// <summary>
         /// Automatically runs the game
         /// </summary>
-        private void AutoIterate(object sender, DoWorkEventArgs e)
+        private void AutoIterate()
         {
-            BackgroundWorker bg = sender as BackgroundWorker;
+            this.SuspendLayout();
+            this.incrementButton.Enabled = false;
+            this.playButton.Enabled = false;
+            this.pauseButton.Enabled = true;
+            this.ResumeLayout(false);
 
-            while (bg.IsBusy)
+            while (1 == 1)
             {
                 System.Threading.Thread.Sleep(500);
                 // Increment state of the universe
@@ -62,12 +67,15 @@ namespace WinFormsGameOfLife
             }
         }
 
-        /*
-        private void AutoPlayer_DoWork(object sender, DoWorkEventArgs e)
+        private void AutoIterateStop()
         {
-
+            if (1 == 1)
+            {
+                this.pauseButton.Enabled = false;
+                this.playButton.Enabled = true;
+                this.incrementButton.Enabled = true; 
+            }
         }
-        */
 
         private void startButton_Click(object sender, EventArgs e)
         {
@@ -116,20 +124,12 @@ namespace WinFormsGameOfLife
 
         private void playButton_Click(object sender, EventArgs e)
         {
-            this.incrementButton.Enabled = false;
-            this.playButton.Enabled = false;
-            this.pauseButton.Enabled = true;
-
-            
             autoPlayer.RunWorkerAsync();
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
         {
-            this.pauseButton.Enabled = false;
-            this.playButton.Enabled = true;
-            this.incrementButton.Enabled = true;
-
+            autoPlayer.CancelAsync();
         }
     }
 }
