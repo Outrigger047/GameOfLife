@@ -9,6 +9,7 @@ namespace WinFormsGameOfLife
 {
     public partial class MainGameForm : Form
     {
+        #region Fields
         /// <summary>
         /// Set when the player starts the game
         /// </summary>
@@ -21,7 +22,6 @@ namespace WinFormsGameOfLife
         /// Prevents new work being assigned to BackgroundWorker before it's done
         /// </summary>
         private AutoResetEvent autoPlayerReset;
-
         /// <summary>
         /// Used to control speeds of auto player
         /// </summary>
@@ -32,16 +32,18 @@ namespace WinFormsGameOfLife
             { "250 msec", 250 },
             { "30 msec", 30 }
         };
+        #endregion
 
+        #region Properties
         /// <summary>
         /// Universe
         /// </summary>
         public Automaton Universe { get; private set; }
+        #endregion
 
-
-
+        #region Constructors
         /// <summary>
-        /// Constructor for generating MainGameForm for use with manual cell states
+        /// Parameterized constructor for generating MainGameForm for use with manual cell states
         /// </summary>
         /// <param name="sizeX">Horizontal size of the universe</param>
         /// <param name="sizeY">Vertical size of the universe</param>
@@ -49,7 +51,7 @@ namespace WinFormsGameOfLife
         {
             GameUniverseSizeX = sizeX;
             GameUniverseSizeY = sizeY;
-            
+
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
             Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
 
@@ -65,7 +67,7 @@ namespace WinFormsGameOfLife
         }
 
         /// <summary>
-        /// Constructor for generating MainGameForm for use with imported cell state
+        /// Parameterized constructor for generating MainGameForm for use with imported cell state
         /// </summary>
         /// <param name="sizeX">Horizontal size of the universe</param>
         /// <param name="sizeY">Vertical size of the universe</param>
@@ -87,7 +89,9 @@ namespace WinFormsGameOfLife
             Text = "Game of Life - " + importFileName + " - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
             InitGameGui();
         }
+        #endregion
 
+        #region Private methods
         /// <summary>
         /// Calls the BackgroundWorker when player starts the auto play option
         /// </summary>
@@ -136,7 +140,9 @@ namespace WinFormsGameOfLife
                 autoPlayer.RunWorkerAsync(e.Result);
             }
         }
+        #endregion
 
+        #region Windows Forms event handlers
         private void startButton_Click(object sender, EventArgs e)
         {
             // Indicate game has started
@@ -151,7 +157,7 @@ namespace WinFormsGameOfLife
 
             incrementButton.Enabled = true;
             gameControls.Visible = true;
-            
+
             foreach (var cb in UniverseGui)
             {
                 cb.Enabled = false;
@@ -231,6 +237,7 @@ namespace WinFormsGameOfLife
             {
                 ClearAllCheckboxes();
             }
-        }
+        } 
+        #endregion
     }
 }

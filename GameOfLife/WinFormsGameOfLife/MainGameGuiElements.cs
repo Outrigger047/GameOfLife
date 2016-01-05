@@ -5,6 +5,18 @@ namespace WinFormsGameOfLife
 {
     partial class MainGameForm
     {
+        #region Fields
+        /// <summary>
+        /// Used to determine where to draw game universe checkboxes
+        /// </summary>
+        private const int ControlPanelVerticalSize = 100;
+        /// <summary>
+        /// Used to determine how to resize window when drawing game universe checkboxes
+        /// </summary>
+        private const int ControlPanelHorizontalSize = 421;
+        #endregion
+
+        #region Properties
         /// <summary>
         /// Used for dynamic checkbox generation
         /// </summary>
@@ -17,16 +29,9 @@ namespace WinFormsGameOfLife
         /// Vertical size of the universe
         /// </summary>
         public int GameUniverseSizeY { get; private set; }
+        #endregion
 
-        /// <summary>
-        /// Used to determine where to draw game universe checkboxes
-        /// </summary>
-        private const int ControlPanelVerticalSize = 100;
-        /// <summary>
-        /// Used to determine how to resize window when drawing game universe checkboxes
-        /// </summary>
-        private const int ControlPanelHorizontalSize = 421;
-
+        #region Private methods
         /// <summary>
         /// Initializes game-related GUI elements on the main form
         /// </summary>
@@ -49,7 +54,7 @@ namespace WinFormsGameOfLife
 
             // Resize the window to accommodate the grid
             ClientSize = new System.Drawing.Size(
-                winXSize < 480 ? 480 : winXSize, 
+                winXSize < 480 ? 480 : winXSize,
                 winYSize);
 
             // Set up the grid of checkboxes
@@ -70,7 +75,7 @@ namespace WinFormsGameOfLife
 
                     if (j <= GameUniverseSizeY - 1)
                     {
-                        drawPosX += 13; 
+                        drawPosX += 13;
                     }
                 }
                 drawPosX = 13;
@@ -138,9 +143,10 @@ namespace WinFormsGameOfLife
                 {
                     cb.Checked = false;
                 }
-                ResumeLayout(false); 
+                ResumeLayout(false);
             }
-        }
+        } 
+        #endregion
 
     }
 }
