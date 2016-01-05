@@ -40,6 +40,7 @@
             this.gameControls = new System.Windows.Forms.Panel();
             this.clearButton = new System.Windows.Forms.Button();
             this.startControls = new System.Windows.Forms.Panel();
+            this.speedLabel = new System.Windows.Forms.Label();
             this.gameControls.SuspendLayout();
             this.startControls.SuspendLayout();
             this.SuspendLayout();
@@ -57,9 +58,9 @@
             // pauseButton
             // 
             this.pauseButton.Enabled = false;
-            this.pauseButton.Location = new System.Drawing.Point(41, 32);
+            this.pauseButton.Location = new System.Drawing.Point(59, 32);
             this.pauseButton.Name = "pauseButton";
-            this.pauseButton.Size = new System.Drawing.Size(37, 23);
+            this.pauseButton.Size = new System.Drawing.Size(47, 23);
             this.pauseButton.TabIndex = 2;
             this.pauseButton.Text = "❚❚";
             this.pauseButton.UseVisualStyleBackColor = true;
@@ -68,9 +69,9 @@
             // incrementButton
             // 
             this.incrementButton.Enabled = false;
-            this.incrementButton.Location = new System.Drawing.Point(247, 25);
+            this.incrementButton.Location = new System.Drawing.Point(112, 32);
             this.incrementButton.Name = "incrementButton";
-            this.incrementButton.Size = new System.Drawing.Size(75, 23);
+            this.incrementButton.Size = new System.Drawing.Size(73, 23);
             this.incrementButton.TabIndex = 3;
             this.incrementButton.Text = "Increment";
             this.incrementButton.UseVisualStyleBackColor = true;
@@ -79,7 +80,7 @@
             // iterationsLabel
             // 
             this.iterationsLabel.AutoSize = true;
-            this.iterationsLabel.Location = new System.Drawing.Point(3, 72);
+            this.iterationsLabel.Location = new System.Drawing.Point(3, 73);
             this.iterationsLabel.Name = "iterationsLabel";
             this.iterationsLabel.Size = new System.Drawing.Size(36, 13);
             this.iterationsLabel.TabIndex = 4;
@@ -88,7 +89,7 @@
             // populationLabel
             // 
             this.populationLabel.AutoSize = true;
-            this.populationLabel.Location = new System.Drawing.Point(81, 72);
+            this.populationLabel.Location = new System.Drawing.Point(79, 73);
             this.populationLabel.Name = "populationLabel";
             this.populationLabel.Size = new System.Drawing.Size(63, 13);
             this.populationLabel.TabIndex = 5;
@@ -98,9 +99,9 @@
             // playButton
             // 
             this.playButton.Enabled = false;
-            this.playButton.Location = new System.Drawing.Point(3, 32);
+            this.playButton.Location = new System.Drawing.Point(6, 32);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(37, 23);
+            this.playButton.Size = new System.Drawing.Size(47, 23);
             this.playButton.TabIndex = 6;
             this.playButton.Text = "▶";
             this.playButton.UseVisualStyleBackColor = true;
@@ -115,13 +116,14 @@
             "500 msec",
             "250 msec",
             "Fuck you"});
-            this.autoSpeedComboBox.Location = new System.Drawing.Point(103, 34);
+            this.autoSpeedComboBox.Location = new System.Drawing.Point(47, 5);
             this.autoSpeedComboBox.Name = "autoSpeedComboBox";
-            this.autoSpeedComboBox.Size = new System.Drawing.Size(71, 21);
+            this.autoSpeedComboBox.Size = new System.Drawing.Size(138, 21);
             this.autoSpeedComboBox.TabIndex = 7;
             // 
             // gameControls
             // 
+            this.gameControls.Controls.Add(this.speedLabel);
             this.gameControls.Controls.Add(this.autoSpeedComboBox);
             this.gameControls.Controls.Add(this.playButton);
             this.gameControls.Controls.Add(this.pauseButton);
@@ -130,7 +132,7 @@
             this.gameControls.Controls.Add(this.iterationsLabel);
             this.gameControls.Location = new System.Drawing.Point(12, 12);
             this.gameControls.Name = "gameControls";
-            this.gameControls.Size = new System.Drawing.Size(421, 99);
+            this.gameControls.Size = new System.Drawing.Size(421, 100);
             this.gameControls.TabIndex = 8;
             // 
             // clearButton
@@ -146,10 +148,20 @@
             // 
             this.startControls.Controls.Add(this.clearButton);
             this.startControls.Controls.Add(this.startButton);
-            this.startControls.Location = new System.Drawing.Point(12, 117);
+            this.startControls.Location = new System.Drawing.Point(12, 118);
             this.startControls.Name = "startControls";
             this.startControls.Size = new System.Drawing.Size(421, 100);
             this.startControls.TabIndex = 9;
+            // 
+            // speedLabel
+            // 
+            this.speedLabel.AutoSize = true;
+            this.speedLabel.Location = new System.Drawing.Point(6, 8);
+            this.speedLabel.Name = "speedLabel";
+            this.speedLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.speedLabel.Size = new System.Drawing.Size(38, 13);
+            this.speedLabel.TabIndex = 8;
+            this.speedLabel.Text = "Speed";
             // 
             // MainGameForm
             // 
@@ -182,5 +194,6 @@
         private System.Windows.Forms.Panel gameControls;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Panel startControls;
+        private System.Windows.Forms.Label speedLabel;
     }
 }

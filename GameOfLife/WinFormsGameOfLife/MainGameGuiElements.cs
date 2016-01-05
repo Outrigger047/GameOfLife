@@ -19,6 +19,11 @@ namespace WinFormsGameOfLife
         public int GameUniverseSizeY { get; private set; }
 
         /// <summary>
+        /// Used to determine where to draw game universe checkboxes
+        /// </summary>
+        private const int ControlPanelVerticalSize = 0;
+
+        /// <summary>
         /// Initializes game-related GUI elements on the main form
         /// </summary>
         private void InitGameGui()
