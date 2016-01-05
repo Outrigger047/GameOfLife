@@ -146,7 +146,12 @@ namespace WinFormsGameOfLife
             SuspendLayout();
 
             startButton.Enabled = false;
+            clearButton.Enabled = false;
+            startControls.Visible = false;
+
             incrementButton.Enabled = true;
+            gameControls.Visible = true;
+            
             foreach (var cb in UniverseGui)
             {
                 cb.Enabled = false;
@@ -192,8 +197,14 @@ namespace WinFormsGameOfLife
             pauseButton.Enabled = true;
             autoSpeedComboBox.Enabled = false;
             ResumeLayout(false);
-            int speed = 1000;
-            autoPlaySpeeds.TryGetValue(autoSpeedComboBox.Text, out speed);
+            int speed;
+            if (autoPlaySpeeds.TryGetValue(autoSpeedComboBox.Text, out speed) == false)
+            {
+                System.Collections.IEnumerator ie = autoSpeedComboBox.Items.GetEnumerator();
+                ie.MoveNext();
+                autoSpeedComboBox.Text = ie.Current as string;
+                speed = 1000;
+            }
 
             StartAutomation(speed);
         }

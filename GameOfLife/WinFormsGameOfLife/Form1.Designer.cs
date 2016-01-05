@@ -65,11 +65,6 @@
             // xUpDown
             // 
             this.xUpDown.Location = new System.Drawing.Point(77, 90);
-            this.xUpDown.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
             this.xUpDown.Minimum = new decimal(new int[] {
             2,
             0,
@@ -96,11 +91,6 @@
             // yUpDown
             // 
             this.yUpDown.Location = new System.Drawing.Point(77, 64);
-            this.yUpDown.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
             this.yUpDown.Minimum = new decimal(new int[] {
             2,
             0,
@@ -221,8 +211,8 @@
             // 
             this.importHorizUpDown.Enabled = false;
             this.importHorizUpDown.Location = new System.Drawing.Point(76, 99);
-            this.importHorizUpDown.Maximum = new decimal(new int[] {
-            50,
+            this.importHorizUpDown.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -249,8 +239,8 @@
             // 
             this.importVertUpDown.Enabled = false;
             this.importVertUpDown.Location = new System.Drawing.Point(76, 125);
-            this.importVertUpDown.Maximum = new decimal(new int[] {
-            50,
+            this.importVertUpDown.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});

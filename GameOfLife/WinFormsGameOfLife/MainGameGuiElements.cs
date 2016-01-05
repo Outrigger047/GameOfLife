@@ -34,6 +34,8 @@ namespace WinFormsGameOfLife
         {
             SuspendLayout();
 
+            gameControls.Height = ControlPanelVerticalSize;
+            startControls.Height = ControlPanelVerticalSize;
             gameControls.Visible = false;
             startControls.Location = new System.Drawing.Point(12, 12);
 
@@ -43,7 +45,7 @@ namespace WinFormsGameOfLife
             }
 
             int winXSize = (13 * GameUniverseSizeY) + 30;
-            int winYSize = (13 * GameUniverseSizeX) + ControlPanelVerticalSize + 10;
+            int winYSize = (13 * GameUniverseSizeX) + ControlPanelVerticalSize + 20;
 
             // Resize the window to accommodate the grid
             ClientSize = new System.Drawing.Size(
