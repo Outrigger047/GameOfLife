@@ -47,9 +47,9 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(19, 38);
+            this.startButton.Location = new System.Drawing.Point(3, 3);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.Size = new System.Drawing.Size(109, 42);
             this.startButton.TabIndex = 1;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
@@ -94,7 +94,6 @@
             this.populationLabel.Size = new System.Drawing.Size(63, 13);
             this.populationLabel.TabIndex = 5;
             this.populationLabel.Text = "Population: ";
-            this.populationLabel.Click += new System.EventHandler(this.populationLabel_Click);
             // 
             // playButton
             // 
@@ -111,11 +110,6 @@
             // 
             this.autoSpeedComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.autoSpeedComboBox.FormattingEnabled = true;
-            this.autoSpeedComboBox.Items.AddRange(new object[] {
-            "1 sec",
-            "500 msec",
-            "250 msec",
-            "Fuck you"});
             this.autoSpeedComboBox.Location = new System.Drawing.Point(47, 5);
             this.autoSpeedComboBox.Name = "autoSpeedComboBox";
             this.autoSpeedComboBox.Size = new System.Drawing.Size(138, 21);
@@ -137,12 +131,13 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(119, 38);
+            this.clearButton.Location = new System.Drawing.Point(118, 3);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(55, 20);
+            this.clearButton.Size = new System.Drawing.Size(109, 42);
             this.clearButton.TabIndex = 8;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // startControls
             // 

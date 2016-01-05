@@ -21,7 +21,11 @@ namespace WinFormsGameOfLife
         /// <summary>
         /// Used to determine where to draw game universe checkboxes
         /// </summary>
-        private const int ControlPanelVerticalSize = 0;
+        private const int ControlPanelVerticalSize = 100;
+        /// <summary>
+        /// Used to determine how to resize window when drawing game universe checkboxes
+        /// </summary>
+        private const int ControlPanelHorizontalSize = 421;
 
         /// <summary>
         /// Initializes game-related GUI elements on the main form
@@ -30,8 +34,11 @@ namespace WinFormsGameOfLife
         {
             this.SuspendLayout();
 
+            gameControls.Visible = false;
+            startControls.Location = new System.Drawing.Point(12, 12);
+
             int winXSize = (13 * GameUniverseSizeY) + 30;
-            int winYSize = (13 * GameUniverseSizeX) + 90;
+            int winYSize = (13 * GameUniverseSizeX) + ControlPanelVerticalSize + 10;
 
             // Resize the window to accommodate the grid
             this.ClientSize = new System.Drawing.Size(
@@ -41,7 +48,7 @@ namespace WinFormsGameOfLife
             // Set up the grid of checkboxes
             UniverseGui = new System.Windows.Forms.CheckBox[GameUniverseSizeX, GameUniverseSizeY];
             int drawPosX = 13;
-            int drawPosY = 75;
+            int drawPosY = 13 + ControlPanelVerticalSize + 13;
             for (int i = 0; i < GameUniverseSizeX; i++)
             {
                 for (int j = 0; j < GameUniverseSizeY; j++)
@@ -112,6 +119,21 @@ namespace WinFormsGameOfLife
             this.ResumeLayout(false);
         }
 
+        /// <summary>
+        /// Wipes all live checkboxes
+        /// </summary>
+        private void ClearAllCheckboxes()
+        {
+            if (!gameRunning)
+            {
+                SuspendLayout();
+                foreach (var cb in UniverseGui)
+                {
+                    cb.Checked = false;
+                }
+                ResumeLayout(false); 
+            }
+        }
 
     }
 }

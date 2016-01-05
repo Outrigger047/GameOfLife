@@ -10,11 +10,6 @@ namespace WinFormsGameOfLife
     public partial class MainGameForm : Form
     {
         /// <summary>
-        /// Universe
-        /// </summary>
-        public Automaton Universe { get; private set; }
-
-        /// <summary>
         /// Set when the player starts the game
         /// </summary>
         private bool gameRunning = false;
@@ -26,6 +21,24 @@ namespace WinFormsGameOfLife
         /// Prevents new work being assigned to BackgroundWorker before it's done
         /// </summary>
         private AutoResetEvent autoPlayerReset;
+
+        /// <summary>
+        /// Used to control speeds of auto player
+        /// </summary>
+        private readonly Dictionary<int, string> autoPlaySpeeds = new Dictionary<int, string>
+        {
+            { 1000, "1000 msec" },
+            { 500, "500 msec" },
+            { 250, "250 msec" },
+            { 30, "30 msec" }
+        };
+
+        /// <summary>
+        /// Universe
+        /// </summary>
+        public Automaton Universe { get; private set; }
+
+
 
         /// <summary>
         /// Constructor for generating MainGameForm for use with manual cell states
@@ -214,9 +227,16 @@ namespace WinFormsGameOfLife
             this.ResumeLayout(false);
         }
 
-        private void populationLabel_Click(object sender, EventArgs e)
+        private void clearButton_Click(object sender, EventArgs e)
         {
+            const string titleBarCaption = "Clear All Cells";
+            const string confirmationMsg = "Are you sure you want to clear all cells?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
+            if (MessageBox.Show(confirmationMsg, titleBarCaption, buttons) == DialogResult.Yes)
+            {
+                ClearAllCheckboxes();
+            }
         }
     }
 }
