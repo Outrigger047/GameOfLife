@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using GameOfLife;
 
@@ -13,23 +14,42 @@ namespace WinFormsGameOfLife
 {
     public partial class MainGameForm : Form
     {
-        private bool gameRunning = false;
-
         /// <summary>
         /// Universe
         /// </summary>
         public Automaton Universe { get; private set; }
 
+        private bool gameRunning = false;
+        private BackgroundWorker autoPlayer;
+        private AutoResetEvent autoPlayerReset;
+
         public MainGameForm(int sizeX, int sizeY)
         {
             GameUniverseSizeX = sizeX;
             GameUniverseSizeY = sizeY;
-            this.Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
+            
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
             Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
 
+            autoPlayer = new BackgroundWorker();
+            autoPlayer.DoWork += new DoWorkEventHandler(TickBackground);
+            autoPlayerReset = new AutoResetEvent(false);
+
             InitializeComponent();
+            Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
             InitGameGui();
+        }
+
+        private void TickBackground(object sender, DoWorkEventArgs e)
+        {
+            Universe.Tick();
+            Thread.Sleep(500);
+        }
+
+        private void TickBackgroundUpdate(object sender, RunWorkerCompletedEventArgs e)
+        {
+            SetCheckboxesFromUniverse();
+            autoPlayerReset.Set();
         }
 
         private void startButton_Click(object sender, EventArgs e)
