@@ -266,7 +266,6 @@
             // importDialog
             // 
             this.importDialog.DefaultExt = "txt";
-            this.importDialog.FileName = "openFileDialog1";
             this.importDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
             this.importDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importDialog_FileOk);
             // 
