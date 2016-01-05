@@ -27,6 +27,11 @@ namespace WinFormsGameOfLife
         /// </summary>
         private AutoResetEvent autoPlayerReset;
 
+        /// <summary>
+        /// Constructor for generating MainGameForm for use with manual cell states
+        /// </summary>
+        /// <param name="sizeX">Horizontal size of the universe</param>
+        /// <param name="sizeY">Vertical size of the universe</param>
         public MainGameForm(int sizeX, int sizeY)
         {
             GameUniverseSizeX = sizeX;
@@ -43,6 +48,30 @@ namespace WinFormsGameOfLife
 
             InitializeComponent();
             Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
+            InitGameGui();
+        }
+
+        /// <summary>
+        /// Constructor for generating MainGameForm for use with imported cell state
+        /// </summary>
+        /// <param name="sizeX">Horizontal size of the universe</param>
+        /// <param name="sizeY">Vertical size of the universe</param>
+        /// <param name="initLiveCells">List of CoordSet objects inidicating initial live cells</param>
+        public MainGameForm(int sizeX, int sizeY, List<Automaton.CoordSet> initLiveCells, string importFileName)
+        {
+            GameUniverseSizeX = sizeX;
+            GameUniverseSizeY = sizeY;
+
+            Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, initLiveCells);
+
+            autoPlayer = new BackgroundWorker();
+            autoPlayer.DoWork += new DoWorkEventHandler(TickBackground);
+            autoPlayer.RunWorkerCompleted += new RunWorkerCompletedEventHandler(TickBackgroundUpdate);
+            autoPlayer.WorkerSupportsCancellation = true;
+            autoPlayerReset = new AutoResetEvent(true);
+
+            InitializeComponent();
+            Text = "Game of Life - " + importFileName + " - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
             InitGameGui();
         }
 

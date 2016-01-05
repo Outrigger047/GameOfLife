@@ -9,23 +9,28 @@ namespace WinFormsGameOfLife
 {
     public partial class SizeInputForm : Form
     {
+        private List<Automaton.CoordSet> InitLiveCells;
+        private string ImportedFileName;
+
+        private int XMin, YMin;
+
         private readonly Regex extDataFileValidLinePattern = new Regex(@"^[0-9]+\s*\,\s*[0-9]+$");
         private readonly Regex extDataFileXCoord = new Regex(@"^[0-9]+");
         private readonly Regex extDataFileYCoord = new Regex(@"[0-9]+$");
-
-        private int xMax, yMax;
-
+        
         public SizeInputForm()
         {
             InitializeComponent();
+
+            fileLoadedLabel.Text = "";
         }
 
         /// <summary>
-        /// Gets a list of live cells for an initial state from an external text file
+        /// Extracts valid coordinates for live cells from external file data
         /// </summary>
         /// <param name="targetFile">Path of the file</param>
         /// <returns>CoordSet list of cells that should be initialized</returns>
-        private List<Automaton.CoordSet> GetInitLiveCellListFromExternalFile(List<string> fileData)
+        private List<Automaton.CoordSet> GetInitLiveCellListFromExternalFile(HashSet<string> fileData)
         {
             List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
             List<int> allX = new List<int>();
@@ -43,8 +48,8 @@ namespace WinFormsGameOfLife
 
             allX.Sort();
             allY.Sort();
-            xMax = System.Linq.Enumerable.Last(allX);
-            yMax = System.Linq.Enumerable.Last(allY);
+            XMin = System.Linq.Enumerable.Last(allX);
+            YMin = System.Linq.Enumerable.Last(allY);
 
             return liveCellsFromFile;
         }
@@ -60,11 +65,19 @@ namespace WinFormsGameOfLife
             importDialog.ShowDialog();
         }
 
+        private void importStartButton_Click(object sender, EventArgs e)
+        {
+            Form gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value),
+                                            Convert.ToInt32(this.yUpDown.Value),
+                                            InitLiveCells,
+                                            ImportedFileName);
+            gameForm.Show();
+        }
+
         private void importDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            // TODO Validate external file here
             Stream s = null;
-            List<string> fileData = new List<string>();
+            HashSet<string> fileData = new HashSet<string>();
             try
             {
                 if ((s = importDialog.OpenFile()) != null)
@@ -86,6 +99,24 @@ namespace WinFormsGameOfLife
                     }
                     s.Close();
                     s.Dispose();
+
+                    ImportedFileName = Path.GetFileName(importDialog.FileName);
+
+                    InitLiveCells = GetInitLiveCellListFromExternalFile(fileData);
+
+                    SuspendLayout();
+                    importHorizUpDown.Minimum = XMin;
+                    importHorizUpDown.Value = XMin;
+                    importVertUpDown.Minimum = YMin;
+                    importVertUpDown.Value = YMin;
+                    importHorizUpDown.Enabled = true;
+                    importHorizLabel.Enabled = true;
+                    importVertUpDown.Enabled = true;
+                    importVertLabel.Enabled = true;
+                    importStartButton.Enabled = true;
+                    fileLoadedLabel.Text = "Loaded " + ImportedFileName;
+                    importButton.Text = "Import New File";
+                    ResumeLayout(false);
                 }
             }
             catch (Exception)

@@ -34,15 +34,16 @@
             this.yUpDown = new System.Windows.Forms.NumericUpDown();
             this.generateButton = new System.Windows.Forms.Button();
             this.generateGroupBox = new System.Windows.Forms.GroupBox();
-            this.importGroupBox = new System.Windows.Forms.GroupBox();
             this.generateInfoLabel = new System.Windows.Forms.Label();
-            this.importInfoLabel = new System.Windows.Forms.Label();
-            this.importVertLabel = new System.Windows.Forms.Label();
-            this.importHorizUpDown = new System.Windows.Forms.NumericUpDown();
-            this.importVertUpDown = new System.Windows.Forms.NumericUpDown();
-            this.importHorizLabel = new System.Windows.Forms.Label();
-            this.importButton = new System.Windows.Forms.Button();
+            this.importGroupBox = new System.Windows.Forms.GroupBox();
+            this.fileLoadedLabel = new System.Windows.Forms.Label();
             this.importStartButton = new System.Windows.Forms.Button();
+            this.importButton = new System.Windows.Forms.Button();
+            this.importVertLabel = new System.Windows.Forms.Label();
+            this.importInfoLabel = new System.Windows.Forms.Label();
+            this.importHorizUpDown = new System.Windows.Forms.NumericUpDown();
+            this.importHorizLabel = new System.Windows.Forms.Label();
+            this.importVertUpDown = new System.Windows.Forms.NumericUpDown();
             this.importDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.xUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yUpDown)).BeginInit();
@@ -139,8 +140,19 @@
             this.generateGroupBox.TabStop = false;
             this.generateGroupBox.Text = "Generate New Game";
             // 
+            // generateInfoLabel
+            // 
+            this.generateInfoLabel.AutoSize = true;
+            this.generateInfoLabel.Location = new System.Drawing.Point(17, 26);
+            this.generateInfoLabel.MaximumSize = new System.Drawing.Size(210, 30);
+            this.generateInfoLabel.Name = "generateInfoLabel";
+            this.generateInfoLabel.Size = new System.Drawing.Size(208, 26);
+            this.generateInfoLabel.TabIndex = 5;
+            this.generateInfoLabel.Text = "Generate a game from scratch by manually specifying live cells";
+            // 
             // importGroupBox
             // 
+            this.importGroupBox.Controls.Add(this.fileLoadedLabel);
             this.importGroupBox.Controls.Add(this.importStartButton);
             this.importGroupBox.Controls.Add(this.importButton);
             this.importGroupBox.Controls.Add(this.importVertLabel);
@@ -155,25 +167,35 @@
             this.importGroupBox.TabStop = false;
             this.importGroupBox.Text = "Import Game State";
             // 
-            // generateInfoLabel
+            // fileLoadedLabel
             // 
-            this.generateInfoLabel.AutoSize = true;
-            this.generateInfoLabel.Location = new System.Drawing.Point(17, 26);
-            this.generateInfoLabel.MaximumSize = new System.Drawing.Size(210, 30);
-            this.generateInfoLabel.Name = "generateInfoLabel";
-            this.generateInfoLabel.Size = new System.Drawing.Size(208, 26);
-            this.generateInfoLabel.TabIndex = 5;
-            this.generateInfoLabel.Text = "Generate a game from scratch by manually specifying live cells";
+            this.fileLoadedLabel.AutoSize = true;
+            this.fileLoadedLabel.Location = new System.Drawing.Point(100, 62);
+            this.fileLoadedLabel.Name = "fileLoadedLabel";
+            this.fileLoadedLabel.Size = new System.Drawing.Size(20, 13);
+            this.fileLoadedLabel.TabIndex = 12;
+            this.fileLoadedLabel.Text = "init";
             // 
-            // importInfoLabel
+            // importStartButton
             // 
-            this.importInfoLabel.AutoSize = true;
-            this.importInfoLabel.Location = new System.Drawing.Point(16, 30);
-            this.importInfoLabel.MaximumSize = new System.Drawing.Size(210, 30);
-            this.importInfoLabel.Name = "importInfoLabel";
-            this.importInfoLabel.Size = new System.Drawing.Size(209, 13);
-            this.importInfoLabel.TabIndex = 6;
-            this.importInfoLabel.Text = "Import a list of live cells from an external file";
+            this.importStartButton.Enabled = false;
+            this.importStartButton.Location = new System.Drawing.Point(141, 111);
+            this.importStartButton.Name = "importStartButton";
+            this.importStartButton.Size = new System.Drawing.Size(75, 23);
+            this.importStartButton.TabIndex = 11;
+            this.importStartButton.Text = "Generate";
+            this.importStartButton.UseVisualStyleBackColor = true;
+            this.importStartButton.Click += new System.EventHandler(this.importStartButton_Click);
+            // 
+            // importButton
+            // 
+            this.importButton.Location = new System.Drawing.Point(19, 57);
+            this.importButton.Name = "importButton";
+            this.importButton.Size = new System.Drawing.Size(75, 23);
+            this.importButton.TabIndex = 10;
+            this.importButton.Text = "Import File";
+            this.importButton.UseVisualStyleBackColor = true;
+            this.importButton.Click += new System.EventHandler(this.importButton_Click);
             // 
             // importVertLabel
             // 
@@ -185,6 +207,16 @@
             this.importVertLabel.TabIndex = 6;
             this.importVertLabel.Text = "Vertical";
             // 
+            // importInfoLabel
+            // 
+            this.importInfoLabel.AutoSize = true;
+            this.importInfoLabel.Location = new System.Drawing.Point(16, 30);
+            this.importInfoLabel.MaximumSize = new System.Drawing.Size(210, 30);
+            this.importInfoLabel.Name = "importInfoLabel";
+            this.importInfoLabel.Size = new System.Drawing.Size(209, 13);
+            this.importInfoLabel.TabIndex = 6;
+            this.importInfoLabel.Text = "Import a list of live cells from an external file";
+            // 
             // importHorizUpDown
             // 
             this.importHorizUpDown.Enabled = false;
@@ -194,39 +226,11 @@
             0,
             0,
             0});
-            this.importHorizUpDown.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             this.importHorizUpDown.Name = "importHorizUpDown";
             this.importHorizUpDown.Size = new System.Drawing.Size(41, 20);
             this.importHorizUpDown.TabIndex = 9;
             this.importHorizUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // importVertUpDown
-            // 
-            this.importVertUpDown.Enabled = false;
-            this.importVertUpDown.Location = new System.Drawing.Point(76, 125);
-            this.importVertUpDown.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.importVertUpDown.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.importVertUpDown.Name = "importVertUpDown";
-            this.importVertUpDown.Size = new System.Drawing.Size(41, 20);
-            this.importVertUpDown.TabIndex = 7;
-            this.importVertUpDown.Value = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -241,25 +245,23 @@
             this.importHorizLabel.TabIndex = 8;
             this.importHorizLabel.Text = "Horizontal";
             // 
-            // importButton
+            // importVertUpDown
             // 
-            this.importButton.Location = new System.Drawing.Point(76, 57);
-            this.importButton.Name = "importButton";
-            this.importButton.Size = new System.Drawing.Size(75, 23);
-            this.importButton.TabIndex = 10;
-            this.importButton.Text = "Import...";
-            this.importButton.UseVisualStyleBackColor = true;
-            this.importButton.Click += new System.EventHandler(this.importButton_Click);
-            // 
-            // importStartButton
-            // 
-            this.importStartButton.Enabled = false;
-            this.importStartButton.Location = new System.Drawing.Point(141, 111);
-            this.importStartButton.Name = "importStartButton";
-            this.importStartButton.Size = new System.Drawing.Size(75, 23);
-            this.importStartButton.TabIndex = 11;
-            this.importStartButton.Text = "Generate";
-            this.importStartButton.UseVisualStyleBackColor = true;
+            this.importVertUpDown.Enabled = false;
+            this.importVertUpDown.Location = new System.Drawing.Point(76, 125);
+            this.importVertUpDown.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.importVertUpDown.Name = "importVertUpDown";
+            this.importVertUpDown.Size = new System.Drawing.Size(41, 20);
+            this.importVertUpDown.TabIndex = 7;
+            this.importVertUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // importDialog
             // 
@@ -311,6 +313,7 @@
         private System.Windows.Forms.Label importHorizLabel;
         private System.Windows.Forms.NumericUpDown importVertUpDown;
         private System.Windows.Forms.OpenFileDialog importDialog;
+        private System.Windows.Forms.Label fileLoadedLabel;
     }
 }
 
