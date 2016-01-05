@@ -36,11 +36,17 @@
             this.iterationsLabel = new System.Windows.Forms.Label();
             this.populationLabel = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
+            this.autoSpeedComboBox = new System.Windows.Forms.ComboBox();
+            this.gameControls = new System.Windows.Forms.Panel();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.startControls = new System.Windows.Forms.Panel();
+            this.gameControls.SuspendLayout();
+            this.startControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(12, 12);
+            this.startButton.Location = new System.Drawing.Point(19, 38);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 1;
@@ -51,7 +57,7 @@
             // pauseButton
             // 
             this.pauseButton.Enabled = false;
-            this.pauseButton.Location = new System.Drawing.Point(166, 12);
+            this.pauseButton.Location = new System.Drawing.Point(41, 32);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(37, 23);
             this.pauseButton.TabIndex = 2;
@@ -62,7 +68,7 @@
             // incrementButton
             // 
             this.incrementButton.Enabled = false;
-            this.incrementButton.Location = new System.Drawing.Point(243, 12);
+            this.incrementButton.Location = new System.Drawing.Point(247, 25);
             this.incrementButton.Name = "incrementButton";
             this.incrementButton.Size = new System.Drawing.Size(75, 23);
             this.incrementButton.TabIndex = 3;
@@ -73,7 +79,7 @@
             // iterationsLabel
             // 
             this.iterationsLabel.AutoSize = true;
-            this.iterationsLabel.Location = new System.Drawing.Point(351, 9);
+            this.iterationsLabel.Location = new System.Drawing.Point(3, 72);
             this.iterationsLabel.Name = "iterationsLabel";
             this.iterationsLabel.Size = new System.Drawing.Size(36, 13);
             this.iterationsLabel.TabIndex = 4;
@@ -82,16 +88,17 @@
             // populationLabel
             // 
             this.populationLabel.AutoSize = true;
-            this.populationLabel.Location = new System.Drawing.Point(324, 25);
+            this.populationLabel.Location = new System.Drawing.Point(81, 72);
             this.populationLabel.Name = "populationLabel";
             this.populationLabel.Size = new System.Drawing.Size(63, 13);
             this.populationLabel.TabIndex = 5;
             this.populationLabel.Text = "Population: ";
+            this.populationLabel.Click += new System.EventHandler(this.populationLabel_Click);
             // 
             // playButton
             // 
             this.playButton.Enabled = false;
-            this.playButton.Location = new System.Drawing.Point(123, 12);
+            this.playButton.Location = new System.Drawing.Point(3, 32);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(37, 23);
             this.playButton.TabIndex = 6;
@@ -99,24 +106,67 @@
             this.playButton.UseVisualStyleBackColor = true;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
+            // autoSpeedComboBox
+            // 
+            this.autoSpeedComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.autoSpeedComboBox.FormattingEnabled = true;
+            this.autoSpeedComboBox.Items.AddRange(new object[] {
+            "1 sec",
+            "500 msec",
+            "250 msec",
+            "Fuck you"});
+            this.autoSpeedComboBox.Location = new System.Drawing.Point(103, 34);
+            this.autoSpeedComboBox.Name = "autoSpeedComboBox";
+            this.autoSpeedComboBox.Size = new System.Drawing.Size(71, 21);
+            this.autoSpeedComboBox.TabIndex = 7;
+            // 
+            // gameControls
+            // 
+            this.gameControls.Controls.Add(this.autoSpeedComboBox);
+            this.gameControls.Controls.Add(this.playButton);
+            this.gameControls.Controls.Add(this.pauseButton);
+            this.gameControls.Controls.Add(this.populationLabel);
+            this.gameControls.Controls.Add(this.incrementButton);
+            this.gameControls.Controls.Add(this.iterationsLabel);
+            this.gameControls.Location = new System.Drawing.Point(12, 12);
+            this.gameControls.Name = "gameControls";
+            this.gameControls.Size = new System.Drawing.Size(421, 99);
+            this.gameControls.TabIndex = 8;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(119, 38);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(55, 20);
+            this.clearButton.TabIndex = 8;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            // 
+            // startControls
+            // 
+            this.startControls.Controls.Add(this.clearButton);
+            this.startControls.Controls.Add(this.startButton);
+            this.startControls.Location = new System.Drawing.Point(12, 117);
+            this.startControls.Name = "startControls";
+            this.startControls.Size = new System.Drawing.Size(421, 100);
+            this.startControls.TabIndex = 9;
+            // 
             // MainGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 50);
-            this.Controls.Add(this.playButton);
-            this.Controls.Add(this.populationLabel);
-            this.Controls.Add(this.iterationsLabel);
-            this.Controls.Add(this.incrementButton);
-            this.Controls.Add(this.pauseButton);
-            this.Controls.Add(this.startButton);
+            this.ClientSize = new System.Drawing.Size(445, 229);
+            this.Controls.Add(this.startControls);
+            this.Controls.Add(this.gameControls);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainGameForm";
             this.ShowIcon = false;
             this.Text = "Game of Life";
+            this.gameControls.ResumeLayout(false);
+            this.gameControls.PerformLayout();
+            this.startControls.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -128,5 +178,9 @@
         private System.Windows.Forms.Label iterationsLabel;
         private System.Windows.Forms.Label populationLabel;
         private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.ComboBox autoSpeedComboBox;
+        private System.Windows.Forms.Panel gameControls;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Panel startControls;
     }
 }

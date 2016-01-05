@@ -106,5 +106,7 @@ namespace WinFormsGameOfLife
 
             this.ResumeLayout(false);
         }
+
+
     }
 }

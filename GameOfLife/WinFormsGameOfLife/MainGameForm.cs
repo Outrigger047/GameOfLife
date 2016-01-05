@@ -49,13 +49,13 @@ namespace WinFormsGameOfLife
         /// <summary>
         /// Calls the BackgroundWorker when player starts the auto play option
         /// </summary>
-        private void StartAutomation()
+        private void StartAutomation(int runSpeed)
         {
             if (autoPlayer.IsBusy)
             {
                 autoPlayerReset.WaitOne();
             }
-            autoPlayer.RunWorkerAsync();
+            autoPlayer.RunWorkerAsync(runSpeed);
         }
 
         /// <summary>
@@ -68,7 +68,8 @@ namespace WinFormsGameOfLife
             // Increment state of the universe
             Universe.Tick();
             // Wait time before drawing on screen
-            Thread.Sleep(350);
+            Thread.Sleep(Convert.ToInt32(e.Argument));
+            e.Result = e.Argument;
             // Pass along cancellation request if player has clicked pause button
             if (autoPlayer.CancellationPending)
             {
@@ -90,7 +91,7 @@ namespace WinFormsGameOfLife
             // Start the worker again if the player hasn't clicked the pause button
             if (!e.Cancelled)
             {
-                autoPlayer.RunWorkerAsync();
+                autoPlayer.RunWorkerAsync(e.Result);
             }
         }
 
@@ -143,20 +144,50 @@ namespace WinFormsGameOfLife
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             this.incrementButton.Enabled = false;
             this.playButton.Enabled = false;
             this.pauseButton.Enabled = true;
+            autoSpeedComboBox.Enabled = false;
+            this.ResumeLayout(false);
+            int speed = 1000;
+            switch (autoSpeedComboBox.Text)
+            {
+                case "1 sec":
+                    speed = 1000;
+                    break;
+                case "500 msec":
+                    speed = 500;
+                    break;
+                case "250 msec":
+                    speed = 250;
+                    break;
+                case "Fuck you":
+                    speed = 30;
+                    break;
+                default:
+                    autoSpeedComboBox.Text = "1 sec";
+                    break;
+            }
 
-            StartAutomation();
+            StartAutomation(speed);
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
         {
             autoPlayer.CancelAsync();
 
+            this.SuspendLayout();
             this.pauseButton.Enabled = false;
             this.playButton.Enabled = true;
             this.incrementButton.Enabled = true;
+            this.autoSpeedComboBox.Enabled = true;
+            this.ResumeLayout(false);
+        }
+
+        private void populationLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
