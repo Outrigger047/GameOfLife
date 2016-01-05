@@ -43,6 +43,7 @@
             this.importHorizLabel = new System.Windows.Forms.Label();
             this.importButton = new System.Windows.Forms.Button();
             this.importStartButton = new System.Windows.Forms.Button();
+            this.importDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.xUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yUpDown)).BeginInit();
             this.generateGroupBox.SuspendLayout();
@@ -256,8 +257,12 @@
             this.importStartButton.Name = "importStartButton";
             this.importStartButton.Size = new System.Drawing.Size(75, 23);
             this.importStartButton.TabIndex = 11;
-            this.importStartButton.Text = "button1";
+            this.importStartButton.Text = "Generate";
             this.importStartButton.UseVisualStyleBackColor = true;
+            // 
+            // importDialog
+            // 
+            this.importDialog.FileName = "openFileDialog1";
             // 
             // SizeInputForm
             // 
@@ -301,6 +306,7 @@
         private System.Windows.Forms.NumericUpDown importHorizUpDown;
         private System.Windows.Forms.Label importHorizLabel;
         private System.Windows.Forms.NumericUpDown importVertUpDown;
+        private System.Windows.Forms.OpenFileDialog importDialog;
     }
 }
 
