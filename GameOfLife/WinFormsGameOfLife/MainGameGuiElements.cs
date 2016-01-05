@@ -53,7 +53,7 @@ namespace WinFormsGameOfLife
             // Set up the grid of checkboxes
             UniverseGui = new System.Windows.Forms.CheckBox[GameUniverseSizeX, GameUniverseSizeY];
             int drawPosX = 13;
-            int drawPosY = 13 + ControlPanelVerticalSize + 13;
+            int drawPosY = 13 + ControlPanelVerticalSize;
             for (int i = 0; i < GameUniverseSizeX; i++)
             {
                 for (int j = 0; j < GameUniverseSizeY; j++)
