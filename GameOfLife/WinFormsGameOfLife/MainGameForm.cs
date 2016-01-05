@@ -19,8 +19,17 @@ namespace WinFormsGameOfLife
         /// </summary>
         public Automaton Universe { get; private set; }
 
+        /// <summary>
+        /// Set when the player starts the game
+        /// </summary>
         private bool gameRunning = false;
+        /// <summary>
+        /// Handles background updating of the universe so UI doesn't lock up
+        /// </summary>
         private BackgroundWorker autoPlayer;
+        /// <summary>
+        /// Prevents new work being assigned to BackgroundWorker before it's done
+        /// </summary>
         private AutoResetEvent autoPlayerReset;
 
         public MainGameForm(int sizeX, int sizeY)
@@ -42,6 +51,9 @@ namespace WinFormsGameOfLife
             InitGameGui();
         }
 
+        /// <summary>
+        /// Calls the BackgroundWorker when player starts the auto play option
+        /// </summary>
         private void StartAutomation()
         {
             if (autoPlayer.IsBusy)
@@ -51,22 +63,36 @@ namespace WinFormsGameOfLife
             autoPlayer.RunWorkerAsync();
         }
 
+        /// <summary>
+        /// Event handler for background universe incrementing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Event arguments</param>
         private void TickBackground(object sender, DoWorkEventArgs e)
         {
+            // Increment state of the universe
             Universe.Tick();
+            // Wait time before drawing on screen
             Thread.Sleep(350);
+            // Pass along cancellation request if player has clicked pause button
             if (autoPlayer.CancellationPending)
             {
                 e.Cancel = true;
             }
         }
 
+        /// <summary>
+        /// Event handler for updating GUI when BackgroundWorker is done
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Event arguments</param>
         private void TickBackgroundUpdate(object sender, RunWorkerCompletedEventArgs e)
         {
-            BackgroundWorker bw = sender as BackgroundWorker;
+            // Update GUI based on BackgroundWorker
             SetCheckboxesFromUniverse();
+            // Indicate background work is done
             autoPlayerReset.Set();
-
+            // Start the worker again if the player hasn't clicked the pause button
             if (!e.Cancelled)
             {
                 autoPlayer.RunWorkerAsync();
@@ -75,6 +101,7 @@ namespace WinFormsGameOfLife
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            // Indicate game has started
             gameRunning = true;
 
             // Update GUI elements that the user no longer needs to interact with
@@ -90,6 +117,7 @@ namespace WinFormsGameOfLife
             // Sets state of the universe based on checkboxes
             Universe.ForceState(GetInitLiveCellListFromCheckboxArray());
 
+            // Update UI indicating game state
             iterationsLabel.Text = "Time: " + Universe.Age;
             populationLabel.Text = "Population: " + Universe.NumLiveCells;
 
