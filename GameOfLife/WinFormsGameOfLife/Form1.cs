@@ -1,7 +1,8 @@
-﻿using System;
+﻿using GameOfLife;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
-using GameOfLife;
 
 namespace WinFormsGameOfLife
 {
@@ -28,6 +29,33 @@ namespace WinFormsGameOfLife
         {
             Form gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value), Convert.ToInt32(this.yUpDown.Value));
             gameForm.Show();
+        }
+
+        private void importButton_Click(object sender, EventArgs e)
+        {
+            importDialog.ShowDialog();
+        }
+
+        private void importDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // TODO Validate external file here
+            Stream s = null;
+            List<string> fileData = new List<string>();
+            try
+            {
+                if ((s = importDialog.OpenFile()) != null)
+                {
+                    using (StreamReader sr = new StreamReader(s))
+                    {
+                        
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

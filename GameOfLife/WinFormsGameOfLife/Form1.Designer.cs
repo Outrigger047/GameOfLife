@@ -249,6 +249,7 @@
             this.importButton.TabIndex = 10;
             this.importButton.Text = "Import...";
             this.importButton.UseVisualStyleBackColor = true;
+            this.importButton.Click += new System.EventHandler(this.importButton_Click);
             // 
             // importStartButton
             // 
@@ -262,7 +263,10 @@
             // 
             // importDialog
             // 
+            this.importDialog.DefaultExt = "txt";
             this.importDialog.FileName = "openFileDialog1";
+            this.importDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.importDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importDialog_FileOk);
             // 
             // SizeInputForm
             // 
