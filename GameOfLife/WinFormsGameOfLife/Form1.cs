@@ -2,12 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace WinFormsGameOfLife
 {
     public partial class SizeInputForm : Form
     {
+        private readonly Regex extDataFileValidLinePattern = new Regex(@"^[0-9]+\s*\,\s*[0-9]+$");
+        private readonly Regex extDataFileXCoord = new Regex(@"^[0-9]+");
+        private readonly Regex extDataFileYCoord = new Regex(@"[0-9]+$");
+
+        private int xMax, yMax;
+
         public SizeInputForm()
         {
             InitializeComponent();
@@ -18,9 +25,26 @@ namespace WinFormsGameOfLife
         /// </summary>
         /// <param name="targetFile">Path of the file</param>
         /// <returns>CoordSet list of cells that should be initialized</returns>
-        private List<Automaton.CoordSet> GetInitLiveCellListFromExternalFile(string targetFile)
+        private List<Automaton.CoordSet> GetInitLiveCellListFromExternalFile(List<string> fileData)
         {
             List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
+            List<int> allX = new List<int>();
+            List<int> allY = new List<int>();
+
+            foreach (var line in fileData)
+            {
+                int xCoord = Convert.ToInt32(extDataFileXCoord.Match(line).Value);
+                int yCoord = Convert.ToInt32(extDataFileYCoord.Match(line).Value);
+
+                liveCellsFromFile.Add(new Automaton.CoordSet(xCoord, yCoord));
+                allX.Add(xCoord);
+                allY.Add(yCoord);
+            }
+
+            allX.Sort();
+            allY.Sort();
+            xMax = System.Linq.Enumerable.Last(allX);
+            yMax = System.Linq.Enumerable.Last(allY);
 
             return liveCellsFromFile;
         }
@@ -47,8 +71,21 @@ namespace WinFormsGameOfLife
                 {
                     using (StreamReader sr = new StreamReader(s))
                     {
-                        
+                        while (!sr.EndOfStream)
+                        {
+                            string currentLine = sr.ReadLine();
+                            if (!Regex.IsMatch(currentLine, extDataFileValidLinePattern.ToString()))
+                            {
+                                throw new Exception("File contains lines that do not match requirements.");
+                            }
+                            else
+                            {
+                                fileData.Add(currentLine);
+                            }
+                        }
                     }
+                    s.Close();
+                    s.Dispose();
                 }
             }
             catch (Exception)
