@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using GameOfLife;
+﻿using GameOfLife;
+using System.Collections.Generic;
 
 namespace WinFormsGameOfLife
 {
