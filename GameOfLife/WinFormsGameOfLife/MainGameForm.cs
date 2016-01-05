@@ -54,7 +54,7 @@ namespace WinFormsGameOfLife
         private void TickBackground(object sender, DoWorkEventArgs e)
         {
             Universe.Tick();
-            Thread.Sleep(500);
+            Thread.Sleep(350);
             if (autoPlayer.CancellationPending)
             {
                 e.Cancel = true;

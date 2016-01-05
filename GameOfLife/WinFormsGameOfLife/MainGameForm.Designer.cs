@@ -51,9 +51,9 @@
             // pauseButton
             // 
             this.pauseButton.Enabled = false;
-            this.pauseButton.Location = new System.Drawing.Point(212, 12);
+            this.pauseButton.Location = new System.Drawing.Point(166, 12);
             this.pauseButton.Name = "pauseButton";
-            this.pauseButton.Size = new System.Drawing.Size(25, 23);
+            this.pauseButton.Size = new System.Drawing.Size(37, 23);
             this.pauseButton.TabIndex = 2;
             this.pauseButton.Text = "❚❚";
             this.pauseButton.UseVisualStyleBackColor = true;
@@ -91,9 +91,9 @@
             // playButton
             // 
             this.playButton.Enabled = false;
-            this.playButton.Location = new System.Drawing.Point(181, 12);
+            this.playButton.Location = new System.Drawing.Point(123, 12);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(25, 23);
+            this.playButton.Size = new System.Drawing.Size(37, 23);
             this.playButton.TabIndex = 6;
             this.playButton.Text = "▶";
             this.playButton.UseVisualStyleBackColor = true;
