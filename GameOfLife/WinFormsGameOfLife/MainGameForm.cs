@@ -25,12 +25,12 @@ namespace WinFormsGameOfLife
         /// <summary>
         /// Used to control speeds of auto player
         /// </summary>
-        private readonly Dictionary<int, string> autoPlaySpeeds = new Dictionary<int, string>
+        private readonly Dictionary<string, int> autoPlaySpeeds = new Dictionary<string, int>
         {
-            { 1000, "1000 msec" },
-            { 500, "500 msec" },
-            { 250, "250 msec" },
-            { 30, "30 msec" }
+            { "1000 msec", 1000 },
+            { "500 msec", 500 },
+            { "250 msec", 250 },
+            { "30 msec", 30 }
         };
 
         /// <summary>
@@ -143,10 +143,10 @@ namespace WinFormsGameOfLife
             gameRunning = true;
 
             // Update GUI elements that the user no longer needs to interact with
-            this.SuspendLayout();
+            SuspendLayout();
 
-            this.startButton.Enabled = false;
-            this.incrementButton.Enabled = true;
+            startButton.Enabled = false;
+            incrementButton.Enabled = true;
             foreach (var cb in UniverseGui)
             {
                 cb.Enabled = false;
@@ -159,9 +159,9 @@ namespace WinFormsGameOfLife
             iterationsLabel.Text = "Time: " + Universe.Age;
             populationLabel.Text = "Population: " + Universe.NumLiveCells;
 
-            this.playButton.Enabled = true;
+            playButton.Enabled = true;
 
-            this.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         private void incrementButton_Click(object sender, EventArgs e)
@@ -179,38 +179,21 @@ namespace WinFormsGameOfLife
                 // TODO Need to sort for comparison first...
                 if (Universe.NumLiveCells == 0 || currentUniverse == Universe.Universe)
                 {
-                    this.incrementButton.Enabled = false;
+                    incrementButton.Enabled = false;
                 }
             }
         }
 
         private void playButton_Click(object sender, EventArgs e)
         {
-            this.SuspendLayout();
-            this.incrementButton.Enabled = false;
-            this.playButton.Enabled = false;
-            this.pauseButton.Enabled = true;
+            SuspendLayout();
+            incrementButton.Enabled = false;
+            playButton.Enabled = false;
+            pauseButton.Enabled = true;
             autoSpeedComboBox.Enabled = false;
-            this.ResumeLayout(false);
+            ResumeLayout(false);
             int speed = 1000;
-            switch (autoSpeedComboBox.Text)
-            {
-                case "1 sec":
-                    speed = 1000;
-                    break;
-                case "500 msec":
-                    speed = 500;
-                    break;
-                case "250 msec":
-                    speed = 250;
-                    break;
-                case "Fuck you":
-                    speed = 30;
-                    break;
-                default:
-                    autoSpeedComboBox.Text = "1 sec";
-                    break;
-            }
+            autoPlaySpeeds.TryGetValue(autoSpeedComboBox.Text, out speed);
 
             StartAutomation(speed);
         }
@@ -219,12 +202,12 @@ namespace WinFormsGameOfLife
         {
             autoPlayer.CancelAsync();
 
-            this.SuspendLayout();
-            this.pauseButton.Enabled = false;
-            this.playButton.Enabled = true;
-            this.incrementButton.Enabled = true;
-            this.autoSpeedComboBox.Enabled = true;
-            this.ResumeLayout(false);
+            SuspendLayout();
+            pauseButton.Enabled = false;
+            playButton.Enabled = true;
+            incrementButton.Enabled = true;
+            autoSpeedComboBox.Enabled = true;
+            ResumeLayout(false);
         }
 
         private void clearButton_Click(object sender, EventArgs e)

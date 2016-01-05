@@ -32,16 +32,21 @@ namespace WinFormsGameOfLife
         /// </summary>
         private void InitGameGui()
         {
-            this.SuspendLayout();
+            SuspendLayout();
 
             gameControls.Visible = false;
             startControls.Location = new System.Drawing.Point(12, 12);
+
+            foreach (var item in autoPlaySpeeds)
+            {
+                autoSpeedComboBox.Items.Add(item.Key);
+            }
 
             int winXSize = (13 * GameUniverseSizeY) + 30;
             int winYSize = (13 * GameUniverseSizeX) + ControlPanelVerticalSize + 10;
 
             // Resize the window to accommodate the grid
-            this.ClientSize = new System.Drawing.Size(
+            ClientSize = new System.Drawing.Size(
                 winXSize < 480 ? 480 : winXSize, 
                 winYSize);
 
@@ -59,7 +64,7 @@ namespace WinFormsGameOfLife
                     UniverseGui[i, j].Location = new System.Drawing.Point(drawPosX, drawPosY);
                     UniverseGui[i, j].Size = new System.Drawing.Size(13, 13);
 
-                    this.Controls.Add(UniverseGui[i, j]);
+                    Controls.Add(UniverseGui[i, j]);
 
                     if (j <= GameUniverseSizeY - 1)
                     {
@@ -70,7 +75,7 @@ namespace WinFormsGameOfLife
                 drawPosY += 13;
             }
 
-            this.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         /// <summary>
@@ -100,7 +105,7 @@ namespace WinFormsGameOfLife
         /// </summary>
         private void SetCheckboxesFromUniverse()
         {
-            this.SuspendLayout();
+            SuspendLayout();
 
             List<Automaton.CoordSet> liveCells = Universe.Universe;
             foreach (var cb in UniverseGui)
@@ -116,7 +121,7 @@ namespace WinFormsGameOfLife
             iterationsLabel.Text = "Time: " + Universe.Age;
             populationLabel.Text = "Population: " + Universe.NumLiveCells;
 
-            this.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         /// <summary>
