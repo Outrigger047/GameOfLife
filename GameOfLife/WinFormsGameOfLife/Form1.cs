@@ -9,22 +9,29 @@ namespace WinFormsGameOfLife
 {
     public partial class SizeInputForm : Form
     {
+        #region Fields
         private List<Automaton.CoordSet> InitLiveCells;
         private string ImportedFileName;
-
-        private int XMin, YMin;
-
+        private int xMin, yMin;
         private readonly Regex extDataFileValidLinePattern = new Regex(@"^[0-9]+\s*\,\s*[0-9]+$");
         private readonly Regex extDataFileXCoord = new Regex(@"^[0-9]+");
         private readonly Regex extDataFileYCoord = new Regex(@"[0-9]+$");
-        
+        #endregion
+
+
+        #region Constructors
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public SizeInputForm()
         {
             InitializeComponent();
 
             fileLoadedLabel.Text = "";
         }
+        #endregion
 
+        #region Private methods
         /// <summary>
         /// Extracts valid coordinates for live cells from external file data
         /// </summary>
@@ -48,12 +55,14 @@ namespace WinFormsGameOfLife
 
             allX.Sort();
             allY.Sort();
-            XMin = System.Linq.Enumerable.Last(allX);
-            YMin = System.Linq.Enumerable.Last(allY);
+            xMin = System.Linq.Enumerable.Last(allX);
+            yMin = System.Linq.Enumerable.Last(allY);
 
             return liveCellsFromFile;
         }
+        #endregion
 
+        #region Windows Forms event handlers
         private void generateButton_Click(object sender, EventArgs e)
         {
             Form gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value), Convert.ToInt32(this.yUpDown.Value));
@@ -105,10 +114,10 @@ namespace WinFormsGameOfLife
                     InitLiveCells = GetInitLiveCellListFromExternalFile(fileData);
 
                     SuspendLayout();
-                    importHorizUpDown.Minimum = XMin;
-                    importHorizUpDown.Value = XMin;
-                    importVertUpDown.Minimum = YMin;
-                    importVertUpDown.Value = YMin;
+                    importHorizUpDown.Minimum = xMin;
+                    importHorizUpDown.Value = xMin;
+                    importVertUpDown.Minimum = yMin;
+                    importVertUpDown.Value = yMin;
                     importHorizUpDown.Enabled = true;
                     importHorizLabel.Enabled = true;
                     importVertUpDown.Enabled = true;
@@ -124,6 +133,7 @@ namespace WinFormsGameOfLife
 
                 throw;
             }
-        }
+        } 
+        #endregion
     }
 }
