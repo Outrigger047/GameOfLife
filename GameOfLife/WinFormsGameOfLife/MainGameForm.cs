@@ -33,23 +33,44 @@ namespace WinFormsGameOfLife
 
             autoPlayer = new BackgroundWorker();
             autoPlayer.DoWork += new DoWorkEventHandler(TickBackground);
-            autoPlayerReset = new AutoResetEvent(false);
+            autoPlayer.RunWorkerCompleted += new RunWorkerCompletedEventHandler(TickBackgroundUpdate);
+            autoPlayer.WorkerSupportsCancellation = true;
+            autoPlayerReset = new AutoResetEvent(true);
 
             InitializeComponent();
             Text = "Game of Life - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
             InitGameGui();
         }
 
+        private void StartAutomation()
+        {
+            if (autoPlayer.IsBusy)
+            {
+                autoPlayerReset.WaitOne();
+            }
+            autoPlayer.RunWorkerAsync();
+        }
+
         private void TickBackground(object sender, DoWorkEventArgs e)
         {
             Universe.Tick();
             Thread.Sleep(500);
+            if (autoPlayer.CancellationPending)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void TickBackgroundUpdate(object sender, RunWorkerCompletedEventArgs e)
         {
+            BackgroundWorker bw = sender as BackgroundWorker;
             SetCheckboxesFromUniverse();
             autoPlayerReset.Set();
+
+            if (!e.Cancelled)
+            {
+                autoPlayer.RunWorkerAsync();
+            }
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -102,10 +123,14 @@ namespace WinFormsGameOfLife
             this.incrementButton.Enabled = false;
             this.playButton.Enabled = false;
             this.pauseButton.Enabled = true;
+
+            StartAutomation();
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
         {
+            autoPlayer.CancelAsync();
+
             this.pauseButton.Enabled = false;
             this.playButton.Enabled = true;
             this.incrementButton.Enabled = true;
