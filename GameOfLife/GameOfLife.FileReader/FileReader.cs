@@ -82,6 +82,7 @@ namespace GameOfLife
             return initLiveCells;
         }
 
+        /*
         public static List<Automaton.CoordSet> ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode, EncodingTypes readAsType)
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
@@ -90,6 +91,7 @@ namespace GameOfLife
 
             return initLiveCells;
         }
+        */
 
         #endregion
 

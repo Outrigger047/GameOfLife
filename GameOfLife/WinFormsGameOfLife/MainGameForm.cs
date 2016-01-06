@@ -27,10 +27,10 @@ namespace WinFormsGameOfLife
         /// </summary>
         private readonly Dictionary<string, int> autoPlaySpeeds = new Dictionary<string, int>
         {
-            { "1000 msec", 1000 },
-            { "500 msec", 500 },
-            { "250 msec", 250 },
-            { "30 msec", 30 }
+            { "1 - Slow", 1000 },
+            { "2 - Medium", 500 },
+            { "3 - Fast", 250 },
+            { "9000 - Cheetah on coke", 30 }
         };
         #endregion
 
