@@ -54,8 +54,8 @@ namespace WinFormsGameOfLife
 
             allX.Sort();
             allY.Sort();
-            xMin = System.Linq.Enumerable.Last(allX);
-            yMin = System.Linq.Enumerable.Last(allY);
+            xMin = System.Linq.Enumerable.Last(allX) + 1;
+            yMin = System.Linq.Enumerable.Last(allY) + 1;
 
             return liveCellsFromFile;
         }
@@ -75,8 +75,8 @@ namespace WinFormsGameOfLife
 
         private void importStartButton_Click(object sender, EventArgs e)
         {
-            Form gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value),
-                                            Convert.ToInt32(this.yUpDown.Value),
+            Form gameForm = new MainGameForm(Convert.ToInt32(this.importHorizUpDown.Value),
+                                            Convert.ToInt32(this.importVertUpDown.Value),
                                             InitLiveCells,
                                             ImportedFileName);
             gameForm.Show();

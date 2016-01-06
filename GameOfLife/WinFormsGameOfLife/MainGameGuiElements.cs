@@ -67,7 +67,10 @@ namespace WinFormsGameOfLife
                 {
                     UniverseGui[i, j] = new System.Windows.Forms.CheckBox();
                     UniverseGui[i, j].Margin = new System.Windows.Forms.Padding(0);
-                    UniverseGui[i, j].CheckState = System.Windows.Forms.CheckState.Unchecked;
+                    UniverseGui[i, j].CheckState = Universe.GetCellState(new Automaton.CoordSet(i, j)) == 
+                        Automaton.Cell.CellStateTypes.Alive ? 
+                        System.Windows.Forms.CheckState.Checked : 
+                        System.Windows.Forms.CheckState.Unchecked;
                     UniverseGui[i, j].Location = new System.Drawing.Point(drawPosX, drawPosY);
                     UniverseGui[i, j].Size = new System.Drawing.Size(13, 13);
 
