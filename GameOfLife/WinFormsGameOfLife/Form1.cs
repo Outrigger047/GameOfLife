@@ -129,7 +129,7 @@ namespace WinFormsGameOfLife
             {
                 if (ex.Message.Contains("not match requirements"))
                 {
-                    string extraInfo = "\n\n" + "Each line must be in the format: X,Y";
+                    string extraInfo = "\n\n" + "Each line must be in the format: X,Y" + "\n\n" + "Positive values only";
                     MessageBox.Show(ex.Message + extraInfo, 
                         "File Import Error", 
                         MessageBoxButtons.OK,
