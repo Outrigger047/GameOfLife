@@ -57,28 +57,20 @@ namespace GameOfLife
         public static List<Automaton.CoordSet> ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode)
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
+            Flags options = new Flags(DetermineEncoding(ref data), offsetMode);
 
-            EncodingTypes encoding = DetermineEncoding(ref data);
-            switch (encoding)
+            string coordLineMatchPattern;
+            CoordMatchByFileType.TryGetValue(options.EncodingType, out coordLineMatchPattern);
+
+            foreach (var line in data)
             {
-                case EncodingTypes.UnknownOrInvalid:
-                    break;
-                case EncodingTypes.Life106:
-                    ReadLife106(ref data, new Flags(encoding, offsetMode), initLiveCells);
-                    break;
-                case EncodingTypes.Life105:
-                    break;
-                case EncodingTypes.MCell:
-                    break;
-                case EncodingTypes.Plaintext:
-                    break;
-                case EncodingTypes.RLE:
-                    break;
-                case EncodingTypes.SOF:
-                    break;
-                default:
-                    break;
+                if (Regex.IsMatch(line, coordLineMatchPattern))
+                {
+                    initLiveCells.Add(ExtractCoordinates(line, options));
+                }
             }
+
+
 
             return initLiveCells;
         }
@@ -87,50 +79,7 @@ namespace GameOfLife
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
 
-            switch (readAsType)
-            {
-                case EncodingTypes.UnknownOrInvalid:
-                    break;
-                case EncodingTypes.Life106:
-                    ReadLife106(ref data, new Flags(EncodingTypes.Life106, offsetMode), initLiveCells);
-                    break;
-                case EncodingTypes.Life105:
-                    break;
-                case EncodingTypes.Plaintext:
-                    break;
-                case EncodingTypes.RLE:
-                    break;
-                case EncodingTypes.SOF:
-                    break;
-                default:
-                    break;
-            }
-
-            return initLiveCells;
-        }
-
-        #endregion
-
-        #region Private methods - Read various file types
-        
-        /// <summary>
-        /// Read Life 1.06 file data.
-        /// Used on http://www.conwaylife.com/wiki
-        /// </summary>
-        /// <param name="data">Data from external file</param>
-        /// <returns>List of CoordSet objects indicating live cells</returns>
-        private static List<Automaton.CoordSet> ReadLife106(ref string[] data, Flags options, List<Automaton.CoordSet> initLiveCells)
-        {
-            string coordLineMatchPattern;
-            CoordMatchByFileType.TryGetValue(EncodingTypes.Life106, out coordLineMatchPattern);
-
-            foreach (var line in data)
-            {
-                if (Regex.IsMatch(line, coordLineMatchPattern))
-                {
-                    initLiveCells.Add(ExtractCoordinates(line, options));
-                } 
-            }
+            // TODO
 
             return initLiveCells;
         }
@@ -167,9 +116,30 @@ namespace GameOfLife
             string pattern;
             CoordMatchByFileType.TryGetValue(options.EncodingType, out pattern);
 
-            Match coordsMatch = Regex.Match(encodedText, pattern);
-            Match xCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"^.*?[0-9\-]+").Value, @"[0-9\-]+");
-            Match yCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"[0-9\-]+?$").Value, @"[0-9\-]+");
+            Match coordsMatch, xCoordMatch, yCoordMatch;
+
+            switch (options.EncodingType)
+            {
+                case EncodingTypes.UnknownOrInvalid:
+                    break;
+                case EncodingTypes.Life106:
+                    coordsMatch = Regex.Match(encodedText, pattern);
+                    xCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"^.*?[0-9\-]+").Value, @"[0-9\-]+");
+                    yCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"[0-9\-]+?$").Value, @"[0-9\-]+");
+                    break;
+                case EncodingTypes.Life105:
+                    break;
+                case EncodingTypes.MCell:
+                    break;
+                case EncodingTypes.Plaintext:
+                    break;
+                case EncodingTypes.RLE:
+                    break;
+                case EncodingTypes.SOF:
+                    break;
+                default:
+                    break;
+            }
 
             return new Automaton.CoordSet(Convert.ToInt32(xCoordMatch.Value), Convert.ToInt32(yCoordMatch.Value));
         }
