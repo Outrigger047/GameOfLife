@@ -61,6 +61,7 @@ namespace GameOfLife
 
             string coordLineMatchPattern;
             CoordMatchByFileType.TryGetValue(options.EncodingType, out coordLineMatchPattern);
+            Match coordsMatch = Regex.Match(encodedText, pattern);
 
             foreach (var line in data)
             {
@@ -123,7 +124,7 @@ namespace GameOfLife
                 case EncodingTypes.UnknownOrInvalid:
                     break;
                 case EncodingTypes.Life106:
-                    coordsMatch = Regex.Match(encodedText, pattern);
+
                     xCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"^.*?[0-9\-]+").Value, @"[0-9\-]+");
                     yCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"[0-9\-]+?$").Value, @"[0-9\-]+");
                     break;
