@@ -17,7 +17,7 @@ namespace GameOfLife
         #endregion
 
         #region Public methods
-        public static List<Automaton.CoordSet> ReadFile(byte data)
+        public static List<Automaton.CoordSet> ReadFile(ref byte[] data)
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
 
@@ -26,7 +26,7 @@ namespace GameOfLife
             return initLiveCells;
         }
 
-        public static List<Automaton.CoordSet> ReadFile(byte data, EncodingTypes readAsType)
+        public static List<Automaton.CoordSet> ReadFile(ref byte[] data, EncodingTypes readAsType)
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
 
@@ -37,16 +37,17 @@ namespace GameOfLife
         #endregion
 
         #region Private methods
+        
+
+
         /// <summary>
         /// Read Run Length Encoded file data.
         /// Used on http://www.conwaylife.com/wiki
         /// </summary>
         /// <param name="data">Data from external file</param>
         /// <returns>List of CoordSet objects indicating live cells</returns>
-        private static List<Automaton.CoordSet> ReadRunLengthEncoding(byte data)
+        private static List<Automaton.CoordSet> ReadRunLengthEncoding(ref byte[] data, List<Automaton.CoordSet> initLiveCells)
         {
-            List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
-
 
 
             return initLiveCells;
