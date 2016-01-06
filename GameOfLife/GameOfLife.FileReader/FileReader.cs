@@ -10,13 +10,17 @@ namespace GameOfLife
     public static class FileReader
     {
         #region Enums
+
         public enum EncodingTypes
         {
+            UnknownOrInvalid = -1,
             Life105, Life106, Plaintext, RLE, SOF
         }
+
         #endregion
 
         #region Public methods
+
         public static List<Automaton.CoordSet> ReadFile(ref byte[] data)
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
@@ -34,11 +38,24 @@ namespace GameOfLife
 
             return initLiveCells;
         }
+
         #endregion
 
         #region Private methods
         
+        /// <summary>
+        /// Determine file encoding scheme
+        /// </summary>
+        /// <param name="data">Reference to file data</param>
+        /// <returns>Type of encoding</returns>
+        private static EncodingTypes DetermineEncoding(ref byte[] data)
+        {
+            EncodingTypes fileType = EncodingTypes.UnknownOrInvalid;
 
+
+
+            return fileType;
+        }
 
         /// <summary>
         /// Read Run Length Encoded file data.
@@ -52,6 +69,7 @@ namespace GameOfLife
 
             return initLiveCells;
         } 
+
         #endregion
     }
 }
