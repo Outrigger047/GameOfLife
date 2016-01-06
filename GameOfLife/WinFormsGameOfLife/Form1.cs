@@ -18,7 +18,6 @@ namespace WinFormsGameOfLife
         private readonly Regex extDataFileYCoord = new Regex(@"[0-9]+$");
         #endregion
 
-
         #region Constructors
         /// <summary>
         /// Default constructor
