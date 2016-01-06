@@ -23,11 +23,19 @@ namespace GameOfLife
             { null, EncodingTypes.SOF }
         };
 
-        private static Dictionary<EncodingTypes, string> CoordMatchByFileType = 
+        private static Dictionary<EncodingTypes, string> CoordLineMatchByFileType = 
             new Dictionary<EncodingTypes, string>
         {
             { EncodingTypes.Life106, @"^\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
             { EncodingTypes.Life105, @"^#P\s+\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
+            { EncodingTypes.Plaintext, @"" }
+        };
+
+        private static Dictionary<EncodingTypes, string> CoordSetMatchByFileType =
+            new Dictionary<EncodingTypes, string>
+        {
+            { EncodingTypes.Life106, @"\-{0,1}[0-9]+" },
+            { EncodingTypes.Life105, @"\-{0,1}[0-9]+" },
             { EncodingTypes.Plaintext, @"" }
         };
 
@@ -60,18 +68,16 @@ namespace GameOfLife
             Flags options = new Flags(DetermineEncoding(ref data), offsetMode);
 
             string coordLineMatchPattern;
-            CoordMatchByFileType.TryGetValue(options.EncodingType, out coordLineMatchPattern);
-            Match coordsMatch = Regex.Match(encodedText, pattern);
+            CoordLineMatchByFileType.TryGetValue(options.EncodingType, out coordLineMatchPattern);
 
             foreach (var line in data)
             {
                 if (Regex.IsMatch(line, coordLineMatchPattern))
                 {
-                    initLiveCells.Add(ExtractCoordinates(line, options));
+                    Match currentMatch = Regex.Match(line, coordLineMatchPattern);
+                    initLiveCells.Add(ExtractCoordinates(currentMatch, coordLineMatchPattern, options));
                 }
             }
-
-
 
             return initLiveCells;
         }
@@ -112,21 +118,18 @@ namespace GameOfLife
         /// <param name="encodedText">Text to search</param>
         /// <param name="fileType">File type of text</param>
         /// <returns>CoordSet object with any valid coordinates</returns>
-        private static Automaton.CoordSet ExtractCoordinates(string encodedText, Flags options)
+        private static Automaton.CoordSet ExtractCoordinates(Match currentMatch, string pattern, Flags options)
         {
-            string pattern;
-            CoordMatchByFileType.TryGetValue(options.EncodingType, out pattern);
-
-            Match coordsMatch, xCoordMatch, yCoordMatch;
+            string[] coordinateMatches = new string[2];
 
             switch (options.EncodingType)
             {
                 case EncodingTypes.UnknownOrInvalid:
                     break;
                 case EncodingTypes.Life106:
-
-                    xCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"^.*?[0-9\-]+").Value, @"[0-9\-]+");
-                    yCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"[0-9\-]+?$").Value, @"[0-9\-]+");
+                    string coordSetPattern;
+                    CoordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetPattern);
+                    Regex.Matches(currentMatch.Value, coordSetPattern).CopyTo(coordinateMatches, 0);
                     break;
                 case EncodingTypes.Life105:
                     break;
@@ -139,10 +142,23 @@ namespace GameOfLife
                 case EncodingTypes.SOF:
                     break;
                 default:
+                    coordinateMatches = null;
                     break;
             }
 
-            return new Automaton.CoordSet(Convert.ToInt32(xCoordMatch.Value), Convert.ToInt32(yCoordMatch.Value));
+            if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
+            {
+                return new Automaton.CoordSet(Convert.ToInt32(coordinateMatches[0]), Convert.ToInt32(coordinateMatches[1]));
+            }
+            else if (options.OffsetMode == CoordExtractionOffsetModes.ScaleToZero)
+            {
+                // Handle rescaling coordinates
+                return new Automaton.CoordSet(Convert.ToInt32(coordinateMatches[0]), Convert.ToInt32(coordinateMatches[1]));
+            }
+            else
+            {
+                return new Automaton.CoordSet(Convert.ToInt32(coordinateMatches[0]), Convert.ToInt32(coordinateMatches[1]));
+            }
         }
 
         #endregion
