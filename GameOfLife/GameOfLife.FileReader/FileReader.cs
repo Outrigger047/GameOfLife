@@ -23,6 +23,14 @@ namespace GameOfLife
             { null, EncodingTypes.SOF }
         };
 
+        private static Dictionary<EncodingTypes, string> CoordMatchByFileType = 
+            new Dictionary<EncodingTypes, string>
+        {
+            { EncodingTypes.Life106, @"^\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
+            { EncodingTypes.Life105, @"^#P\s+\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
+            { EncodingTypes.Plaintext, @"" }
+        };
+
         #endregion
 
         #region Enums
@@ -33,11 +41,20 @@ namespace GameOfLife
             Life106, Life105, MCell, Plaintext, RLE, SOF
         }
 
+        /// <summary>
+        /// Used to set mode of operation when translating coordinates from file to Automaton.CoordSet.
+        /// ScaleToZero indicates lowest negative value should be scaled to zero. RelativeToOrigin makes no chnages.
+        /// </summary>
+        public enum CoordExtractionOffsetModes
+        {
+            ScaleToZero, RelativeToOrigin
+        }
+
         #endregion
 
         #region Public methods
 
-        public static List<Automaton.CoordSet> ReadFile(ref string[] data)
+        public static List<Automaton.CoordSet> ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode)
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
 
@@ -65,7 +82,7 @@ namespace GameOfLife
             return initLiveCells;
         }
 
-        public static List<Automaton.CoordSet> ReadFile(ref string[] data, EncodingTypes readAsType)
+        public static List<Automaton.CoordSet> ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode, EncodingTypes readAsType)
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
 
@@ -93,8 +110,34 @@ namespace GameOfLife
 
         #endregion
 
-        #region Private methods
+        #region Private methods - Read various file types
         
+        /// <summary>
+        /// Read Life 1.06 file data.
+        /// Used on http://www.conwaylife.com/wiki
+        /// </summary>
+        /// <param name="data">Data from external file</param>
+        /// <returns>List of CoordSet objects indicating live cells</returns>
+        private static List<Automaton.CoordSet> ReadLife106(ref string[] data, List<Automaton.CoordSet> initLiveCells)
+        {
+            string coordLineMatchPattern;
+            CoordMatchByFileType.TryGetValue(EncodingTypes.Life106, out coordLineMatchPattern);
+
+            foreach (var line in data)
+            {
+                if (Regex.IsMatch(line, coordLineMatchPattern))
+                {
+                    initLiveCells.Add(ExtractCoordinates(line, EncodingTypes.Life106));
+                } 
+            }
+
+            return initLiveCells;
+        }
+
+        #endregion
+
+        #region Private methods - Other operations
+
         /// <summary>
         /// Determine file encoding scheme
         /// </summary>
@@ -110,33 +153,32 @@ namespace GameOfLife
                 }
             }
             return EncodingTypes.UnknownOrInvalid;
-        }
-
-        /// <summary>
-        /// Read Life 1.06 file data.
-        /// Used on http://www.conwaylife.com/wiki
-        /// </summary>
-        /// <param name="data">Data from external file</param>
-        /// <returns>List of CoordSet objects indicating live cells</returns>
-        private static List<Automaton.CoordSet> ReadLife106(ref string[] data, List<Automaton.CoordSet> initLiveCells)
-        {
-
-
-            return initLiveCells;
-        }
-
-        /// <summary>
-        /// Read Run Length Encoded file data.
-        /// Used on http://www.conwaylife.com/wiki
-        /// </summary>
-        /// <param name="data">Data from external file</param>
-        /// <returns>List of CoordSet objects indicating live cells</returns>
-        private static List<Automaton.CoordSet> ReadRunLengthEncoding(ref string[] data, List<Automaton.CoordSet> initLiveCells)
-        {
-
-
-            return initLiveCells;
         } 
+
+        /// <summary>
+        /// Extracts a valid set of coordinates from a line of encoded text
+        /// </summary>
+        /// <param name="encodedText">Text to search</param>
+        /// <param name="fileType">File type of text</param>
+        /// <returns>CoordSet object with any valid coordinates</returns>
+        private static Automaton.CoordSet ExtractCoordinates(string encodedText, EncodingTypes fileType, CoordExtractionOffsetModes offsetMode)
+        {
+            string pattern;
+            CoordMatchByFileType.TryGetValue(fileType, out pattern);
+
+            Match coordsMatch = Regex.Match(encodedText, pattern);
+            Match xCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"^.*?[0-9\-]+").Value, @"[0-9\-]+");
+            Match yCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"[0-9\-]+?$").Value, @"[0-9\-]+");
+
+            if (offsetMode == CoordExtractionOffsetModes.ScaleToZero)
+            {
+                
+            }
+            else
+            {
+                return new Automaton.CoordSet(Convert.ToInt32(xCoordMatch.Value), Convert.ToInt32(yCoordMatch.Value));
+            }
+        }
 
         #endregion
     }
