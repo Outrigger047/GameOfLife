@@ -105,8 +105,6 @@ namespace WinFormsGameOfLife
                             }
                         }
                     }
-                    s.Close();
-                    s.Dispose();
 
                     ImportedFileName = Path.GetFileName(importDialog.FileName);
 
@@ -127,10 +125,25 @@ namespace WinFormsGameOfLife
                     ResumeLayout(false);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                if (ex.Message.Contains("not match requirements"))
+                {
+                    string extraInfo = "\n\n" + "Each line must be in the format: X,Y";
+                    MessageBox.Show(ex.Message + extraInfo, 
+                        "File Import Error", 
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                else
+                {
+                    throw; 
+                }
+            }
+            finally
+            {
+                s.Close();
+                s.Dispose();
             }
         } 
         #endregion
