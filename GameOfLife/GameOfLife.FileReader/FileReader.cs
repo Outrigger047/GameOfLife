@@ -58,12 +58,13 @@ namespace GameOfLife
         {
             List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
 
-            switch (DetermineEncoding(ref data))
+            EncodingTypes encoding = DetermineEncoding(ref data);
+            switch (encoding)
             {
                 case EncodingTypes.UnknownOrInvalid:
                     break;
                 case EncodingTypes.Life106:
-                    ReadLife106(ref data, initLiveCells);
+                    ReadLife106(ref data, new Flags(encoding, offsetMode), initLiveCells);
                     break;
                 case EncodingTypes.Life105:
                     break;
@@ -91,7 +92,7 @@ namespace GameOfLife
                 case EncodingTypes.UnknownOrInvalid:
                     break;
                 case EncodingTypes.Life106:
-                    ReadLife106(ref data, initLiveCells);
+                    ReadLife106(ref data, new Flags(EncodingTypes.Life106, offsetMode), initLiveCells);
                     break;
                 case EncodingTypes.Life105:
                     break;
@@ -118,7 +119,7 @@ namespace GameOfLife
         /// </summary>
         /// <param name="data">Data from external file</param>
         /// <returns>List of CoordSet objects indicating live cells</returns>
-        private static List<Automaton.CoordSet> ReadLife106(ref string[] data, List<Automaton.CoordSet> initLiveCells)
+        private static List<Automaton.CoordSet> ReadLife106(ref string[] data, Flags options, List<Automaton.CoordSet> initLiveCells)
         {
             string coordLineMatchPattern;
             CoordMatchByFileType.TryGetValue(EncodingTypes.Life106, out coordLineMatchPattern);
@@ -127,7 +128,7 @@ namespace GameOfLife
             {
                 if (Regex.IsMatch(line, coordLineMatchPattern))
                 {
-                    initLiveCells.Add(ExtractCoordinates(line, EncodingTypes.Life106));
+                    initLiveCells.Add(ExtractCoordinates(line, options));
                 } 
             }
 
@@ -161,22 +162,31 @@ namespace GameOfLife
         /// <param name="encodedText">Text to search</param>
         /// <param name="fileType">File type of text</param>
         /// <returns>CoordSet object with any valid coordinates</returns>
-        private static Automaton.CoordSet ExtractCoordinates(string encodedText, EncodingTypes fileType, CoordExtractionOffsetModes offsetMode)
+        private static Automaton.CoordSet ExtractCoordinates(string encodedText, Flags options)
         {
             string pattern;
-            CoordMatchByFileType.TryGetValue(fileType, out pattern);
+            CoordMatchByFileType.TryGetValue(options.EncodingType, out pattern);
 
             Match coordsMatch = Regex.Match(encodedText, pattern);
             Match xCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"^.*?[0-9\-]+").Value, @"[0-9\-]+");
             Match yCoordMatch = Regex.Match(Regex.Match(coordsMatch.Value, @"[0-9\-]+?$").Value, @"[0-9\-]+");
 
-            if (offsetMode == CoordExtractionOffsetModes.ScaleToZero)
+            return new Automaton.CoordSet(Convert.ToInt32(xCoordMatch.Value), Convert.ToInt32(yCoordMatch.Value));
+        }
+
+        #endregion
+
+        #region Nested classes
+
+        private class Flags
+        {
+            public EncodingTypes EncodingType { get; private set; }
+            public CoordExtractionOffsetModes OffsetMode { get; private set; }
+
+            public Flags(EncodingTypes encodingType, CoordExtractionOffsetModes offsetMode)
             {
-                
-            }
-            else
-            {
-                return new Automaton.CoordSet(Convert.ToInt32(xCoordMatch.Value), Convert.ToInt32(yCoordMatch.Value));
+                EncodingType = encodingType;
+                OffsetMode = offsetMode;
             }
         }
 
