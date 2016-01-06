@@ -192,6 +192,16 @@ namespace GameOfLife
 
             NumLiveCells = liveCells.Count;
         }
+
+        /// <summary>
+        /// Get the current state of a given cell in the universe
+        /// </summary>
+        /// <param name="target">Coordinates of the target cell</param>
+        /// <returns>Current state of the target cell</returns>
+        public Automaton.Cell.CellStateTypes GetCellState(Automaton.CoordSet target)
+        {
+            return universe[target.X, target.Y].State;
+        }
         #endregion
 
         #region Private methods
