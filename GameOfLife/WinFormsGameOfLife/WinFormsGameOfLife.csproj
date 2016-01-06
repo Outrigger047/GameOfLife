@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release %28Desktop out%29|AnyCPU'">
-    <OutputPath>C:\Users\andre_000\Desktop\GameOfLife\</OutputPath>
+    <OutputPath>C:\Users\andre_000\Desktop\GameOfLife\GameOfLife\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
