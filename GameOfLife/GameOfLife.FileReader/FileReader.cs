@@ -1,6 +1,7 @@
 ﻿using GameOfLife;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace GameOfLife
@@ -39,7 +40,7 @@ namespace GameOfLife
             { EncodingTypes.Life106, @"\-{0,1}[0-9]+" },
             { EncodingTypes.Life105, @"\-{0,1}[0-9]+" },
             { EncodingTypes.Plaintext, @"" },
-            { EncodingTypes.MyCommaFormat, @"^[0-9]+\,[0-9]+$" }
+            { EncodingTypes.MyCommaFormat, @"\-{0,1}[0-9]+" }
         };
 
         #endregion
@@ -67,22 +68,25 @@ namespace GameOfLife
 
         public static List<Automaton.CoordSet> ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode)
         {
-            List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
+            List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
             Flags options = new Flags(DetermineEncoding(ref data), offsetMode);
 
             string coordLineMatchPattern;
             CoordLineMatchByFileType.TryGetValue(options.EncodingType, out coordLineMatchPattern);
+            string coordSetMatchPattern;
+            CoordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetMatchPattern);
 
             foreach (var line in data)
             {
                 if (Regex.IsMatch(line, coordLineMatchPattern))
                 {
-                    Match currentMatch = Regex.Match(line, coordLineMatchPattern);
-                    initLiveCells.Add(ExtractCoordinates(currentMatch, coordLineMatchPattern, options));
+                    Match currentLineMatch = Regex.Match(line, coordLineMatchPattern);
+                    MatchCollection currentLineCoordsMatches = Regex.Matches(currentLineMatch.Value, coordSetMatchPattern);
+                    //liveCellsFromFile.Add(ExtractCoordinates(currentMatch, coordLineMatchPattern, options));
                 }
             }
 
-            return initLiveCells;
+            return liveCellsFromFile;
         }
 
         /*
