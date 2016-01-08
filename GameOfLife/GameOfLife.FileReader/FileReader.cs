@@ -20,7 +20,8 @@ namespace GameOfLife
             { null, EncodingTypes.MCell },
             { @"^\!Name\: [A-Za-z ]+$", EncodingTypes.Plaintext },
             { @"^x = [0-9]+, y = [0-9]+$", EncodingTypes.RLE }, // TODO RLE header is more complex...
-            { null, EncodingTypes.SOF }
+            { null, EncodingTypes.SOF },
+            { @"#MyCommaSeparatedFormat", EncodingTypes.MyCommaFormat }
         };
 
         private static Dictionary<EncodingTypes, string> CoordLineMatchByFileType = 
@@ -28,7 +29,8 @@ namespace GameOfLife
         {
             { EncodingTypes.Life106, @"^\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
             { EncodingTypes.Life105, @"^#P\s+\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
-            { EncodingTypes.Plaintext, @"" }
+            { EncodingTypes.Plaintext, @"" },
+            { EncodingTypes.MyCommaFormat, @"^[0-9]+\,[0-9]+$" }
         };
 
         private static Dictionary<EncodingTypes, string> CoordSetMatchByFileType =
@@ -36,7 +38,8 @@ namespace GameOfLife
         {
             { EncodingTypes.Life106, @"\-{0,1}[0-9]+" },
             { EncodingTypes.Life105, @"\-{0,1}[0-9]+" },
-            { EncodingTypes.Plaintext, @"" }
+            { EncodingTypes.Plaintext, @"" },
+            { EncodingTypes.MyCommaFormat, @"^[0-9]+\,[0-9]+$" }
         };
 
         #endregion
@@ -46,7 +49,7 @@ namespace GameOfLife
         public enum EncodingTypes
         {
             UnknownOrInvalid = -1,
-            Life106, Life105, MCell, Plaintext, RLE, SOF
+            Life106, Life105, MCell, Plaintext, RLE, SOF, MyCommaFormat
         }
 
         /// <summary>

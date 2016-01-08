@@ -72,7 +72,7 @@
             0});
             this.xUpDown.Name = "xUpDown";
             this.xUpDown.Size = new System.Drawing.Size(41, 20);
-            this.xUpDown.TabIndex = 1;
+            this.xUpDown.TabIndex = 2;
             this.xUpDown.Value = new decimal(new int[] {
             10,
             0,
@@ -98,7 +98,7 @@
             0});
             this.yUpDown.Name = "yUpDown";
             this.yUpDown.Size = new System.Drawing.Size(41, 20);
-            this.yUpDown.TabIndex = 3;
+            this.yUpDown.TabIndex = 1;
             this.yUpDown.Value = new decimal(new int[] {
             10,
             0,
@@ -110,7 +110,7 @@
             this.generateButton.Location = new System.Drawing.Point(142, 75);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 23);
-            this.generateButton.TabIndex = 4;
+            this.generateButton.TabIndex = 3;
             this.generateButton.Text = "Generate";
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
@@ -172,7 +172,7 @@
             this.importStartButton.Location = new System.Drawing.Point(141, 111);
             this.importStartButton.Name = "importStartButton";
             this.importStartButton.Size = new System.Drawing.Size(75, 23);
-            this.importStartButton.TabIndex = 11;
+            this.importStartButton.TabIndex = 6;
             this.importStartButton.Text = "Generate";
             this.importStartButton.UseVisualStyleBackColor = true;
             this.importStartButton.Click += new System.EventHandler(this.importStartButton_Click);
@@ -182,7 +182,7 @@
             this.importButton.Location = new System.Drawing.Point(19, 57);
             this.importButton.Name = "importButton";
             this.importButton.Size = new System.Drawing.Size(75, 23);
-            this.importButton.TabIndex = 10;
+            this.importButton.TabIndex = 7;
             this.importButton.Text = "Import File";
             this.importButton.UseVisualStyleBackColor = true;
             this.importButton.Click += new System.EventHandler(this.importButton_Click);
@@ -218,7 +218,7 @@
             0});
             this.importHorizUpDown.Name = "importHorizUpDown";
             this.importHorizUpDown.Size = new System.Drawing.Size(41, 20);
-            this.importHorizUpDown.TabIndex = 9;
+            this.importHorizUpDown.TabIndex = 4;
             this.importHorizUpDown.Value = new decimal(new int[] {
             1,
             0,
@@ -246,7 +246,7 @@
             0});
             this.importVertUpDown.Name = "importVertUpDown";
             this.importVertUpDown.Size = new System.Drawing.Size(41, 20);
-            this.importVertUpDown.TabIndex = 7;
+            this.importVertUpDown.TabIndex = 5;
             this.importVertUpDown.Value = new decimal(new int[] {
             1,
             0,

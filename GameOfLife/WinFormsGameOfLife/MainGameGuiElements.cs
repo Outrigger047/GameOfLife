@@ -73,7 +73,7 @@ namespace WinFormsGameOfLife
                         System.Windows.Forms.CheckState.Unchecked;
                     UniverseGui[i, j].Location = new System.Drawing.Point(drawPosX, drawPosY);
                     UniverseGui[i, j].Size = new System.Drawing.Size(13, 13);
-
+                    
                     Controls.Add(UniverseGui[i, j]);
 
                     if (j <= GameUniverseSizeY - 1)
