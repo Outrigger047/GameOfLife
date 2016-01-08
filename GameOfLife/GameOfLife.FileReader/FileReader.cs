@@ -82,6 +82,7 @@ namespace GameOfLife
                 {
                     Match currentLineMatch = Regex.Match(line, coordLineMatchPattern);
                     MatchCollection currentLineCoordsMatches = Regex.Matches(currentLineMatch.Value, coordSetMatchPattern);
+
                     //liveCellsFromFile.Add(ExtractCoordinates(currentMatch, coordLineMatchPattern, options));
                 }
             }
