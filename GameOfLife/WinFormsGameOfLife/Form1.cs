@@ -108,7 +108,9 @@ namespace WinFormsGameOfLife
 
                     ImportedFileName = Path.GetFileName(importDialog.FileName);
 
-                    InitLiveCells = GetInitLiveCellListFromExternalFile(fileData);
+                    // This line controls how we go from raw data from file to a list of live coordinates
+                    //InitLiveCells = GetInitLiveCellListFromExternalFile(fileData);
+                    InitLiveCells = FileReader.ReadFile(fileData.)
 
                     SuspendLayout();
                     importHorizUpDown.Minimum = xMin;

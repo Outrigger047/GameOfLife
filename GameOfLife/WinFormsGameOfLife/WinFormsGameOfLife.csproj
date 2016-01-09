@@ -124,6 +124,10 @@
       <Project>{90469b70-720f-46f0-a735-34d37056b5eb}</Project>
       <Name>GameOfLife.Automaton</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GameOfLife.FileReader\GameOfLife.FileReader.csproj">
+      <Project>{75573470-c976-4c82-ac50-345a690cc9a3}</Project>
+      <Name>GameOfLife.FileReader</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
