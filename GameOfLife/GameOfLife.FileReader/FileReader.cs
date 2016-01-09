@@ -77,28 +77,38 @@ namespace GameOfLife
             string coordSetMatchPattern;
             CoordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetMatchPattern);
 
-            List<int> allX = new List<int>();
-            List<int> allY = new List<int>();
-
-            foreach (var line in data)
+            if (options.OffsetMode == CoordExtractionOffsetModes.ScaleToZero)
             {
-                if (Regex.IsMatch(line, coordLineMatchPattern))
+                List<int> allX = new List<int>();
+                List<int> allY = new List<int>();
+                int xMin, yMin;
+
+                foreach (var line in data)
                 {
-                    Match currentLineMatch = Regex.Match(line, coordLineMatchPattern);
-                    MatchCollection currentLineCoordsMatches = Regex.Matches(currentLineMatch.Value, coordSetMatchPattern);
+                    if (Regex.IsMatch(line, coordLineMatchPattern))
+                    {
+                        Match currentLineMatch = Regex.Match(line, coordLineMatchPattern);
+                        MatchCollection currentLineCoordsMatches = Regex.Matches(currentLineMatch.Value, coordSetMatchPattern);
 
-                    string[] currentCoords = currentLineCoordsMatches.Cast<Match>().Select(m => m.Value).ToArray();
-                    string xCoord = currentCoords[0];
-                    string yCoord = currentCoords[1];
+                        string[] currentCoords = currentLineCoordsMatches.Cast<Match>().Select(m => m.Value).ToArray();
+                        string xCoord = currentCoords[0];
+                        string yCoord = currentCoords[1];
 
-                    liveCellsFromFile.Add(new Automaton.CoordSet(Convert.ToInt32(xCoord), Convert.ToInt32(yCoord)));
-                    allX.Add(Convert.ToInt32(xCoord));
-                    allY.Add(Convert.ToInt32(yCoord));
+                        allX.Add(Convert.ToInt32(xCoord));
+                        allY.Add(Convert.ToInt32(yCoord));
+
+                        liveCellsFromFile.Add(new Automaton.CoordSet(Convert.ToInt32(xCoord), Convert.ToInt32(yCoord)));
+                    }
                 }
 
                 allX.Sort();
-                allY.Sort();
+                allY.Sort(); 
             }
+            else if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
+            {
+                // do regular import without scaling op here
+            }
+            
 
             return liveCellsFromFile;
         }
