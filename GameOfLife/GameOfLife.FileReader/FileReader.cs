@@ -76,6 +76,9 @@ namespace GameOfLife
             string coordSetMatchPattern;
             CoordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetMatchPattern);
 
+            List<int> allX = new List<int>();
+            List<int> allY = new List<int>();
+
             foreach (var line in data)
             {
                 if (Regex.IsMatch(line, coordLineMatchPattern))
@@ -84,6 +87,7 @@ namespace GameOfLife
                     MatchCollection currentLineCoordsMatches = Regex.Matches(currentLineMatch.Value, coordSetMatchPattern);
 
                     //liveCellsFromFile.Add(ExtractCoordinates(currentMatch, coordLineMatchPattern, options));
+                    currentLineCoordsMatches.
                 }
             }
 
