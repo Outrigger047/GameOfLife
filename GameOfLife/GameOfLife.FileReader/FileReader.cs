@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace GameOfLife
@@ -86,9 +87,17 @@ namespace GameOfLife
                     Match currentLineMatch = Regex.Match(line, coordLineMatchPattern);
                     MatchCollection currentLineCoordsMatches = Regex.Matches(currentLineMatch.Value, coordSetMatchPattern);
 
-                    //liveCellsFromFile.Add(ExtractCoordinates(currentMatch, coordLineMatchPattern, options));
-                    currentLineCoordsMatches.
+                    string[] currentCoords = currentLineCoordsMatches.Cast<Match>().Select(m => m.Value).ToArray();
+                    string xCoord = currentCoords[0];
+                    string yCoord = currentCoords[1];
+
+                    liveCellsFromFile.Add(new Automaton.CoordSet(Convert.ToInt32(xCoord), Convert.ToInt32(yCoord)));
+                    allX.Add(Convert.ToInt32(xCoord));
+                    allY.Add(Convert.ToInt32(yCoord));
                 }
+
+                allX.Sort();
+                allY.Sort();
             }
 
             return liveCellsFromFile;
