@@ -69,7 +69,7 @@ namespace GameOfLife
 
         public static FileExtract ReadFile(List<string> data, CoordExtractionOffsetModes offsetMode)
         {
-            FileExtract fe;
+            FileExtract fe = new FileExtract();
             List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
             Flags options = new Flags(DetermineEncoding(data), offsetMode);
 
@@ -115,7 +115,10 @@ namespace GameOfLife
                     liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + xMin, tempCoord[1] + yMin));
                 }
 
-                fe = new FileExtract(liveCellsFromFile, xMin, yMin);
+                //fe = new FileExtract(liveCellsFromFile, xMin, yMin);
+                fe.LiveCells = liveCellsFromFile;
+                fe.XMin = xMin;
+                fe.YMin = yMin;
             }
             else if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
             {
@@ -134,12 +137,15 @@ namespace GameOfLife
                     }
                 }
 
-                fe = new FileExtract(liveCellsFromFile);
+                //fe = new FileExtract(liveCellsFromFile);
+                fe.LiveCells = liveCellsFromFile;
             }
+            /*
             else
             {
                 fe = new FileExtract();
             }
+            */
 
             return fe;
         }
@@ -241,34 +247,20 @@ namespace GameOfLife
             }
         }
 
-        public class FileExtract
-        {
-            public List<Automaton.CoordSet> LiveCells { get; private set; }
-            public int? XMin { get; private set; }
-            public int? YMin { get; private set; }
-
-            public FileExtract(List<Automaton.CoordSet> liveCells, int xMin, int yMin)
-            {
-                LiveCells = liveCells;
-                XMin = xMin;
-                YMin = yMin;
-            }
-
-            public FileExtract(List<Automaton.CoordSet> liveCells)
-            {
-                LiveCells = liveCells;
-                XMin = null;
-                YMin = null;
-            }
-
-            public FileExtract()
-            {
-                LiveCells = null;
-                XMin = null;
-                YMin = null;
-            }
-        }
-
         #endregion
+    }
+
+    public class FileExtract
+    {
+        public List<Automaton.CoordSet> LiveCells { get; set; }
+        public int? XMin { get; set; }
+        public int? YMin { get; set; }
+
+        public FileExtract()
+        {
+            LiveCells = null;
+            XMin = null;
+            YMin = null;
+        }
     }
 }
