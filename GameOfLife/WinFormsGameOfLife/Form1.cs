@@ -110,13 +110,13 @@ namespace WinFormsGameOfLife
 
                     // This line controls how we go from raw data from file to a list of live coordinates
                     //InitLiveCells = GetInitLiveCellListFromExternalFile(fileData);
-                    InitLiveCells = FileReader.ReadFile(fileData.)
+                    FileReader.FileExtract fe = FileReader.ReadFile(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
 
                     SuspendLayout();
-                    importHorizUpDown.Minimum = xMin;
-                    importHorizUpDown.Value = xMin;
-                    importVertUpDown.Minimum = yMin;
-                    importVertUpDown.Value = yMin;
+                    importHorizUpDown.Minimum = fe.XMin;
+                    importHorizUpDown.Value = fe.XMin;
+                    importVertUpDown.Minimum = fe.YMin;
+                    importVertUpDown.Value = fe.YMin;
                     importHorizUpDown.Enabled = true;
                     importHorizLabel.Enabled = true;
                     importVertUpDown.Enabled = true;
