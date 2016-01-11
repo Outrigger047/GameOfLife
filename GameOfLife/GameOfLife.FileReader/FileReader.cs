@@ -232,6 +232,19 @@ namespace GameOfLife
             }
         }
 
+        public class FileExtract
+        {
+            public List<Automaton.CoordSet> LiveCells { get; private set; }
+            public int XMin, YMin;
+
+            public FileExtract(List<Automaton.CoordSet> liveCells, int xMin, int yMin)
+            {
+                LiveCells = liveCells;
+                XMin = xMin;
+                YMin = yMin;
+            }
+        }
+
         #endregion
     }
 }
