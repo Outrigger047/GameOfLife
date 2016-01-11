@@ -67,11 +67,11 @@ namespace GameOfLife
 
         #region Public methods
 
-        public static FileExtract ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode)
+        public static FileExtract ReadFile(List<string> data, CoordExtractionOffsetModes offsetMode)
         {
             FileExtract fe;
             List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
-            Flags options = new Flags(DetermineEncoding(ref data), offsetMode);
+            Flags options = new Flags(DetermineEncoding(data), offsetMode);
 
             string coordLineMatchPattern;
             CoordLineMatchByFileType.TryGetValue(options.EncodingType, out coordLineMatchPattern);
@@ -164,11 +164,11 @@ namespace GameOfLife
         /// </summary>
         /// <param name="data">Reference to file data</param>
         /// <returns>Type of encoding</returns>
-        private static EncodingTypes DetermineEncoding(ref string[] data)
+        private static EncodingTypes DetermineEncoding(List<string> data)
         {
             foreach (var headerPattern in HeaderLookup)
             {
-                if (Regex.Match(data[0], headerPattern.Key).Success)
+                if (Regex.Match(data.First(), headerPattern.Key).Success)
                 {
                     return headerPattern.Value;
                 }

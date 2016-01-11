@@ -85,7 +85,7 @@ namespace WinFormsGameOfLife
         private void importDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Stream s = null;
-            HashSet<string> fileData = new HashSet<string>();
+            List<string> fileData = new List<string>();
             try
             {
                 if ((s = importDialog.OpenFile()) != null)
