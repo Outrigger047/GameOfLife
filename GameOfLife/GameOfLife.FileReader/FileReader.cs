@@ -67,8 +67,9 @@ namespace GameOfLife
 
         #region Public methods
 
-        public static List<Automaton.CoordSet> ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode)
+        public static FileExtract ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode)
         {
+            FileExtract fe;
             List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
             Flags options = new Flags(DetermineEncoding(ref data), offsetMode);
 
@@ -113,6 +114,8 @@ namespace GameOfLife
                 {
                     liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + xMin, tempCoord[1] + yMin));
                 }
+
+                fe = new FileExtract(liveCellsFromFile, xMin, yMin);
             }
             else if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
             {
@@ -130,9 +133,15 @@ namespace GameOfLife
                         liveCellsFromFile.Add(new Automaton.CoordSet(Convert.ToInt32(xCoord), Convert.ToInt32(yCoord)));
                     }
                 }
+
+                fe = new FileExtract(liveCellsFromFile);
             }
-            
-            return liveCellsFromFile;
+            else
+            {
+                fe = new FileExtract();
+            }
+
+            return fe;
         }
 
         /*
@@ -168,12 +177,12 @@ namespace GameOfLife
         } 
 
         /// <summary>
-        /// Extracts a valid set of coordinates from a line of encoded text
+        /// DEPRECATED: Extracts a valid set of coordinates from a line of encoded text
         /// </summary>
         /// <param name="encodedText">Text to search</param>
         /// <param name="fileType">File type of text</param>
         /// <returns>CoordSet object with any valid coordinates</returns>
-        private static Automaton.CoordSet ExtractCoordinates(Match currentMatch, string pattern, Flags options)
+        private static Automaton.CoordSet _ExtractCoordinates(Match currentMatch, string pattern, Flags options)
         {
             string[] coordinateMatches = new string[2];
 
@@ -235,13 +244,28 @@ namespace GameOfLife
         public class FileExtract
         {
             public List<Automaton.CoordSet> LiveCells { get; private set; }
-            public int XMin, YMin;
+            public int? XMin { get; private set; }
+            public int? YMin { get; private set; }
 
             public FileExtract(List<Automaton.CoordSet> liveCells, int xMin, int yMin)
             {
                 LiveCells = liveCells;
                 XMin = xMin;
                 YMin = yMin;
+            }
+
+            public FileExtract(List<Automaton.CoordSet> liveCells)
+            {
+                LiveCells = liveCells;
+                XMin = null;
+                YMin = null;
+            }
+
+            public FileExtract()
+            {
+                LiveCells = null;
+                XMin = null;
+                YMin = null;
             }
         }
 
