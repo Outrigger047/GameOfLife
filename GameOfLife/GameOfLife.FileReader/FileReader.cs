@@ -17,34 +17,9 @@ namespace GameOfLife
         private List<string> data;
         private Flags options;
 
-        private Dictionary<string, EncodingTypes> headerLookup =
-            new Dictionary<string, EncodingTypes>()
-        {
-            { @"\#Life 1.06", EncodingTypes.Life106 },
-            { @"\#Life 1.05", EncodingTypes.Life105 },
-            { null, EncodingTypes.MCell },
-            { @"^\!Name\: [A-Za-z ]+$", EncodingTypes.Plaintext },
-            { @"^x = [0-9]+, y = [0-9]+$", EncodingTypes.RLE }, // TODO RLE header is more complex...
-            { null, EncodingTypes.SOF },
-            { @"#MyCommaSeparatedFormat", EncodingTypes.MyCommaFormat }
-        };
-
-        private Dictionary<EncodingTypes, string> coordLineMatchByFileType =
-            
-        
-            { EncodingTypes.Life106, @"^\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
-            { EncodingTypes.Life105, @"^#P\s+\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
-            { EncodingTypes.Plaintext, @"" },
-            { EncodingTypes.MyCommaFormat, @"^[0-9]+\,[0-9]+$" };
-
-        private Dictionary<EncodingTypes, string> coordSetMatchByFileType =
-            new Dictionary<EncodingTypes, string>()
-        {
-            { EncodingTypes.Life106, @"\-{0,1}[0-9]+" },
-            { EncodingTypes.Life105, @"\-{0,1}[0-9]+" },
-            { EncodingTypes.Plaintext, @"" },
-            { EncodingTypes.MyCommaFormat, @"\-{0,1}[0-9]+" }
-        };
+        private Dictionary<string, EncodingTypes> headerLookup = new Dictionary<string, EncodingTypes>();
+        private Dictionary<EncodingTypes, string> coordLineMatchByFileType = new Dictionary<EncodingTypes, string>();
+        private Dictionary<EncodingTypes, string> coordSetMatchByFileType = new Dictionary<EncodingTypes, string>();
 
         #endregion
 
@@ -77,6 +52,26 @@ namespace GameOfLife
 
         public FileReader(List<string> data, CoordExtractionOffsetModes offsetMode)
         {
+            // Dictionaries
+            headerLookup.Add(@"\#Life 1.06", EncodingTypes.Life106);
+            headerLookup.Add(@"\#Life 1.05", EncodingTypes.Life105);
+            headerLookup.Add(@"\#Life 1.05", EncodingTypes.Life105);
+            headerLookup.Add(@"^\!Name\: [A-Za-z ]+$", EncodingTypes.Plaintext);
+            headerLookup.Add(@"^x = [0-9]+, y = [0-9]+$", EncodingTypes.RLE);
+            headerLookup.Add(@"", EncodingTypes.SOF);
+            headerLookup.Add(@"#MyCommaSeparatedFormat", EncodingTypes.MyCommaFormat);
+
+            coordLineMatchByFileType.Add(EncodingTypes.Life106, @"^\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$");
+            coordLineMatchByFileType.Add(EncodingTypes.Life105, @"^#P\s+\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$");
+            coordLineMatchByFileType.Add(EncodingTypes.Plaintext, @"");
+            coordLineMatchByFileType.Add(EncodingTypes.MyCommaFormat, @"^[0-9]+\,[0-9]+$");
+
+            coordSetMatchByFileType.Add(EncodingTypes.Life106, @"\-{0,1}[0-9]+");
+            coordSetMatchByFileType.Add(EncodingTypes.Life105, @"\-{0,1}[0-9]+");
+            coordSetMatchByFileType.Add(EncodingTypes.Plaintext, @"");
+            coordSetMatchByFileType.Add(EncodingTypes.MyCommaFormat, @"\-{0,1}[0-9]+");
+
+            // Everything else
             this.data = data;
             options = new Flags(DetermineEncoding(this.data), offsetMode);
             Extract = new FileExtract();
