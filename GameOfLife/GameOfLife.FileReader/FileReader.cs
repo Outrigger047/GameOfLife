@@ -10,12 +10,15 @@ namespace GameOfLife
     /// <summary>
     /// Helper class to translate file data containing initial setups and cell configurations
     /// </summary>
-    public static class FileReader
+    public class FileReader
     {
         #region Fields
 
-        private static Dictionary<string, EncodingTypes> HeaderLookup =
-            new Dictionary<string, EncodingTypes>
+        private List<string> data;
+        private Flags options;
+
+        private Dictionary<string, EncodingTypes> headerLookup =
+            new Dictionary<string, EncodingTypes>()
         {
             { @"\#Life 1.06", EncodingTypes.Life106 },
             { @"\#Life 1.05", EncodingTypes.Life105 },
@@ -26,23 +29,28 @@ namespace GameOfLife
             { @"#MyCommaSeparatedFormat", EncodingTypes.MyCommaFormat }
         };
 
-        private static Dictionary<EncodingTypes, string> CoordLineMatchByFileType = 
-            new Dictionary<EncodingTypes, string>
-        {
+        private Dictionary<EncodingTypes, string> coordLineMatchByFileType =
+            
+        
             { EncodingTypes.Life106, @"^\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
             { EncodingTypes.Life105, @"^#P\s+\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$" },
             { EncodingTypes.Plaintext, @"" },
-            { EncodingTypes.MyCommaFormat, @"^[0-9]+\,[0-9]+$" }
-        };
+            { EncodingTypes.MyCommaFormat, @"^[0-9]+\,[0-9]+$" };
 
-        private static Dictionary<EncodingTypes, string> CoordSetMatchByFileType =
-            new Dictionary<EncodingTypes, string>
+        private Dictionary<EncodingTypes, string> coordSetMatchByFileType =
+            new Dictionary<EncodingTypes, string>()
         {
             { EncodingTypes.Life106, @"\-{0,1}[0-9]+" },
             { EncodingTypes.Life105, @"\-{0,1}[0-9]+" },
             { EncodingTypes.Plaintext, @"" },
             { EncodingTypes.MyCommaFormat, @"\-{0,1}[0-9]+" }
         };
+
+        #endregion
+
+        #region Properties
+
+        public FileExtract Extract { get; private set; }
 
         #endregion
 
@@ -65,18 +73,29 @@ namespace GameOfLife
 
         #endregion
 
+        #region Constructor
+
+        public FileReader(List<string> data, CoordExtractionOffsetModes offsetMode)
+        {
+            this.data = data;
+            options = new Flags(DetermineEncoding(this.data), offsetMode);
+            Extract = new FileExtract();
+
+            ReadFile();
+        }
+
+        #endregion
+
         #region Public methods
 
-        public static FileExtract ReadFile(List<string> data, CoordExtractionOffsetModes offsetMode)
+        private FileExtract ReadFile()
         {
-            FileExtract fe = new FileExtract();
             List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
-            Flags options = new Flags(DetermineEncoding(data), offsetMode);
 
             string coordLineMatchPattern;
-            CoordLineMatchByFileType.TryGetValue(options.EncodingType, out coordLineMatchPattern);
+            coordLineMatchByFileType.TryGetValue(options.EncodingType, out coordLineMatchPattern);
             string coordSetMatchPattern;
-            CoordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetMatchPattern);
+            coordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetMatchPattern);
 
             if (options.OffsetMode == CoordExtractionOffsetModes.ScaleToZero)
             {
@@ -116,9 +135,9 @@ namespace GameOfLife
                 }
 
                 //fe = new FileExtract(liveCellsFromFile, xMin, yMin);
-                fe.LiveCells = liveCellsFromFile;
-                fe.XMin = xMin;
-                fe.YMin = yMin;
+                Extract.LiveCells = liveCellsFromFile;
+                Extract.XMin = xMin;
+                Extract.YMin = yMin;
             }
             else if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
             {
@@ -138,7 +157,7 @@ namespace GameOfLife
                 }
 
                 //fe = new FileExtract(liveCellsFromFile);
-                fe.LiveCells = liveCellsFromFile;
+                Extract.LiveCells = liveCellsFromFile;
             }
             /*
             else
@@ -146,8 +165,8 @@ namespace GameOfLife
                 fe = new FileExtract();
             }
             */
+            return Extract;
 
-            return fe;
         }
 
         /*
@@ -170,9 +189,9 @@ namespace GameOfLife
         /// </summary>
         /// <param name="data">Reference to file data</param>
         /// <returns>Type of encoding</returns>
-        private static EncodingTypes DetermineEncoding(List<string> data)
+        private EncodingTypes DetermineEncoding(List<string> data)
         {
-            foreach (var headerPattern in HeaderLookup)
+            foreach (var headerPattern in headerLookup)
             {
                 if (Regex.Match(data.First(), headerPattern.Key).Success)
                 {
@@ -180,7 +199,7 @@ namespace GameOfLife
                 }
             }
             return EncodingTypes.UnknownOrInvalid;
-        } 
+        }
 
         /// <summary>
         /// DEPRECATED: Extracts a valid set of coordinates from a line of encoded text
@@ -188,7 +207,7 @@ namespace GameOfLife
         /// <param name="encodedText">Text to search</param>
         /// <param name="fileType">File type of text</param>
         /// <returns>CoordSet object with any valid coordinates</returns>
-        private static Automaton.CoordSet _ExtractCoordinates(Match currentMatch, string pattern, Flags options)
+        private Automaton.CoordSet _ExtractCoordinates(Match currentMatch, string pattern, Flags options)
         {
             string[] coordinateMatches = new string[2];
 
@@ -198,7 +217,7 @@ namespace GameOfLife
                     break;
                 case EncodingTypes.Life106:
                     string coordSetPattern;
-                    CoordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetPattern);
+                    coordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetPattern);
                     Regex.Matches(currentMatch.Value, coordSetPattern).CopyTo(coordinateMatches, 0);
                     break;
                 case EncodingTypes.Life105:
@@ -247,20 +266,20 @@ namespace GameOfLife
             }
         }
 
-        #endregion
-    }
-
-    public class FileExtract
-    {
-        public List<Automaton.CoordSet> LiveCells { get; set; }
-        public int? XMin { get; set; }
-        public int? YMin { get; set; }
-
-        public FileExtract()
+        public class FileExtract
         {
-            LiveCells = null;
-            XMin = null;
-            YMin = null;
+            public List<Automaton.CoordSet> LiveCells { get; set; }
+            public int? XMin { get; set; }
+            public int? YMin { get; set; }
+
+            public FileExtract()
+            {
+                LiveCells = null;
+                XMin = null;
+                YMin = null;
+            }
         }
+
+        #endregion
     }
 }

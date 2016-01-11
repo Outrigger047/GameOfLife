@@ -110,7 +110,9 @@ namespace WinFormsGameOfLife
 
                     // This line controls how we go from raw data from file to a list of live coordinates
                     //InitLiveCells = GetInitLiveCellListFromExternalFile(fileData);
-                    FileExtract fe = FileReader.ReadFile(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
+                    FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
+                    FileReader.FileExtract fe = fr.Extract;
+                    
                     InitLiveCells = fe.LiveCells;
 
                     SuspendLayout();
