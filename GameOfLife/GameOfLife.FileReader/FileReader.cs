@@ -158,6 +158,10 @@ namespace GameOfLife
             }
             else if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
             {
+                List<int> allX = new List<int>();
+                List<int> allY = new List<int>();
+                int xMin, yMin;
+
                 foreach (var line in data)
                 {
                     if (Regex.IsMatch(line, coordLineMatchPattern))
@@ -169,12 +173,22 @@ namespace GameOfLife
                         string xCoord = currentCoords[0];
                         string yCoord = currentCoords[1];
 
+                        allX.Add(Convert.ToInt32(xCoord));
+                        allY.Add(Convert.ToInt32(yCoord));
+
                         liveCellsFromFile.Add(new Automaton.CoordSet(Convert.ToInt32(xCoord), Convert.ToInt32(yCoord)));
                     }
                 }
 
+                allX.Sort();
+                allY.Sort();
+                xMin = Enumerable.Last(allX) + 1;
+                yMin = Enumerable.Last(allY) + 1;
+
                 //fe = new FileExtract(liveCellsFromFile);
                 Extract.LiveCells = liveCellsFromFile;
+                Extract.XMin = xMin;
+                Extract.YMin = yMin;
             }
             /*
             else
