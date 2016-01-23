@@ -55,10 +55,9 @@ namespace GameOfLife
             // Dictionaries
             headerLookup.Add(@"\#Life 1.06", EncodingTypes.Life106);
             headerLookup.Add(@"\#Life 1.05", EncodingTypes.Life105);
-            headerLookup.Add(@"\#Life 1.05", EncodingTypes.Life105);
             headerLookup.Add(@"^\!Name\: [A-Za-z ]+$", EncodingTypes.Plaintext);
             headerLookup.Add(@"^x = [0-9]+, y = [0-9]+$", EncodingTypes.RLE);
-            headerLookup.Add(@"", EncodingTypes.SOF);
+            //headerLookup.Add(@"", EncodingTypes.SOF);
             headerLookup.Add(@"#MyCommaSeparatedFormat", EncodingTypes.MyCommaFormat);
 
             coordLineMatchByFileType.Add(EncodingTypes.Life106, @"^\-{0,1}[0-9]+\s+\-{0,1}[0-9]+$");
