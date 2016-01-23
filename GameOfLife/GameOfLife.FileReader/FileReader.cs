@@ -68,7 +68,7 @@ namespace GameOfLife
             coordSetMatchByFileType.Add(EncodingTypes.Life106, @"\-{0,1}[0-9]+");
             coordSetMatchByFileType.Add(EncodingTypes.Life105, @"\-{0,1}[0-9]+");
             coordSetMatchByFileType.Add(EncodingTypes.Plaintext, @"");
-            coordSetMatchByFileType.Add(EncodingTypes.MyCommaFormat, @"\-{0,1}[0-9]+");
+            coordSetMatchByFileType.Add(EncodingTypes.MyCommaFormat, @"[0-9]+");
 
             // Everything else
             this.data = data;
@@ -95,7 +95,7 @@ namespace GameOfLife
             {
                 if (options.EncodingType == EncodingTypes.UnknownOrInvalid)
                 {
-                    throw new Exception("File encoding type is unknown or invalid");
+                    throw new Exception("File encoding type is unknown or invalid.");
                 }
             }
 

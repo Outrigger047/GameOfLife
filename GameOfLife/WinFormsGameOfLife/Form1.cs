@@ -14,6 +14,7 @@ namespace WinFormsGameOfLife
         private string ImportedFileName;
         private int xMin, yMin;
         private readonly Regex extDataFileValidLinePattern = new Regex(@"^[0-9]+\s*\,\s*[0-9]+$");
+        private readonly Regex extDataFileValidHeaderPattern = new Regex(@"^#.*$+");
         private readonly Regex extDataFileXCoord = new Regex(@"^[0-9]+");
         private readonly Regex extDataFileYCoord = new Regex(@"[0-9]+$");
         #endregion
@@ -95,7 +96,7 @@ namespace WinFormsGameOfLife
                         while (!sr.EndOfStream)
                         {
                             string currentLine = sr.ReadLine();
-                            if (!Regex.IsMatch(currentLine, extDataFileValidLinePattern.ToString()))
+                            if (!Regex.IsMatch(currentLine, extDataFileValidLinePattern.ToString()) && !Regex.IsMatch(currentLine, extDataFileValidHeaderPattern.ToString()))
                             {
                                 throw new Exception("File contains lines that do not match requirements.");
                             }
