@@ -109,8 +109,8 @@ namespace WinFormsGameOfLife
 
                     ImportedFileName = Path.GetFileName(importDialog.FileName);
 
-                    //FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
-                    FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.RelativeToOrigin);
+                    FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
+                    //FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.RelativeToOrigin);
 
                     InitLiveCells = fr.Extract.LiveCells;
 
