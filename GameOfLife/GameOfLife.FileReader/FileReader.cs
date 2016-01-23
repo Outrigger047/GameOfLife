@@ -133,7 +133,22 @@ namespace GameOfLife
 
                 foreach (var tempCoord in tempPreShiftCells)
                 {
-                    liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + xMin, tempCoord[1] + yMin));
+                    if (xMin < 0 && yMin < 0)
+                    {
+                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + xMin, tempCoord[1] + yMin));
+                    }
+                    else if (xMin < 0)
+                    {
+                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + xMin, tempCoord[1]));
+                    }
+                    else if (yMin < 0)
+                    {
+                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0], tempCoord[1] + yMin));
+                    }
+                    else
+                    {
+                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0], tempCoord[1]));
+                    }
                 }
 
                 //fe = new FileExtract(liveCellsFromFile, xMin, yMin);
