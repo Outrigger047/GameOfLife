@@ -140,6 +140,13 @@ namespace WinFormsGameOfLife
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+                else if (ex.Message.Contains("unknown or invalid"))
+                {
+                    MessageBox.Show(ex.Message,
+                        "File Import Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
                 else
                 {
                     throw; 

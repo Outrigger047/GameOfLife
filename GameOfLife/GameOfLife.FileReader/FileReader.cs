@@ -91,6 +91,14 @@ namespace GameOfLife
             string coordSetMatchPattern;
             coordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetMatchPattern);
 
+            if (coordLineMatchPattern == null | coordSetMatchPattern == null)
+            {
+                if (options.EncodingType == EncodingTypes.UnknownOrInvalid)
+                {
+                    throw new Exception("File encoding type is unknown or invalid");
+                }
+            }
+
             if (options.OffsetMode == CoordExtractionOffsetModes.ScaleToZero)
             {
                 List<int> allX = new List<int>();
