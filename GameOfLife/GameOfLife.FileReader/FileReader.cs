@@ -128,22 +128,22 @@ namespace GameOfLife
 
                 allX.Sort();
                 allY.Sort();
-                xMin = Enumerable.First(allX) + 1;
-                yMin = Enumerable.First(allY) + 1;
+                xMin = Enumerable.First(allX);
+                yMin = Enumerable.First(allY);
 
                 foreach (var tempCoord in tempPreShiftCells)
                 {
                     if (xMin < 0 && yMin < 0)
                     {
-                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + xMin, tempCoord[1] + yMin));
+                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + Math.Abs(xMin), tempCoord[1] + Math.Abs(yMin)));
                     }
                     else if (xMin < 0)
                     {
-                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + xMin, tempCoord[1]));
+                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + Math.Abs(xMin), tempCoord[1]));
                     }
                     else if (yMin < 0)
                     {
-                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0], tempCoord[1] + yMin));
+                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0], tempCoord[1] + Math.Abs(yMin)));
                     }
                     else
                     {
@@ -153,8 +153,8 @@ namespace GameOfLife
 
                 //fe = new FileExtract(liveCellsFromFile, xMin, yMin);
                 Extract.LiveCells = liveCellsFromFile;
-                Extract.XMin = xMin;
-                Extract.YMin = yMin;
+                Extract.XMin = Math.Abs(xMin);
+                Extract.YMin = Math.Abs(yMin);
             }
             else if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
             {

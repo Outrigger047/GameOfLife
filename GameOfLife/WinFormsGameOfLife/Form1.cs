@@ -118,10 +118,10 @@ namespace WinFormsGameOfLife
                     InitLiveCells = fr.Extract.LiveCells;
 
                     SuspendLayout();
-                    importHorizUpDown.Minimum = (decimal) fr.Extract.XMin;
-                    importHorizUpDown.Value = (decimal) fr.Extract.XMin;
-                    importVertUpDown.Minimum = (decimal) fr.Extract.YMin;
-                    importVertUpDown.Value = (decimal) fr.Extract.YMin;
+                    importHorizUpDown.Minimum = (decimal) fr.Extract.XMin + 1;
+                    importHorizUpDown.Value = (decimal) fr.Extract.XMin + 1;
+                    importVertUpDown.Minimum = (decimal) fr.Extract.YMin + 1;
+                    importVertUpDown.Value = (decimal) fr.Extract.YMin + 1;
                     importHorizUpDown.Enabled = true;
                     importHorizLabel.Enabled = true;
                     importVertUpDown.Enabled = true;
