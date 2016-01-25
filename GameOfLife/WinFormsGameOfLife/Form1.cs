@@ -96,6 +96,7 @@ namespace WinFormsGameOfLife
                         while (!sr.EndOfStream)
                         {
                             string currentLine = sr.ReadLine();
+                            /*
                             if (!Regex.IsMatch(currentLine, extDataFileValidLinePattern.ToString()) && !Regex.IsMatch(currentLine, extDataFileValidHeaderPattern.ToString()))
                             {
                                 throw new Exception("File contains lines that do not match requirements.");
@@ -104,6 +105,8 @@ namespace WinFormsGameOfLife
                             {
                                 fileData.Add(currentLine);
                             }
+                            */
+                            fileData.Add(currentLine);
                         }
                     }
 

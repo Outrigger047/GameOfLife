@@ -128,8 +128,8 @@ namespace GameOfLife
 
                 allX.Sort();
                 allY.Sort();
-                xMin = Enumerable.Last(allX) + 1;
-                yMin = Enumerable.Last(allY) + 1;
+                xMin = Enumerable.First(allX) + 1;
+                yMin = Enumerable.First(allY) + 1;
 
                 foreach (var tempCoord in tempPreShiftCells)
                 {
