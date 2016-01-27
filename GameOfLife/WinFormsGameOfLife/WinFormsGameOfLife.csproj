@@ -106,693 +106,2067 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Assets\ManualOffset.xlsx" />
-    <None Include="Assets\Patterns\101_106.lif" />
-    <None Include="Assets\Patterns\104p177_106.lif" />
-    <None Include="Assets\Patterns\10enginecordership_106.lif" />
-    <None Include="Assets\Patterns\112p51_106.lif" />
-    <None Include="Assets\Patterns\114p6h1v0_106.lif" />
-    <None Include="Assets\Patterns\117p18_106.lif" />
-    <None Include="Assets\Patterns\117p9h3v0_106.lif" />
-    <None Include="Assets\Patterns\119p4h1v0_106.lif" />
-    <None Include="Assets\Patterns\1234_106.lif" />
-    <None Include="Assets\Patterns\123p271_106.lif" />
-    <None Include="Assets\Patterns\123_106.lif" />
-    <None Include="Assets\Patterns\124p21_106.lif" />
-    <None Include="Assets\Patterns\124p37_106.lif" />
-    <None Include="Assets\Patterns\132p37_106.lif" />
-    <None Include="Assets\Patterns\134p25_106.lif" />
-    <None Include="Assets\Patterns\134p39.1_106.lif" />
-    <None Include="Assets\Patterns\13enginecordership_106.lif" />
-    <None Include="Assets\Patterns\144p24_106.lif" />
-    <None Include="Assets\Patterns\145p20_106.lif" />
-    <None Include="Assets\Patterns\160p10h2v0_106.lif" />
-    <None Include="Assets\Patterns\168p22.1_106.lif" />
-    <None Include="Assets\Patterns\17c45reaction_106.lif" />
-    <None Include="Assets\Patterns\186p24_106.lif" />
-    <None Include="Assets\Patterns\18p2.471_106.lif" />
-    <None Include="Assets\Patterns\1beacon_106.lif" />
-    <None Include="Assets\Patterns\20p2_106.lif" />
-    <None Include="Assets\Patterns\21p2_106.lif" />
-    <None Include="Assets\Patterns\22p2_106.lif" />
-    <None Include="Assets\Patterns\22p36_106.lif" />
-    <None Include="Assets\Patterns\23334m_106.lif" />
-    <None Include="Assets\Patterns\233p3h1v0_106.lif" />
-    <None Include="Assets\Patterns\23p2_106.lif" />
-    <None Include="Assets\Patterns\24p10_106.lif" />
-    <None Include="Assets\Patterns\24p2_106.lif" />
-    <None Include="Assets\Patterns\258p3onachimsp11_106.lif" />
-    <None Include="Assets\Patterns\258p3_106.lif" />
-    <None Include="Assets\Patterns\25p3h1v0.2_106.lif" />
-    <None Include="Assets\Patterns\26p2_106.lif" />
-    <None Include="Assets\Patterns\26p40_106.lif" />
-    <None Include="Assets\Patterns\274p6h1v0_106.lif" />
-    <None Include="Assets\Patterns\28p7.2_106.lif" />
-    <None Include="Assets\Patterns\28p71_106.lif" />
-    <None Include="Assets\Patterns\295p5h1v1_106.lif" />
-    <None Include="Assets\Patterns\29p9_106.lif" />
-    <None Include="Assets\Patterns\2fumaroles_106.lif" />
-    <None Include="Assets\Patterns\30p5h2v0_106.lif" />
-    <None Include="Assets\Patterns\34p13_106.lif" />
-    <None Include="Assets\Patterns\35p52_106.lif" />
-    <None Include="Assets\Patterns\36p22_106.lif" />
-    <None Include="Assets\Patterns\37p10.1_106.lif" />
-    <None Include="Assets\Patterns\37p7.1_106.lif" />
-    <None Include="Assets\Patterns\38p111_106.lif" />
-    <None Include="Assets\Patterns\38p7.2_106.lif" />
-    <None Include="Assets\Patterns\3enginecordershipgun_106.lif" />
-    <None Include="Assets\Patterns\3enginecordershiprake_106.lif" />
-    <None Include="Assets\Patterns\3enginecordership_106.lif" />
-    <None Include="Assets\Patterns\400p49_106.lif" />
-    <None Include="Assets\Patterns\41p7.2_106.lif" />
-    <None Include="Assets\Patterns\42p101_106.lif" />
-    <None Include="Assets\Patterns\43p18_106.lif" />
-    <None Include="Assets\Patterns\440p49.1_106.lif" />
-    <None Include="Assets\Patterns\44p5h2v0_106.lif" />
-    <None Include="Assets\Patterns\44p7.2_106.lif" />
-    <None Include="Assets\Patterns\46p22_106.lif" />
-    <None Include="Assets\Patterns\46p4h1v0_106.lif" />
-    <None Include="Assets\Patterns\47p72_106.lif" />
-    <None Include="Assets\Patterns\4812diamond_106.lif" />
-    <None Include="Assets\Patterns\48p22_106.lif" />
-    <None Include="Assets\Patterns\48p31_106.lif" />
-    <None Include="Assets\Patterns\49p88_106.lif" />
-    <None Include="Assets\Patterns\4boats_106.lif" />
-    <None Include="Assets\Patterns\4enginecordershipb_106.lif" />
-    <None Include="Assets\Patterns\4enginecordership_106.lif" />
-    <None Include="Assets\Patterns\50p35_106.lif" />
-    <None Include="Assets\Patterns\54p171_106.lif" />
-    <None Include="Assets\Patterns\56p27_106.lif" />
-    <None Include="Assets\Patterns\56p6h1v0_106.lif" />
-    <None Include="Assets\Patterns\58p5h1v1_106.lif" />
-    <None Include="Assets\Patterns\5enginecordership_106.lif" />
-    <None Include="Assets\Patterns\60p3h1v0.3_106.lif" />
-    <None Include="Assets\Patterns\60p5h2v0_106.lif" />
-    <None Include="Assets\Patterns\64p2h1v0_106.lif" />
-    <None Include="Assets\Patterns\65p131_106.lif" />
-    <None Include="Assets\Patterns\67p5h1v1_106.lif" />
-    <None Include="Assets\Patterns\69p48_106.lif" />
-    <None Include="Assets\Patterns\6enginecordership_106.lif" />
-    <None Include="Assets\Patterns\70p5h2v0_106.lif" />
-    <None Include="Assets\Patterns\7468m_106.lif" />
-    <None Include="Assets\Patterns\77p6h1v1_106.lif" />
-    <None Include="Assets\Patterns\78p70_106.lif" />
-    <None Include="Assets\Patterns\7enginecordership_106.lif" />
-    <None Include="Assets\Patterns\7inarowcordership_106.lif" />
-    <None Include="Assets\Patterns\86p5h1v1_106.lif" />
-    <None Include="Assets\Patterns\88p28_106.lif" />
-    <None Include="Assets\Patterns\92p331_106.lif" />
-    <None Include="Assets\Patterns\94p271_106.lif" />
-    <None Include="Assets\Patterns\98p25_106.lif" />
-    <None Include="Assets\Patterns\achimsp11_106.lif" />
-    <None Include="Assets\Patterns\achimsp144_106.lif" />
-    <None Include="Assets\Patterns\achimsp16_106.lif" />
-    <None Include="Assets\Patterns\achimsp4_106.lif" />
-    <None Include="Assets\Patterns\achimsp8_106.lif" />
-    <None Include="Assets\Patterns\acorn_106.lif" />
-    <None Include="Assets\Patterns\aforall_106.lif" />
-    <None Include="Assets\Patterns\aircraftcarrier_106.lif" />
-    <None Include="Assets\Patterns\airforce_106.lif" />
-    <None Include="Assets\Patterns\ak47reaction_106.lif" />
-    <None Include="Assets\Patterns\almosymmetric_106.lif" />
-    <None Include="Assets\Patterns\ants_106.lif" />
-    <None Include="Assets\Patterns\anvil_106.lif" />
-    <None Include="Assets\Patterns\average_106.lif" />
-    <None Include="Assets\Patterns\b29_106.lif" />
-    <None Include="Assets\Patterns\b52bomber_106.lif" />
-    <None Include="Assets\Patterns\babblingbrook1_106.lif" />
-    <None Include="Assets\Patterns\backrake1_106.lif" />
-    <None Include="Assets\Patterns\backrake2_106.lif" />
-    <None Include="Assets\Patterns\backrake3_106.lif" />
-    <None Include="Assets\Patterns\bakersdozen_106.lif" />
-    <None Include="Assets\Patterns\bakery_106.lif" />
-    <None Include="Assets\Patterns\baker_106.lif" />
-    <None Include="Assets\Patterns\barge2spaceship_106.lif" />
-    <None Include="Assets\Patterns\bargespaceship_106.lif" />
-    <None Include="Assets\Patterns\barge_106.lif" />
-    <None Include="Assets\Patterns\beaconandtwotails_106.lif" />
-    <None Include="Assets\Patterns\beaconmaker_106.lif" />
-    <None Include="Assets\Patterns\beaconon38p11.1_106.lif" />
-    <None Include="Assets\Patterns\beacon_106.lif" />
-    <None Include="Assets\Patterns\beehat_106.lif" />
-    <None Include="Assets\Patterns\beehiveandcap_106.lif" />
-    <None Include="Assets\Patterns\beehiveanddock_106.lif" />
-    <None Include="Assets\Patterns\beehiveandlonghookeatingtub_106.lif" />
-    <None Include="Assets\Patterns\beehiveandtable_106.lif" />
-    <None Include="Assets\Patterns\beehiveatbeehive_106.lif" />
-    <None Include="Assets\Patterns\beehiveatloaf_106.lif" />
-    <None Include="Assets\Patterns\beehivebendtail_106.lif" />
-    <None Include="Assets\Patterns\beehivefuse_106.lif" />
-    <None Include="Assets\Patterns\beehivewithnine_106.lif" />
-    <None Include="Assets\Patterns\beehivewithtail_106.lif" />
-    <None Include="Assets\Patterns\beehive_106.lif" />
-    <None Include="Assets\Patterns\bentkeys_106.lif" />
-    <None Include="Assets\Patterns\bheptomino_106.lif" />
-    <None Include="Assets\Patterns\biblock_106.lif" />
-    <None Include="Assets\Patterns\bicap_106.lif" />
-    <None Include="Assets\Patterns\biclock_106.lif" />
-    <None Include="Assets\Patterns\bigglider_106.lif" />
-    <None Include="Assets\Patterns\bigs_106.lif" />
-    <None Include="Assets\Patterns\bigun_106.lif" />
-    <None Include="Assets\Patterns\biloaf1_106.lif" />
-    <None Include="Assets\Patterns\biloaf2_106.lif" />
-    <None Include="Assets\Patterns\biloaf3_106.lif" />
-    <None Include="Assets\Patterns\bipolebridgepseudobarberpole_106.lif" />
-    <None Include="Assets\Patterns\bipole_106.lif" />
-    <None Include="Assets\Patterns\bipond_106.lif" />
-    <None Include="Assets\Patterns\bistableswitch_106.lif" />
-    <None Include="Assets\Patterns\bitingoffmorethantheycanchew_106.lif" />
-    <None Include="Assets\Patterns\blinkerfuse_106.lif" />
-    <None Include="Assets\Patterns\blinkerpuffer1_106.lif" />
-    <None Include="Assets\Patterns\blinkerpuffer2_106.lif" />
-    <None Include="Assets\Patterns\blinkersbitpole_106.lif" />
-    <None Include="Assets\Patterns\blinkership1_106.lif" />
-    <None Include="Assets\Patterns\blinker_106.lif" />
-    <None Include="Assets\Patterns\blockade_106.lif" />
-    <None Include="Assets\Patterns\blockandcap_106.lif" />
-    <None Include="Assets\Patterns\blockanddock_106.lif" />
-    <None Include="Assets\Patterns\blockandglider_106.lif" />
-    <None Include="Assets\Patterns\blockandtwotails_106.lif" />
-    <None Include="Assets\Patterns\blockedp41_106.lif" />
-    <None Include="Assets\Patterns\blockedp42_106.lif" />
-    <None Include="Assets\Patterns\blockedp43_106.lif" />
-    <None Include="Assets\Patterns\blockedp4tnose_106.lif" />
-    <None Include="Assets\Patterns\blocker_106.lif" />
-    <None Include="Assets\Patterns\blocklayingswitchengine_106.lif" />
-    <None Include="Assets\Patterns\blockonboat_106.lif" />
-    <None Include="Assets\Patterns\blockontable_106.lif" />
-    <None Include="Assets\Patterns\blockstacker_106.lif" />
-    <None Include="Assets\Patterns\block_106.lif" />
-    <None Include="Assets\Patterns\blom_106.lif" />
-    <None Include="Assets\Patterns\boatmaker_106.lif" />
-    <None Include="Assets\Patterns\boatonquadpole_106.lif" />
-    <None Include="Assets\Patterns\boatonsparkcoil_106.lif" />
-    <None Include="Assets\Patterns\boatshiptie_106.lif" />
-    <None Include="Assets\Patterns\boatstretcher1_106.lif" />
-    <None Include="Assets\Patterns\boattie_106.lif" />
-    <None Include="Assets\Patterns\boatwithlongtail_106.lif" />
-    <None Include="Assets\Patterns\boat_106.lif" />
-    <None Include="Assets\Patterns\boojumreflector_106.lif" />
-    <None Include="Assets\Patterns\bookends_106.lif" />
-    <None Include="Assets\Patterns\bookend_106.lif" />
-    <None Include="Assets\Patterns\boss_106.lif" />
-    <None Include="Assets\Patterns\bottle_106.lif" />
-    <None Include="Assets\Patterns\brain_106.lif" />
-    <None Include="Assets\Patterns\breeder1_106.lif" />
-    <None Include="Assets\Patterns\bricklayer_106.lif" />
-    <None Include="Assets\Patterns\buckaroo_106.lif" />
-    <None Include="Assets\Patterns\bulletheptomino_106.lif" />
-    <None Include="Assets\Patterns\bunnies10_106.lif" />
-    <None Include="Assets\Patterns\bunnies11_106.lif" />
-    <None Include="Assets\Patterns\bunnies9_106.lif" />
-    <None Include="Assets\Patterns\bunnies_106.lif" />
-    <None Include="Assets\Patterns\bun_106.lif" />
-    <None Include="Assets\Patterns\burloaferimeter_106.lif" />
-    <None Include="Assets\Patterns\butterfly_106.lif" />
-    <None Include="Assets\Patterns\byflops_106.lif" />
-    <None Include="Assets\Patterns\cabertosser1_106.lif" />
-    <None Include="Assets\Patterns\canadagoose_106.lif" />
-    <None Include="Assets\Patterns\candelabra_106.lif" />
-    <None Include="Assets\Patterns\candlefrobra_106.lif" />
-    <None Include="Assets\Patterns\canoe_106.lif" />
-    <None Include="Assets\Patterns\cap_106.lif" />
-    <None Include="Assets\Patterns\carnivalshuttle_106.lif" />
-    <None Include="Assets\Patterns\carriersiamesecarrier_106.lif" />
-    <None Include="Assets\Patterns\carriersiamesesnake_106.lif" />
-    <None Include="Assets\Patterns\catacryst_106.lif" />
-    <None Include="Assets\Patterns\catereron34p13_106.lif" />
-    <None Include="Assets\Patterns\catereron36p22_106.lif" />
-    <None Include="Assets\Patterns\catereron44p7.2_106.lif" />
-    <None Include="Assets\Patterns\catereronfigureeight_106.lif" />
-    <None Include="Assets\Patterns\caterer_106.lif" />
-    <None Include="Assets\Patterns\cauldron_106.lif" />
-    <None Include="Assets\Patterns\centinal_106.lif" />
-    <None Include="Assets\Patterns\century_106.lif" />
-    <None Include="Assets\Patterns\champageglass_106.lif" />
-    <None Include="Assets\Patterns\champagneglass_106.lif" />
-    <None Include="Assets\Patterns\chemist_106.lif" />
-    <None Include="Assets\Patterns\cheptomino_106.lif" />
-    <None Include="Assets\Patterns\cheshirecat_106.lif" />
-    <None Include="Assets\Patterns\chickenwire_106.lif" />
-    <None Include="Assets\Patterns\cisbargewithtail_106.lif" />
-    <None Include="Assets\Patterns\cisbeaconandanvil_106.lif" />
-    <None Include="Assets\Patterns\cisbeaconandcap_106.lif" />
-    <None Include="Assets\Patterns\cisbeaconanddock_106.lif" />
-    <None Include="Assets\Patterns\cisbeaconandtable_106.lif" />
-    <None Include="Assets\Patterns\cisbeaconupandlonghook_106.lif" />
-    <None Include="Assets\Patterns\cisblockandlonghook_106.lif" />
-    <None Include="Assets\Patterns\cisboatanddock_106.lif" />
-    <None Include="Assets\Patterns\cisboatandlonghookeatingtub_106.lif" />
-    <None Include="Assets\Patterns\cisboatandtable_106.lif" />
-    <None Include="Assets\Patterns\cisboatwithtail_106.lif" />
-    <None Include="Assets\Patterns\cisfusewithtwotails_106.lif" />
-    <None Include="Assets\Patterns\cishookandrbee_106.lif" />
-    <None Include="Assets\Patterns\cishookwithtail_106.lif" />
-    <None Include="Assets\Patterns\cisloafwithtail_106.lif" />
-    <None Include="Assets\Patterns\cismirroredrbee_106.lif" />
-    <None Include="Assets\Patterns\cisrbeeandrloaf_106.lif" />
-    <None Include="Assets\Patterns\cisrotatedrbee_106.lif" />
-    <None Include="Assets\Patterns\cisshillelagh_106.lif" />
-    <None Include="Assets\Patterns\clawwithtail_106.lif" />
-    <None Include="Assets\Patterns\clock2_106.lif" />
-    <None Include="Assets\Patterns\clock_106.lif" />
-    <None Include="Assets\Patterns\coeship_106.lif" />
-    <None Include="Assets\Patterns\coesp8_106.lif" />
-    <None Include="Assets\Patterns\conduit1_106.lif" />
-    <None Include="Assets\Patterns\confusedeaters_106.lif" />
-    <None Include="Assets\Patterns\cordpuller_106.lif" />
-    <None Include="Assets\Patterns\cousins_106.lif" />
-    <None Include="Assets\Patterns\cover_106.lif" />
-    <None Include="Assets\Patterns\cow_106.lif" />
-    <None Include="Assets\Patterns\crab_106.lif" />
-    <None Include="Assets\Patterns\cross2_106.lif" />
-    <None Include="Assets\Patterns\cross_106.lif" />
-    <None Include="Assets\Patterns\crowd_106.lif" />
-    <None Include="Assets\Patterns\crown_106.lif" />
-    <None Include="Assets\Patterns\cuphook_106.lif" />
-    <None Include="Assets\Patterns\dart_106.lif" />
-    <None Include="Assets\Patterns\deadsparkcoil_106.lif" />
-    <None Include="Assets\Patterns\deepcell_106.lif" />
-    <None Include="Assets\Patterns\diamondring_106.lif" />
-    <None Include="Assets\Patterns\diehard_106.lif" />
-    <None Include="Assets\Patterns\dinnertable_106.lif" />
-    <None Include="Assets\Patterns\diuresis_106.lif" />
-    <None Include="Assets\Patterns\dock_106.lif" />
-    <None Include="Assets\Patterns\doublecaterer_106.lif" />
-    <None Include="Assets\Patterns\doubleewe_106.lif" />
-    <None Include="Assets\Patterns\doublex_106.lif" />
-    <None Include="Assets\Patterns\dragon_106.lif" />
-    <None Include="Assets\Patterns\eater1_106.lif" />
-    <None Include="Assets\Patterns\eater2_106.lif" />
-    <None Include="Assets\Patterns\eater3_106.lif" />
-    <None Include="Assets\Patterns\eater4_106.lif" />
-    <None Include="Assets\Patterns\eater5_106.lif" />
-    <None Include="Assets\Patterns\eaterblockfrob_106.lif" />
-    <None Include="Assets\Patterns\eateronboat_106.lif" />
-    <None Include="Assets\Patterns\eaterplug_106.lif" />
-    <None Include="Assets\Patterns\eatersiameseeater_106.lif" />
-    <None Include="Assets\Patterns\ecologist_106.lif" />
-    <None Include="Assets\Patterns\edgerepairspaceship1_106.lif" />
-    <None Include="Assets\Patterns\edgerepairspaceship2_106.lif" />
-    <None Include="Assets\Patterns\edna26_106.lif" />
-    <None Include="Assets\Patterns\edna_106.lif" />
-    <None Include="Assets\Patterns\electricfence_106.lif" />
-    <None Include="Assets\Patterns\elevener_106.lif" />
-    <None Include="Assets\Patterns\elevenloop_106.lif" />
-    <None Include="Assets\Patterns\elkiesp5_106.lif" />
-    <None Include="Assets\Patterns\ellisonp4hwemulatorhybrid_106.lif" />
-    <None Include="Assets\Patterns\ellisonp4hwemulator_106.lif" />
-    <None Include="Assets\Patterns\enretard_106.lif" />
-    <None Include="Assets\Patterns\enterprise_106.lif" />
-    <None Include="Assets\Patterns\eureka_106.lif" />
-    <None Include="Assets\Patterns\extraextralongsnake_106.lif" />
-    <None Include="Assets\Patterns\extralongsnake_106.lif" />
-    <None Include="Assets\Patterns\extremelyimpressive_106.lif" />
-    <None Include="Assets\Patterns\fastforwardforcefield_106.lif" />
-    <None Include="Assets\Patterns\fermatprimecalculator_106.lif" />
-    <None Include="Assets\Patterns\figureeighton36p22_106.lif" />
-    <None Include="Assets\Patterns\figureeightonpentadecathlon_106.lif" />
-    <None Include="Assets\Patterns\figureeight_106.lif" />
-    <None Include="Assets\Patterns\fleet_106.lif" />
-    <None Include="Assets\Patterns\fly_106.lif" />
-    <None Include="Assets\Patterns\foreandback_106.lif" />
-    <None Include="Assets\Patterns\fountain_106.lif" />
-    <None Include="Assets\Patterns\fourteener_106.lif" />
-    <None Include="Assets\Patterns\fox_106.lif" />
-    <None Include="Assets\Patterns\frenchkiss_106.lif" />
-    <None Include="Assets\Patterns\frogii_106.lif" />
-    <None Include="Assets\Patterns\fumaroleon34p13_106.lif" />
-    <None Include="Assets\Patterns\fumaroleonachimsp11_106.lif" />
-    <None Include="Assets\Patterns\fumarole_106.lif" />
-    <None Include="Assets\Patterns\gabrielsp138_106.lif" />
-    <None Include="Assets\Patterns\gardenofeden1_106.lif" />
-    <None Include="Assets\Patterns\gardenofeden2_106.lif" />
-    <None Include="Assets\Patterns\gardenofeden3_106.lif" />
-    <None Include="Assets\Patterns\gardenofeden4_106.lif" />
-    <None Include="Assets\Patterns\gardenofeden5_106.lif" />
-    <None Include="Assets\Patterns\germ_106.lif" />
-    <None Include="Assets\Patterns\glasses_106.lif" />
-    <None Include="Assets\Patterns\gliderloop_106.lif" />
-    <None Include="Assets\Patterns\gliderproducingswitchengine_106.lif" />
-    <None Include="Assets\Patterns\glidersbythedozen_106.lif" />
-    <None Include="Assets\Patterns\glider_106.lif" />
-    <None Include="Assets\Patterns\gosperglidergun_106.lif" />
-    <None Include="Assets\Patterns\gottsdots_106.lif" />
-    <None Include="Assets\Patterns\gourmet_106.lif" />
-    <None Include="Assets\Patterns\graycounter_106.lif" />
-    <None Include="Assets\Patterns\greatonoff_106.lif" />
-    <None Include="Assets\Patterns\griddleandbeehive_106.lif" />
-    <None Include="Assets\Patterns\griddleandblock_106.lif" />
-    <None Include="Assets\Patterns\griddleandboat_106.lif" />
-    <None Include="Assets\Patterns\grin_106.lif" />
-    <None Include="Assets\Patterns\gunstar2_106.lif" />
-    <None Include="Assets\Patterns\gunstar_106.lif" />
-    <None Include="Assets\Patterns\hacksaw_106.lif" />
-    <None Include="Assets\Patterns\halfmax_106.lif" />
-    <None Include="Assets\Patterns\hammerhead_106.lif" />
-    <None Include="Assets\Patterns\harbor_106.lif" />
-    <None Include="Assets\Patterns\harvester_106.lif" />
-    <None Include="Assets\Patterns\hat_106.lif" />
-    <None Include="Assets\Patterns\heart_106.lif" />
-    <None Include="Assets\Patterns\heavyweightemulator_106.lif" />
-    <None Include="Assets\Patterns\heavyweightvolcano_106.lif" />
-    <None Include="Assets\Patterns\hebdarole_106.lif" />
-    <None Include="Assets\Patterns\hectic_106.lif" />
-    <None Include="Assets\Patterns\heptapole_106.lif" />
-    <None Include="Assets\Patterns\herschelgrandparent_106.lif" />
-    <None Include="Assets\Patterns\herschelparent_106.lif" />
-    <None Include="Assets\Patterns\herschelreceiver_106.lif" />
-    <None Include="Assets\Patterns\herschel_106.lif" />
-    <None Include="Assets\Patterns\hertzoscillator_106.lif" />
-    <None Include="Assets\Patterns\hexapole_106.lif" />
-    <None Include="Assets\Patterns\hivemaker_106.lif" />
-    <None Include="Assets\Patterns\hivenudger2_106.lif" />
-    <None Include="Assets\Patterns\hivenudger_106.lif" />
-    <None Include="Assets\Patterns\honeycomb_106.lif" />
-    <None Include="Assets\Patterns\honeyfarm_106.lif" />
-    <None Include="Assets\Patterns\hooks_106.lif" />
-    <None Include="Assets\Patterns\hookwithtail_106.lif" />
-    <None Include="Assets\Patterns\house_106.lif" />
-    <None Include="Assets\Patterns\hustlerii_106.lif" />
-    <None Include="Assets\Patterns\hustler_106.lif" />
-    <None Include="Assets\Patterns\hwss_106.lif" />
-    <None Include="Assets\Patterns\infinitegliderhotel_106.lif" />
-    <None Include="Assets\Patterns\infinitelwsshotel_106.lif" />
-    <None Include="Assets\Patterns\integralsign_106.lif" />
-    <None Include="Assets\Patterns\integralwithhook_106.lif" />
-    <None Include="Assets\Patterns\integralwithtub_106.lif" />
-    <None Include="Assets\Patterns\interchange_106.lif" />
-    <None Include="Assets\Patterns\iwona_106.lif" />
-    <None Include="Assets\Patterns\jack_106.lif" />
-    <None Include="Assets\Patterns\jamon34p13.1_106.lif" />
-    <None Include="Assets\Patterns\jamon44p7.2_106.lif" />
-    <None Include="Assets\Patterns\jam_106.lif" />
-    <None Include="Assets\Patterns\jolson_106.lif" />
-    <None Include="Assets\Patterns\justyna_106.lif" />
-    <None Include="Assets\Patterns\karelsp15_106.lif" />
-    <None Include="Assets\Patterns\killercandlefrobras_106.lif" />
-    <None Include="Assets\Patterns\killertoads_106.lif" />
-    <None Include="Assets\Patterns\koksgalaxy_106.lif" />
-    <None Include="Assets\Patterns\lake2_106.lif" />
-    <None Include="Assets\Patterns\laputa_106.lif" />
-    <None Include="Assets\Patterns\lidka_106.lif" />
-    <None Include="Assets\Patterns\lightbulb_106.lif" />
-    <None Include="Assets\Patterns\lightspeedoscillator1_106.lif" />
-    <None Include="Assets\Patterns\lightspeedoscillator2_106.lif" />
-    <None Include="Assets\Patterns\lightspeedoscillator3_106.lif" />
-    <None Include="Assets\Patterns\lightweightemulator_106.lif" />
-    <None Include="Assets\Patterns\loadingdock_106.lif" />
-    <None Include="Assets\Patterns\loafsiamesebarge_106.lif" />
-    <None Include="Assets\Patterns\loafsiameseloaf_106.lif" />
-    <None Include="Assets\Patterns\loaf_106.lif" />
-    <None Include="Assets\Patterns\logt2growth_106.lif" />
-    <None Include="Assets\Patterns\longbarge_106.lif" />
-    <None Include="Assets\Patterns\longboat_106.lif" />
-    <None Include="Assets\Patterns\longcanoe_106.lif" />
-    <None Include="Assets\Patterns\longhookwithtail_106.lif" />
-    <None Include="Assets\Patterns\longhook_106.lif" />
-    <None Include="Assets\Patterns\longintegral_106.lif" />
-    <None Include="Assets\Patterns\longlongbarge_106.lif" />
-    <None Include="Assets\Patterns\longlongboat_106.lif" />
-    <None Include="Assets\Patterns\longlongcanoe_106.lif" />
-    <None Include="Assets\Patterns\longlonghookwithtail_106.lif" />
-    <None Include="Assets\Patterns\longlongshillelagh_106.lif" />
-    <None Include="Assets\Patterns\longlongship_106.lif" />
-    <None Include="Assets\Patterns\longlongsnake_106.lif" />
-    <None Include="Assets\Patterns\longshillelagh_106.lif" />
-    <None Include="Assets\Patterns\longship_106.lif" />
-    <None Include="Assets\Patterns\longsnake_106.lif" />
-    <None Include="Assets\Patterns\loop_106.lif" />
-    <None Include="Assets\Patterns\lwss_106.lif" />
-    <None Include="Assets\Patterns\mango_106.lif" />
-    <None Include="Assets\Patterns\mathematician_106.lif" />
-    <None Include="Assets\Patterns\max_106.lif" />
-    <None Include="Assets\Patterns\mazing_106.lif" />
-    <None Include="Assets\Patterns\mickeymouse_106.lif" />
-    <None Include="Assets\Patterns\middleweightemulator_106.lif" />
-    <None Include="Assets\Patterns\middleweightvolcano_106.lif" />
-    <None Include="Assets\Patterns\minipressurecooker_106.lif" />
-    <None Include="Assets\Patterns\mirage_106.lif" />
-    <None Include="Assets\Patterns\mirroreddock_106.lif" />
-    <None Include="Assets\Patterns\moldandlonghookeatingtub_106.lif" />
-    <None Include="Assets\Patterns\moldon36p22_106.lif" />
-    <None Include="Assets\Patterns\moldon41p7.2_106.lif" />
-    <None Include="Assets\Patterns\moldonfumarole_106.lif" />
-    <None Include="Assets\Patterns\moldonpentadecathlon_106.lif" />
-    <None Include="Assets\Patterns\mold_106.lif" />
-    <None Include="Assets\Patterns\monogram_106.lif" />
-    <None Include="Assets\Patterns\montana_106.lif" />
-    <None Include="Assets\Patterns\mooseantlers_106.lif" />
-    <None Include="Assets\Patterns\mosquito1_106.lif" />
-    <None Include="Assets\Patterns\mosquito2_106.lif" />
-    <None Include="Assets\Patterns\mosquito3_106.lif" />
-    <None Include="Assets\Patterns\mosquito4_106.lif" />
-    <None Include="Assets\Patterns\mosquito5_106.lif" />
-    <None Include="Assets\Patterns\movingsawtooth_106.lif" />
-    <None Include="Assets\Patterns\multuminparvo_106.lif" />
-    <None Include="Assets\Patterns\mutteringmoat1_106.lif" />
-    <None Include="Assets\Patterns\mwss_106.lif" />
-    <None Include="Assets\Patterns\negentropy_106.lif" />
-    <None Include="Assets\Patterns\newfive_106.lif" />
-    <None Include="Assets\Patterns\newgun1_106.lif" />
-    <None Include="Assets\Patterns\newgun2_106.lif" />
-    <None Include="Assets\Patterns\newshuttle_106.lif" />
-    <None Include="Assets\Patterns\noahsark_106.lif" />
-    <None Include="Assets\Patterns\nonmonotonicspaceship1_106.lif" />
-    <None Include="Assets\Patterns\octagon2on36p22_106.lif" />
-    <None Include="Assets\Patterns\octagon2_106.lif" />
-    <None Include="Assets\Patterns\oddkeys_106.lif" />
-    <None Include="Assets\Patterns\oddtesttubebaby_106.lif" />
-    <None Include="Assets\Patterns\onepergeneration_106.lif" />
-    <None Include="Assets\Patterns\orion2_106.lif" />
-    <None Include="Assets\Patterns\orion_106.lif" />
-    <None Include="Assets\Patterns\ortholoafandtable_106.lif" />
-    <None Include="Assets\Patterns\owss_106.lif" />
-    <None Include="Assets\Patterns\p110trafficjam_106.lif" />
-    <None Include="Assets\Patterns\p156hansleohassler_106.lif" />
-    <None Include="Assets\Patterns\p15prepulsarspaceship_106.lif" />
-    <None Include="Assets\Patterns\p35beehivehassler_106.lif" />
-    <None Include="Assets\Patterns\p36toadhassler_106.lif" />
-    <None Include="Assets\Patterns\p40bheptominoshuttle_106.lif" />
-    <None Include="Assets\Patterns\p42glidershuttle_106.lif" />
-    <None Include="Assets\Patterns\p44piheptominohassler_106.lif" />
-    <None Include="Assets\Patterns\p44trafficlighthassler_106.lif" />
-    <None Include="Assets\Patterns\p48toadhassler_106.lif" />
-    <None Include="Assets\Patterns\p50glidershuttle_106.lif" />
-    <None Include="Assets\Patterns\p50trafficjam_106.lif" />
-    <None Include="Assets\Patterns\p54shuttle_106.lif" />
-    <None Include="Assets\Patterns\p56bheptominoshuttle_106.lif" />
-    <None Include="Assets\Patterns\p5760unitlifecell_106.lif" />
-    <None Include="Assets\Patterns\p57herschelloop1_106.lif" />
-    <None Include="Assets\Patterns\p58toadsucker_106.lif" />
-    <None Include="Assets\Patterns\p59herschelloop1_106.lif" />
-    <None Include="Assets\Patterns\p5reflector_106.lif" />
-    <None Include="Assets\Patterns\p61herschelloop1_106.lif" />
-    <None Include="Assets\Patterns\p94s_106.lif" />
-    <None Include="Assets\Patterns\paperclip_106.lif" />
-    <None Include="Assets\Patterns\parabolicsawtooth_106.lif" />
-    <None Include="Assets\Patterns\pedestle_106.lif" />
-    <None Include="Assets\Patterns\pennylane_106.lif" />
-    <None Include="Assets\Patterns\pentadecathlonon37p7.1_106.lif" />
-    <None Include="Assets\Patterns\pentadecathlonon38p7.2_106.lif" />
-    <None Include="Assets\Patterns\pentadecathlononsnacker_106.lif" />
-    <None Include="Assets\Patterns\pentadecathlononthumb1_106.lif" />
-    <None Include="Assets\Patterns\pentadecathlon_106.lif" />
-    <None Include="Assets\Patterns\pentant_106.lif" />
-    <None Include="Assets\Patterns\pentapole_106.lif" />
-    <None Include="Assets\Patterns\pentoad1h2_106.lif" />
-    <None Include="Assets\Patterns\pentoad2_106.lif" />
-    <None Include="Assets\Patterns\pentoad_106.lif" />
-    <None Include="Assets\Patterns\phoenix1_106.lif" />
-    <None Include="Assets\Patterns\piheptomino_106.lif" />
-    <None Include="Assets\Patterns\pinwheel_106.lif" />
-    <None Include="Assets\Patterns\piorbital_106.lif" />
-    <None Include="Assets\Patterns\piportraitor_106.lif" />
-    <None Include="Assets\Patterns\pipsquirter1_106.lif" />
-    <None Include="Assets\Patterns\pipsquirter2_106.lif" />
-    <None Include="Assets\Patterns\piship1_106.lif" />
-    <None Include="Assets\Patterns\piston_106.lif" />
-    <None Include="Assets\Patterns\pond_106.lif" />
-    <None Include="Assets\Patterns\popover_106.lif" />
-    <None Include="Assets\Patterns\prebeehive_106.lif" />
-    <None Include="Assets\Patterns\preblock_106.lif" />
-    <None Include="Assets\Patterns\prepulsarhassler55_106.lif" />
-    <None Include="Assets\Patterns\prepulsarshuttle26_106.lif" />
-    <None Include="Assets\Patterns\prepulsarshuttle28_106.lif" />
-    <None Include="Assets\Patterns\prepulsarshuttle29_106.lif" />
-    <None Include="Assets\Patterns\prepulsarshuttle47_106.lif" />
-    <None Include="Assets\Patterns\prepulsarspaceship_106.lif" />
-    <None Include="Assets\Patterns\prepulsar_106.lif" />
-    <None Include="Assets\Patterns\pressurecooker_106.lif" />
-    <None Include="Assets\Patterns\primer_106.lif" />
-    <None Include="Assets\Patterns\protein_106.lif" />
-    <None Include="Assets\Patterns\pseudobarberpoleon36p22_106.lif" />
-    <None Include="Assets\Patterns\pseudobarberpole_106.lif" />
-    <None Include="Assets\Patterns\puffer1_106.lif" />
-    <None Include="Assets\Patterns\puffer2_106.lif" />
-    <None Include="Assets\Patterns\pulsarquadrant_106.lif" />
-    <None Include="Assets\Patterns\pulsar_106.lif" />
-    <None Include="Assets\Patterns\pushalong1_106.lif" />
-    <None Include="Assets\Patterns\quadpole_106.lif" />
-    <None Include="Assets\Patterns\quadpseudostilllife_106.lif" />
-    <None Include="Assets\Patterns\quad_106.lif" />
-    <None Include="Assets\Patterns\quasar_106.lif" />
-    <None Include="Assets\Patterns\queenbeeshuttle_106.lif" />
-    <None Include="Assets\Patterns\queenbee_106.lif" />
-    <None Include="Assets\Patterns\r2d2_106.lif" />
-    <None Include="Assets\Patterns\rabbits_106.lif" />
-    <None Include="Assets\Patterns\rats_106.lif" />
-    <None Include="Assets\Patterns\rbeeandsnake_106.lif" />
-    <None Include="Assets\Patterns\rectifier_106.lif" />
-    <None Include="Assets\Patterns\revolver_106.lif" />
-    <None Include="Assets\Patterns\ringoffire_106.lif" />
-    <None Include="Assets\Patterns\rloaf_106.lif" />
-    <None Include="Assets\Patterns\roteightor_106.lif" />
-    <None Include="Assets\Patterns\rpentomino_106.lif" />
-    <None Include="Assets\Patterns\rumblingriver1_106.lif" />
-    <None Include="Assets\Patterns\sailboat_106.lif" />
-    <None Include="Assets\Patterns\sawtooth1163_106.lif" />
-    <None Include="Assets\Patterns\sawtooth1846_106.lif" />
-    <None Include="Assets\Patterns\sawtooth1_106.lif" />
-    <None Include="Assets\Patterns\sawtooth260_106.lif" />
-    <None Include="Assets\Patterns\sawtooth362_106.lif" />
-    <None Include="Assets\Patterns\sawtooth562_106.lif" />
-    <None Include="Assets\Patterns\sawtooth633_106.lif" />
-    <None Include="Assets\Patterns\schickengine_106.lif" />
-    <None Include="Assets\Patterns\scorpion_106.lif" />
-    <None Include="Assets\Patterns\scotsp5_106.lif" />
-    <None Include="Assets\Patterns\scrubber_106.lif" />
-    <None Include="Assets\Patterns\seal_106.lif" />
-    <None Include="Assets\Patterns\sesquihat_106.lif" />
-    <None Include="Assets\Patterns\shillelagh_106.lif" />
-    <None Include="Assets\Patterns\shipinabottle_106.lif" />
-    <None Include="Assets\Patterns\shipmaker_106.lif" />
-    <None Include="Assets\Patterns\shiponlongboat_106.lif" />
-    <None Include="Assets\Patterns\shiponquadpole_106.lif" />
-    <None Include="Assets\Patterns\shiptie_106.lif" />
-    <None Include="Assets\Patterns\ship_106.lif" />
-    <None Include="Assets\Patterns\shortkeys_106.lif" />
-    <None Include="Assets\Patterns\sidecargun_106.lif" />
-    <None Include="Assets\Patterns\sidecar_106.lif" />
-    <None Include="Assets\Patterns\sidewalk_106.lif" />
-    <None Include="Assets\Patterns\siesta_106.lif" />
-    <None Include="Assets\Patterns\silversp5_106.lif" />
-    <None Include="Assets\Patterns\sixls_106.lif" />
-    <None Include="Assets\Patterns\sixtynine_106.lif" />
-    <None Include="Assets\Patterns\skewedquad_106.lif" />
-    <None Include="Assets\Patterns\skewedtrafficlight_106.lif" />
-    <None Include="Assets\Patterns\slowpuffer1_106.lif" />
-    <None Include="Assets\Patterns\slowpuffer2_106.lif" />
-    <None Include="Assets\Patterns\smalllake_106.lif" />
-    <None Include="Assets\Patterns\smiley_106.lif" />
-    <None Include="Assets\Patterns\snacker2_106.lif" />
-    <None Include="Assets\Patterns\snackeron38p7.2_106.lif" />
-    <None Include="Assets\Patterns\snacker_106.lif" />
-    <None Include="Assets\Patterns\snail_106.lif" />
-    <None Include="Assets\Patterns\snakebridgesnake_106.lif" />
-    <None Include="Assets\Patterns\snakedance_106.lif" />
-    <None Include="Assets\Patterns\snakepit2_106.lif" />
-    <None Include="Assets\Patterns\snakepit_106.lif" />
-    <None Include="Assets\Patterns\snakesiamesesnake_106.lif" />
-    <None Include="Assets\Patterns\snake_106.lif" />
-    <None Include="Assets\Patterns\snorkelloop_106.lif" />
-    <None Include="Assets\Patterns\sombreros_106.lif" />
-    <None Include="Assets\Patterns\spacefiller1_106.lif" />
-    <None Include="Assets\Patterns\spacerake_106.lif" />
-    <None Include="Assets\Patterns\sparkcoil_106.lif" />
-    <None Include="Assets\Patterns\sparky_106.lif" />
-    <None Include="Assets\Patterns\spider_106.lif" />
-    <None Include="Assets\Patterns\spiral_106.lif" />
-    <None Include="Assets\Patterns\squaredance_106.lif" />
-    <None Include="Assets\Patterns\stairstephexomino_106.lif" />
-    <None Include="Assets\Patterns\stargate_106.lif" />
-    <None Include="Assets\Patterns\star_106.lif" />
-    <None Include="Assets\Patterns\stillater_106.lif" />
-    <None Include="Assets\Patterns\superfountain_106.lif" />
-    <None Include="Assets\Patterns\surprise_106.lif" />
-    <None Include="Assets\Patterns\swan_106.lif" />
-    <None Include="Assets\Patterns\switchengine_106.lif" />
-    <None Include="Assets\Patterns\symmetricscorpion_106.lif" />
-    <None Include="Assets\Patterns\tableontable_106.lif" />
-    <None Include="Assets\Patterns\table_106.lif" />
-    <None Include="Assets\Patterns\tail_106.lif" />
-    <None Include="Assets\Patterns\teardrop_106.lif" />
-    <None Include="Assets\Patterns\technician_106.lif" />
-    <None Include="Assets\Patterns\teeth_106.lif" />
-    <None Include="Assets\Patterns\testtubebaby_106.lif" />
-    <None Include="Assets\Patterns\tetrominoes_106.lif" />
-    <None Include="Assets\Patterns\thumb1_106.lif" />
-    <None Include="Assets\Patterns\thunderbird_106.lif" />
-    <None Include="Assets\Patterns\titanictoroidaltraveler_106.lif" />
-    <None Include="Assets\Patterns\tlogtgrowth_106.lif" />
-    <None Include="Assets\Patterns\tnosedp4_106.lif" />
-    <None Include="Assets\Patterns\tnosedp6_106.lif" />
-    <None Include="Assets\Patterns\toad_106.lif" />
-    <None Include="Assets\Patterns\toaster_106.lif" />
-    <None Include="Assets\Patterns\totalaperiodic_106.lif" />
-    <None Include="Assets\Patterns\trafficcircle_106.lif" />
-    <None Include="Assets\Patterns\trafficjam_106.lif" />
-    <None Include="Assets\Patterns\trafficlight_106.lif" />
-    <None Include="Assets\Patterns\transbargewithtail_106.lif" />
-    <None Include="Assets\Patterns\transbeaconanddock_106.lif" />
-    <None Include="Assets\Patterns\transbeaconandtable_106.lif" />
-    <None Include="Assets\Patterns\transblockandlonghook_106.lif" />
-    <None Include="Assets\Patterns\transboatanddock_106.lif" />
-    <None Include="Assets\Patterns\transboatwithnine_106.lif" />
-    <None Include="Assets\Patterns\transboatwithtail_106.lif" />
-    <None Include="Assets\Patterns\transfusewithtwotails_106.lif" />
-    <None Include="Assets\Patterns\transhookandrbee_106.lif" />
-    <None Include="Assets\Patterns\transloafwithtail_106.lif" />
-    <None Include="Assets\Patterns\transmirroredrbee_106.lif" />
-    <None Include="Assets\Patterns\transrbeeandrloaf_106.lif" />
-    <None Include="Assets\Patterns\transrotatedrbee_106.lif" />
-    <None Include="Assets\Patterns\tricetongs_106.lif" />
-    <None Include="Assets\Patterns\triplecaterer_106.lif" />
-    <None Include="Assets\Patterns\triplepseudostilllife_106.lif" />
-    <None Include="Assets\Patterns\tripole_106.lif" />
-    <None Include="Assets\Patterns\tritoad_106.lif" />
-    <None Include="Assets\Patterns\trueperiod22gun_106.lif" />
-    <None Include="Assets\Patterns\ttetromino_106.lif" />
-    <None Include="Assets\Patterns\tubber_106.lif" />
-    <None Include="Assets\Patterns\tubtesttubebaby_106.lif" />
-    <None Include="Assets\Patterns\tubwithlonglongtail_106.lif" />
-    <None Include="Assets\Patterns\tubwithlongtail_106.lif" />
-    <None Include="Assets\Patterns\tubwithtail_106.lif" />
-    <None Include="Assets\Patterns\tub_106.lif" />
-    <None Include="Assets\Patterns\tumbler_106.lif" />
-    <None Include="Assets\Patterns\tumblingttetson_106.lif" />
-    <None Include="Assets\Patterns\turingmachine_106.lif" />
-    <None Include="Assets\Patterns\turningtoads_106.lif" />
-    <None Include="Assets\Patterns\turtle_106.lif" />
-    <None Include="Assets\Patterns\twinbeesshuttle_106.lif" />
-    <None Include="Assets\Patterns\twinhat_106.lif" />
-    <None Include="Assets\Patterns\twinprimecalculator_106.lif" />
-    <None Include="Assets\Patterns\twirlingttetsons2_106.lif" />
-    <None Include="Assets\Patterns\twoeaters_106.lif" />
-    <None Include="Assets\Patterns\twoglidermess_106.lif" />
-    <None Include="Assets\Patterns\twoprelhasslers_106.lif" />
-    <None Include="Assets\Patterns\twopulsarquadrants_106.lif" />
-    <None Include="Assets\Patterns\unicycle_106.lif" />
-    <None Include="Assets\Patterns\unixon41p7.2_106.lif" />
-    <None Include="Assets\Patterns\unix_106.lif" />
-    <None Include="Assets\Patterns\vacuumgunpulling_106.lif" />
-    <None Include="Assets\Patterns\vacuumgun_106.lif" />
-    <None Include="Assets\Patterns\venetianblinds_106.lif" />
-    <None Include="Assets\Patterns\verylonghouse_106.lif" />
-    <None Include="Assets\Patterns\washerwoman_106.lif" />
-    <None Include="Assets\Patterns\washingmachine_106.lif" />
-    <None Include="Assets\Patterns\wasp_106.lif" />
-    <None Include="Assets\Patterns\wavefront_106.lif" />
-    <None Include="Assets\Patterns\waveguide1_106.lif" />
-    <None Include="Assets\Patterns\weekender_106.lif" />
-    <None Include="Assets\Patterns\whynot_106.lif" />
-    <None Include="Assets\Patterns\wickstretcher1_106.lif" />
-    <None Include="Assets\Patterns\windmill_106.lif" />
-    <None Include="Assets\Patterns\wingspaceship_106.lif" />
-    <None Include="Assets\Patterns\wing_106.lif" />
-    <None Include="Assets\Patterns\workerbee_106.lif" />
-    <None Include="Assets\Patterns\x66_106.lif" />
-    <None Include="Assets\Patterns\zhexomino_106.lif" />
-    <None Include="Assets\Patterns\zweiback_106.lif" />
+    <None Include="Assets\Patterns\101_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\104p177_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\10enginecordership_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\112p51_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\114p6h1v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\117p18_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\117p9h3v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\119p4h1v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\1234_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\123p271_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\123_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\124p21_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\124p37_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\132p37_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\134p25_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\134p39.1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\13enginecordership_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\144p24_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\145p20_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\160p10h2v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\168p22.1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\17c45reaction_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\186p24_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\18p2.471_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\1beacon_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\20p2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\21p2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\22p2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\22p36_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\23334m_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\233p3h1v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\23p2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\24p10_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\24p2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\258p3onachimsp11_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\258p3_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\25p3h1v0.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\26p2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\26p40_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\274p6h1v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\28p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\28p71_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\295p5h1v1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\29p9_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\2fumaroles_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\30p5h2v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\34p13_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\35p52_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\36p22_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\37p10.1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\37p7.1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\38p111_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\38p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\3enginecordershipgun_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\3enginecordershiprake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\3enginecordership_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\400p49_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\41p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\42p101_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\43p18_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\440p49.1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\44p5h2v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\44p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\46p22_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\46p4h1v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\47p72_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\4812diamond_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\48p22_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\48p31_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\49p88_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\4boats_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\4enginecordershipb_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\4enginecordership_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\50p35_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\54p171_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\56p27_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\56p6h1v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\58p5h1v1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\5enginecordership_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\60p3h1v0.3_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\60p5h2v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\64p2h1v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\65p131_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\67p5h1v1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\69p48_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\6enginecordership_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\70p5h2v0_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\7468m_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\77p6h1v1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\78p70_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\7enginecordership_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\7inarowcordership_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\86p5h1v1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\88p28_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\92p331_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\94p271_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\98p25_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\achimsp11_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\achimsp144_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\achimsp16_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\achimsp4_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\achimsp8_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\acorn_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\aforall_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\aircraftcarrier_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\airforce_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ak47reaction_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\almosymmetric_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ants_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\anvil_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\average_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\b29_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\b52bomber_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\babblingbrook1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\backrake1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\backrake2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\backrake3_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bakersdozen_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bakery_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\baker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\barge2spaceship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bargespaceship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\barge_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beaconandtwotails_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beaconmaker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beaconon38p11.1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beacon_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehiveandcap_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehiveanddock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehiveandlonghookeatingtub_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehiveandtable_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehiveatbeehive_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehiveatloaf_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehivebendtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehivefuse_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehivewithnine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehivewithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\beehive_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bentkeys_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bheptomino_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\biblock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bicap_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\biclock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bigglider_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bigs_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bigun_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\biloaf1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\biloaf2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\biloaf3_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bipolebridgepseudobarberpole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bipole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bipond_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bistableswitch_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bitingoffmorethantheycanchew_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blinkerfuse_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blinkerpuffer1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blinkerpuffer2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blinkersbitpole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blinkership1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blinker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockade_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockandcap_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockanddock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockandglider_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockandtwotails_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockedp41_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockedp42_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockedp43_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockedp4tnose_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blocker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blocklayingswitchengine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockonboat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockontable_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blockstacker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\block_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\blom_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boatmaker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boatonquadpole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boatonsparkcoil_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boatshiptie_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boatstretcher1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boattie_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boatwithlongtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boojumreflector_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bookends_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bookend_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\boss_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bottle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\brain_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\breeder1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bricklayer_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\buckaroo_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bulletheptomino_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bunnies10_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bunnies11_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bunnies9_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bunnies_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\bun_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\burloaferimeter_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\butterfly_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\byflops_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cabertosser1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\canadagoose_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\candelabra_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\candlefrobra_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\canoe_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cap_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\carnivalshuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\carriersiamesecarrier_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\carriersiamesesnake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\catacryst_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\catereron34p13_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\catereron36p22_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\catereron44p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\catereronfigureeight_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\caterer_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cauldron_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\centinal_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\century_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\champageglass_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\champagneglass_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\chemist_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cheptomino_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cheshirecat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\chickenwire_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisbargewithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisbeaconandanvil_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisbeaconandcap_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisbeaconanddock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisbeaconandtable_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisbeaconupandlonghook_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisblockandlonghook_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisboatanddock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisboatandlonghookeatingtub_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisboatandtable_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisboatwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisfusewithtwotails_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cishookandrbee_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cishookwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisloafwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cismirroredrbee_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisrbeeandrloaf_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisrotatedrbee_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cisshillelagh_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\clawwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\clock2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\clock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\coeship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\coesp8_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\conduit1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\confusedeaters_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cordpuller_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cousins_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cover_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cow_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\crab_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cross2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cross_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\crowd_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\crown_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\cuphook_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\dart_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\deadsparkcoil_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\deepcell_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\diamondring_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\diehard_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\dinnertable_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\diuresis_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\dock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\doublecaterer_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\doubleewe_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\doublex_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\dragon_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eater1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eater2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eater3_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eater4_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eater5_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eaterblockfrob_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eateronboat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eaterplug_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eatersiameseeater_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ecologist_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\edgerepairspaceship1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\edgerepairspaceship2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\edna26_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\edna_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\electricfence_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\elevener_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\elevenloop_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\elkiesp5_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ellisonp4hwemulatorhybrid_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ellisonp4hwemulator_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\enretard_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\enterprise_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\eureka_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\extraextralongsnake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\extralongsnake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\extremelyimpressive_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fastforwardforcefield_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fermatprimecalculator_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\figureeighton36p22_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\figureeightonpentadecathlon_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\figureeight_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fleet_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fly_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\foreandback_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fountain_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fourteener_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fox_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\frenchkiss_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\frogii_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fumaroleon34p13_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fumaroleonachimsp11_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\fumarole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gabrielsp138_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gardenofeden1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gardenofeden2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gardenofeden3_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gardenofeden4_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gardenofeden5_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\germ_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\glasses_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gliderloop_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gliderproducingswitchengine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\glidersbythedozen_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\glider_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gosperglidergun_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gottsdots_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gourmet_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\graycounter_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\greatonoff_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\griddleandbeehive_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\griddleandblock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\griddleandboat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\grin_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gunstar2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\gunstar_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hacksaw_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\halfmax_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hammerhead_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\harbor_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\harvester_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\heart_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\heavyweightemulator_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\heavyweightvolcano_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hebdarole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hectic_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\heptapole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\herschelgrandparent_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\herschelparent_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\herschelreceiver_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\herschel_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hertzoscillator_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hexapole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hivemaker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hivenudger2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hivenudger_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\honeycomb_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\honeyfarm_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hooks_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hookwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\house_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hustlerii_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hustler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\hwss_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\infinitegliderhotel_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\infinitelwsshotel_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\integralsign_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\integralwithhook_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\integralwithtub_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\interchange_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\iwona_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\jack_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\jamon34p13.1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\jamon44p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\jam_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\jolson_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\justyna_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\karelsp15_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\killercandlefrobras_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\killertoads_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\koksgalaxy_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\lake2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\laputa_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\lidka_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\lightbulb_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\lightspeedoscillator1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\lightspeedoscillator2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\lightspeedoscillator3_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\lightweightemulator_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\loadingdock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\loafsiamesebarge_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\loafsiameseloaf_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\loaf_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\logt2growth_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longbarge_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longboat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longcanoe_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longhookwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longhook_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longintegral_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longlongbarge_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longlongboat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longlongcanoe_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longlonghookwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longlongshillelagh_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longlongship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longlongsnake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longshillelagh_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\longsnake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\loop_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\lwss_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mango_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mathematician_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\max_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mazing_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mickeymouse_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\middleweightemulator_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\middleweightvolcano_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\minipressurecooker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mirage_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mirroreddock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\moldandlonghookeatingtub_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\moldon36p22_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\moldon41p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\moldonfumarole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\moldonpentadecathlon_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mold_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\monogram_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\montana_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mooseantlers_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mosquito1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mosquito2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mosquito3_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mosquito4_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mosquito5_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\movingsawtooth_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\multuminparvo_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mutteringmoat1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\mwss_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\negentropy_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\newfive_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\newgun1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\newgun2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\newshuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\noahsark_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\nonmonotonicspaceship1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\octagon2on36p22_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\octagon2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\oddkeys_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\oddtesttubebaby_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\onepergeneration_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\orion2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\orion_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ortholoafandtable_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\owss_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p110trafficjam_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p156hansleohassler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p15prepulsarspaceship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p35beehivehassler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p36toadhassler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p40bheptominoshuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p42glidershuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p44piheptominohassler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p44trafficlighthassler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p48toadhassler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p50glidershuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p50trafficjam_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p54shuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p56bheptominoshuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p5760unitlifecell_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p57herschelloop1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p58toadsucker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p59herschelloop1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p5reflector_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p61herschelloop1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\p94s_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\paperclip_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\parabolicsawtooth_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pedestle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pennylane_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentadecathlonon37p7.1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentadecathlonon38p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentadecathlononsnacker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentadecathlononthumb1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentadecathlon_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentant_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentapole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentoad1h2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentoad2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pentoad_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\phoenix1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\piheptomino_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pinwheel_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\piorbital_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\piportraitor_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pipsquirter1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pipsquirter2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\piship1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\piston_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pond_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\popover_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\prebeehive_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\preblock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\prepulsarhassler55_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\prepulsarshuttle26_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\prepulsarshuttle28_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\prepulsarshuttle29_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\prepulsarshuttle47_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\prepulsarspaceship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\prepulsar_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pressurecooker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\primer_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\protein_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pseudobarberpoleon36p22_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pseudobarberpole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\puffer1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\puffer2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pulsarquadrant_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pulsar_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\pushalong1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\quadpole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\quadpseudostilllife_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\quad_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\quasar_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\queenbeeshuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\queenbee_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\r2d2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\rabbits_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\rats_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\rbeeandsnake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\rectifier_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\revolver_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ringoffire_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\rloaf_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\roteightor_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\rpentomino_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\rumblingriver1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sailboat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sawtooth1163_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sawtooth1846_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sawtooth1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sawtooth260_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sawtooth362_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sawtooth562_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sawtooth633_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\schickengine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\scorpion_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\scotsp5_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\scrubber_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\seal_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sesquihat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\shillelagh_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\shipinabottle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\shipmaker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\shiponlongboat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\shiponquadpole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\shiptie_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\shortkeys_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sidecargun_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sidecar_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sidewalk_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\siesta_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\silversp5_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sixls_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sixtynine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\skewedquad_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\skewedtrafficlight_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\slowpuffer1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\slowpuffer2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\smalllake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\smiley_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snacker2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snackeron38p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snacker_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snakebridgesnake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snakedance_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snakepit2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snakepit_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snakesiamesesnake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\snorkelloop_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sombreros_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\spacefiller1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\spacerake_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sparkcoil_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\sparky_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\spider_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\spiral_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\squaredance_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\stairstephexomino_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\stargate_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\star_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\stillater_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\superfountain_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\surprise_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\swan_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\switchengine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\symmetricscorpion_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tableontable_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\table_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\teardrop_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\technician_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\teeth_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\testtubebaby_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tetrominoes_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\thumb1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\thunderbird_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\titanictoroidaltraveler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tlogtgrowth_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tnosedp4_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tnosedp6_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\toad_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\toaster_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\totalaperiodic_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\trafficcircle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\trafficjam_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\trafficlight_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transbargewithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transbeaconanddock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transbeaconandtable_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transblockandlonghook_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transboatanddock_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transboatwithnine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transboatwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transfusewithtwotails_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transhookandrbee_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transloafwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transmirroredrbee_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transrbeeandrloaf_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\transrotatedrbee_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tricetongs_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\triplecaterer_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\triplepseudostilllife_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tripole_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tritoad_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\trueperiod22gun_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\ttetromino_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tubber_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tubtesttubebaby_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tubwithlonglongtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tubwithlongtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tubwithtail_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tub_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tumbler_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\tumblingttetson_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\turingmachine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\turningtoads_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\turtle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\twinbeesshuttle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\twinhat_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\twinprimecalculator_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\twirlingttetsons2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\twoeaters_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\twoglidermess_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\twoprelhasslers_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\twopulsarquadrants_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\unicycle_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\unixon41p7.2_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\unix_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\vacuumgunpulling_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\vacuumgun_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\venetianblinds_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\verylonghouse_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\washerwoman_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\washingmachine_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\wasp_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\wavefront_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\waveguide1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\weekender_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\whynot_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\wickstretcher1_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\windmill_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\wingspaceship_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\wing_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\workerbee_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\x66_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\zhexomino_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Patterns\zweiback_106.lif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
