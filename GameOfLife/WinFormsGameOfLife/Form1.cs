@@ -96,16 +96,6 @@ namespace WinFormsGameOfLife
                         while (!sr.EndOfStream)
                         {
                             string currentLine = sr.ReadLine();
-                            /*
-                            if (!Regex.IsMatch(currentLine, extDataFileValidLinePattern.ToString()) && !Regex.IsMatch(currentLine, extDataFileValidHeaderPattern.ToString()))
-                            {
-                                throw new Exception("File contains lines that do not match requirements.");
-                            }
-                            else
-                            {
-                                fileData.Add(currentLine);
-                            }
-                            */
                             fileData.Add(currentLine);
                         }
                     }
@@ -113,8 +103,7 @@ namespace WinFormsGameOfLife
                     ImportedFileName = Path.GetFileName(importDialog.FileName);
 
                     FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
-                    //FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.RelativeToOrigin);
-
+                    
                     InitLiveCells = fr.Extract.LiveCells;
 
                     SuspendLayout();
