@@ -232,32 +232,14 @@ namespace GameOfLife
                 xMin = Enumerable.Last(allX) + 1;
                 yMin = Enumerable.Last(allY) + 1;
 
-                //fe = new FileExtract(liveCellsFromFile);
                 Extract.LiveCells = liveCellsFromFile;
                 Extract.XMin = xMin;
                 Extract.YMin = yMin;
             }
-            /*
-            else
-            {
-                fe = new FileExtract();
-            }
-            */
+            
             return Extract;
 
         }
-
-        /*
-        public static List<Automaton.CoordSet> ReadFile(ref string[] data, CoordExtractionOffsetModes offsetMode, EncodingTypes readAsType)
-        {
-            List<Automaton.CoordSet> initLiveCells = new List<Automaton.CoordSet>();
-
-            // TODO
-
-            return initLiveCells;
-        }
-        */
-
         #endregion
 
         #region Private methods - Other operations
