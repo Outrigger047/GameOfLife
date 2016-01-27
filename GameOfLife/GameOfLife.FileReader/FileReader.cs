@@ -80,7 +80,7 @@ namespace GameOfLife
 
         #endregion
 
-        #region Public methods
+        #region Private methods
 
         private void ReadFile()
         {
@@ -102,7 +102,7 @@ namespace GameOfLife
             if (options.OffsetMode == CoordExtractionOffsetModes.ScaleToZero)
             {
                 List<int[]> allCellsPreShift = new List<int[]>();
-                                
+
                 foreach (var line in data)
                 {
                     if (Regex.IsMatch(line, coordLineMatchPattern))
@@ -237,9 +237,6 @@ namespace GameOfLife
                 Extract.YMin = yMin;
             }
         }
-        #endregion
-
-        #region Private methods - Other operations
 
         /// <summary>
         /// Determine file encoding scheme
