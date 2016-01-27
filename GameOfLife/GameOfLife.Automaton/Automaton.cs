@@ -233,43 +233,96 @@ namespace GameOfLife
         /// <returns>Current state of targeted cell</returns>
         private Cell.CellStateTypes GetNeighborState(CoordSet currentPos, Cardinals target)
         {
+            Cell.CellStateTypes neighborState = Cell.CellStateTypes.Invalid;
+
             switch(target)
             {
                 case Cardinals.N:
-                    return universe[
-                        currentPos.X, 
-                        currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
+                    if (currentPos.Y - 1 < 0)
+                    {
+                        neighborState = Cell.CellStateTypes.Invalid;
+                    }
+                    else
+                    {
+                        neighborState = universe[currentPos.X, currentPos.Y - 1].State;
+                    }
+                    break;
                 case Cardinals.NE:
-                    return universe[
-                        currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, 
-                        currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
+                    if (currentPos.X + 1 > sizeX - 1 | currentPos.Y - 1 < 0)
+                    {
+                        neighborState = Cell.CellStateTypes.Invalid;
+                    }
+                    else
+                    {
+                        neighborState = universe[currentPos.X + 1, currentPos.Y - 1].State;
+                    }
+                    break;
                 case Cardinals.E:
-                    return universe[
-                        currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, 
-                        currentPos.Y].State;
+                    if (currentPos.X + 1 > sizeX - 1)
+                    {
+                        neighborState = Cell.CellStateTypes.Invalid;
+                    }
+                    else
+                    {
+                        neighborState = universe[currentPos.X + 1, currentPos.Y].State;
+                    }
+                    break;
                 case Cardinals.SE:
-                    return universe[
-                        currentPos.X + 1 > sizeX - 1 ? sizeX - 1 : currentPos.X + 1, 
-                        currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
+                    if (currentPos.X + 1 > sizeX - 1 | currentPos.Y + 1 > sizeY - 1)
+                    {
+                        neighborState = Cell.CellStateTypes.Invalid;
+                    }
+                    else
+                    {
+                        neighborState = universe[currentPos.X + 1, currentPos.Y + 1].State;
+                    }
+                    break;
                 case Cardinals.S:
-                    return universe[
-                        currentPos.X, 
-                        currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
+                    if (currentPos.Y + 1 > sizeY - 1)
+                    {
+                        neighborState = Cell.CellStateTypes.Invalid;
+                    }
+                    else
+                    {
+                        neighborState = universe[currentPos.X, currentPos.Y + 1].State;
+                    }
+                    break;
                 case Cardinals.SW:
-                    return universe[
-                        currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, 
-                        currentPos.Y + 1 > sizeY - 1 ? sizeY - 1 : currentPos.Y + 1].State;
+                    if (currentPos.Y + 1 > sizeY - 1 | currentPos.X - 1 < 0)
+                    {
+                        neighborState = Cell.CellStateTypes.Invalid;
+                    }
+                    else
+                    {
+                        neighborState = universe[currentPos.X - 1, currentPos.Y + 1].State;
+                    }
+                    break;
                 case Cardinals.W:
-                    return universe[
-                        currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, 
-                        currentPos.Y].State;
+                    if (currentPos.X - 1 < 0)
+                    {
+                        neighborState = Cell.CellStateTypes.Invalid;
+                    }
+                    else
+                    {
+                        neighborState = universe[currentPos.X - 1, currentPos.Y].State;
+                    }
+                    break;
                 case Cardinals.NW:
-                    return universe[
-                        currentPos.X - 1 < 0 ? 0 : currentPos.X - 1, 
-                        currentPos.Y - 1 < 0 ? 0 : currentPos.Y - 1].State;
+                    if (currentPos.Y - 1 < 0 | currentPos.X - 1 < 0)
+                    {
+                        neighborState = Cell.CellStateTypes.Invalid;
+                    }
+                    else
+                    {
+                        neighborState = universe[currentPos.X - 1, currentPos.Y - 1].State;
+                    }
+                    break;
                 default:
-                    return Cell.CellStateTypes.Invalid;
+                    neighborState = Cell.CellStateTypes.Invalid;
+                    break;
             }
+
+            return neighborState;
         }
         #endregion
 
