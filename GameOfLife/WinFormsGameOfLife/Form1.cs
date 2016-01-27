@@ -14,6 +14,7 @@ namespace WinFormsGameOfLife
         private string ImportedFileName;
         private int xMin, yMin;
         private readonly Regex extDataFileValidLinePattern = new Regex(@"^[0-9]+\s*\,\s*[0-9]+$");
+        private readonly Regex extDataFileValidHeaderPattern = new Regex(@"^#.*$+");
         private readonly Regex extDataFileXCoord = new Regex(@"^[0-9]+");
         private readonly Regex extDataFileYCoord = new Regex(@"[0-9]+$");
         #endregion
@@ -85,7 +86,7 @@ namespace WinFormsGameOfLife
         private void importDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Stream s = null;
-            HashSet<string> fileData = new HashSet<string>();
+            List<string> fileData = new List<string>();
             try
             {
                 if ((s = importDialog.OpenFile()) != null)
@@ -95,26 +96,21 @@ namespace WinFormsGameOfLife
                         while (!sr.EndOfStream)
                         {
                             string currentLine = sr.ReadLine();
-                            if (!Regex.IsMatch(currentLine, extDataFileValidLinePattern.ToString()))
-                            {
-                                throw new Exception("File contains lines that do not match requirements.");
-                            }
-                            else
-                            {
-                                fileData.Add(currentLine);
-                            }
+                            fileData.Add(currentLine);
                         }
                     }
 
                     ImportedFileName = Path.GetFileName(importDialog.FileName);
 
-                    InitLiveCells = GetInitLiveCellListFromExternalFile(fileData);
+                    FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
+                    
+                    InitLiveCells = fr.Extract.LiveCells;
 
                     SuspendLayout();
-                    importHorizUpDown.Minimum = xMin;
-                    importHorizUpDown.Value = xMin;
-                    importVertUpDown.Minimum = yMin;
-                    importVertUpDown.Value = yMin;
+                    importHorizUpDown.Minimum = (decimal) fr.Extract.XMin + 1;
+                    importHorizUpDown.Value = (decimal) fr.Extract.XMin + 1;
+                    importVertUpDown.Minimum = (decimal) fr.Extract.YMin + 1;
+                    importVertUpDown.Value = (decimal) fr.Extract.YMin + 1;
                     importHorizUpDown.Enabled = true;
                     importHorizLabel.Enabled = true;
                     importVertUpDown.Enabled = true;
@@ -132,6 +128,13 @@ namespace WinFormsGameOfLife
                     string extraInfo = "\n\n" + "Each line must be in the format: X,Y" + "\n\n" + "Positive values only";
                     MessageBox.Show(ex.Message + extraInfo, 
                         "File Import Error", 
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                else if (ex.Message.Contains("unknown or invalid"))
+                {
+                    MessageBox.Show(ex.Message,
+                        "File Import Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
