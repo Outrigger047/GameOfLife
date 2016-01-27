@@ -101,11 +101,8 @@ namespace GameOfLife
 
             if (options.OffsetMode == CoordExtractionOffsetModes.ScaleToZero)
             {
-                List<int> allX = new List<int>();
-                List<int> allY = new List<int>();
-                int xMin, yMin;
-                List<int[]> tempPreShiftCells = new List<int[]>();
-
+                List<int[]> allCellsPreShift = new List<int[]>();
+                                
                 foreach (var line in data)
                 {
                     if (Regex.IsMatch(line, coordLineMatchPattern))
@@ -113,48 +110,98 @@ namespace GameOfLife
                         Match currentLineMatch = Regex.Match(line, coordLineMatchPattern);
                         MatchCollection currentLineCoordsMatches = Regex.Matches(currentLineMatch.Value, coordSetMatchPattern);
 
-                        string[] currentCoords = currentLineCoordsMatches.Cast<Match>().Select(m => m.Value).ToArray();
-                        string xCoord = currentCoords[0];
-                        string yCoord = currentCoords[1];
-
-                        allX.Add(Convert.ToInt32(xCoord));
-                        allY.Add(Convert.ToInt32(yCoord));
-
-                        int[] tempIntPair = { Convert.ToInt32(xCoord), Convert.ToInt32(yCoord) };
-
-                        tempPreShiftCells.Add(tempIntPair);
+                        int[] currentCoords = Array.ConvertAll(currentLineCoordsMatches.Cast<Match>().Select(m => m.Value).ToArray(), int.Parse);
+                        allCellsPreShift.Add(currentCoords);
                     }
                 }
 
-                allX.Sort();
-                allY.Sort();
-                xMin = Enumerable.First(allX);
-                yMin = Enumerable.First(allY);
-
-                foreach (var tempCoord in tempPreShiftCells)
+                List<int> allXCoordsPreShift = new List<int>();
+                List<int> allYCoordsPreShift = new List<int>();
+                foreach (var coordSet in allCellsPreShift)
                 {
-                    if (xMin < 0 && yMin < 0)
+                    allXCoordsPreShift.Add(coordSet[0]);
+                    allYCoordsPreShift.Add(coordSet[1]);
+                }
+
+                allXCoordsPreShift.Sort();
+                allYCoordsPreShift.Sort();
+
+                int shiftDistanceX = Math.Abs(allXCoordsPreShift.First());
+                int shiftDistanceY = Math.Abs(allYCoordsPreShift.First());
+                int minXAxisSize = 0, minYAxisSize = 0;
+
+                if (allXCoordsPreShift.First() < 0 && allYCoordsPreShift.First() < 0)
+                {
+                    foreach (var preShiftCoord in allCellsPreShift)
                     {
-                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + Math.Abs(xMin), tempCoord[1] + Math.Abs(yMin)));
+                        liveCellsFromFile.Add(new Automaton.CoordSet(preShiftCoord[0] + shiftDistanceX, preShiftCoord[1] + shiftDistanceY));
+
+                        if (preShiftCoord[0] + shiftDistanceX > minXAxisSize)
+                        {
+                            minXAxisSize = preShiftCoord[0] + shiftDistanceX;
+                        }
+
+                        if (preShiftCoord[1] + shiftDistanceY > minYAxisSize)
+                        {
+                            minYAxisSize = preShiftCoord[1] + shiftDistanceY;
+                        }
                     }
-                    else if (xMin < 0)
+                }
+                else if (allXCoordsPreShift.First() < 0)
+                {
+                    foreach (var preShiftCoord in allCellsPreShift)
                     {
-                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0] + Math.Abs(xMin), tempCoord[1]));
+                        liveCellsFromFile.Add(new Automaton.CoordSet(preShiftCoord[0] + shiftDistanceX, preShiftCoord[1]));
+
+                        if (preShiftCoord[0] + shiftDistanceX > minXAxisSize)
+                        {
+                            minXAxisSize = preShiftCoord[0] + shiftDistanceX;
+                        }
+
+                        if (preShiftCoord[1] > minYAxisSize)
+                        {
+                            minYAxisSize = preShiftCoord[1];
+                        }
                     }
-                    else if (yMin < 0)
+                }
+                else if (allYCoordsPreShift.First() < 0)
+                {
+                    foreach (var preShiftCoord in allCellsPreShift)
                     {
-                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0], tempCoord[1] + Math.Abs(yMin)));
+                        liveCellsFromFile.Add(new Automaton.CoordSet(preShiftCoord[0], preShiftCoord[1] + shiftDistanceY));
+
+                        if (preShiftCoord[0] > minXAxisSize)
+                        {
+                            minXAxisSize = preShiftCoord[0];
+                        }
+
+                        if (preShiftCoord[1] + shiftDistanceY > minYAxisSize)
+                        {
+                            minYAxisSize = preShiftCoord[1] + shiftDistanceY;
+                        }
                     }
-                    else
+                }
+                else
+                {
+                    foreach (var preShiftCoord in allCellsPreShift)
                     {
-                        liveCellsFromFile.Add(new Automaton.CoordSet(tempCoord[0], tempCoord[1]));
+                        liveCellsFromFile.Add(new Automaton.CoordSet(preShiftCoord[0], preShiftCoord[1]));
+
+                        if (preShiftCoord[0] > minXAxisSize)
+                        {
+                            minXAxisSize = preShiftCoord[0];
+                        }
+
+                        if (preShiftCoord[1] > minYAxisSize)
+                        {
+                            minYAxisSize = preShiftCoord[1];
+                        }
                     }
                 }
 
-                //fe = new FileExtract(liveCellsFromFile, xMin, yMin);
                 Extract.LiveCells = liveCellsFromFile;
-                Extract.XMin = Math.Abs(xMin);
-                Extract.YMin = Math.Abs(yMin);
+                Extract.XMin = minXAxisSize;
+                Extract.YMin = minYAxisSize;
             }
             else if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
             {
