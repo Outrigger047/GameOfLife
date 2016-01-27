@@ -54,9 +54,9 @@ namespace GameOfLife
         {
             // Dictionaries
             headerLookup.Add(@"\#Life 1.06", EncodingTypes.Life106);
-            headerLookup.Add(@"\#Life 1.05", EncodingTypes.Life105);
-            headerLookup.Add(@"^\!Name\: [A-Za-z ]+$", EncodingTypes.Plaintext);
-            headerLookup.Add(@"^x = [0-9]+, y = [0-9]+$", EncodingTypes.RLE);
+            //headerLookup.Add(@"\#Life 1.05", EncodingTypes.Life105);
+            //headerLookup.Add(@"^\!Name\: [A-Za-z ]+$", EncodingTypes.Plaintext);
+            //headerLookup.Add(@"^x = [0-9]+, y = [0-9]+$", EncodingTypes.RLE);
             //headerLookup.Add(@"", EncodingTypes.SOF);
             headerLookup.Add(@"#MyCommaSeparatedFormat", EncodingTypes.MyCommaFormat);
 
@@ -82,7 +82,7 @@ namespace GameOfLife
 
         #region Public methods
 
-        private FileExtract ReadFile()
+        private void ReadFile()
         {
             List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
 
@@ -236,9 +236,6 @@ namespace GameOfLife
                 Extract.XMin = xMin;
                 Extract.YMin = yMin;
             }
-            
-            return Extract;
-
         }
         #endregion
 
