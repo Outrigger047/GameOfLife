@@ -20,7 +20,7 @@ namespace WinFormsGameOfLife
         #endregion
 
         #region Properties
-
+        public List<FileReader.FileExtract> PatternFileData { get; private set; }
         #endregion
 
         #region Constructors
