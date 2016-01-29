@@ -10,13 +10,17 @@ namespace WinFormsGameOfLife
     public partial class SizeInputForm : Form
     {
         #region Fields
-        private List<Automaton.CoordSet> InitLiveCells;
-        private string ImportedFileName;
+        private List<Automaton.CoordSet> initLiveCells;
+        private string importedFilename;
         private int xMin, yMin;
         private readonly Regex extDataFileValidLinePattern = new Regex(@"^[0-9]+\s*\,\s*[0-9]+$");
         private readonly Regex extDataFileValidHeaderPattern = new Regex(@"^#.*$+");
         private readonly Regex extDataFileXCoord = new Regex(@"^[0-9]+");
         private readonly Regex extDataFileYCoord = new Regex(@"[0-9]+$");
+        #endregion
+
+        #region Properties
+
         #endregion
 
         #region Constructors
@@ -78,8 +82,8 @@ namespace WinFormsGameOfLife
         {
             Form gameForm = new MainGameForm(Convert.ToInt32(this.importHorizUpDown.Value),
                                             Convert.ToInt32(this.importVertUpDown.Value),
-                                            InitLiveCells,
-                                            ImportedFileName);
+                                            initLiveCells,
+                                            importedFilename);
             gameForm.Show();
         }
 
@@ -100,11 +104,11 @@ namespace WinFormsGameOfLife
                         }
                     }
 
-                    ImportedFileName = Path.GetFileName(importDialog.FileName);
+                    importedFilename = Path.GetFileName(importDialog.FileName);
 
                     FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
                     
-                    InitLiveCells = fr.Extract.LiveCells;
+                    initLiveCells = fr.Extract.LiveCells;
 
                     SuspendLayout();
                     importHorizUpDown.Minimum = (decimal) fr.Extract.XMin + 1;
@@ -116,7 +120,7 @@ namespace WinFormsGameOfLife
                     importVertUpDown.Enabled = true;
                     importVertLabel.Enabled = true;
                     importStartButton.Enabled = true;
-                    fileLoadedLabel.Text = "Loaded " + ImportedFileName;
+                    fileLoadedLabel.Text = "Loaded " + importedFilename;
                     importButton.Text = "Import New File";
                     ResumeLayout(false);
                 }

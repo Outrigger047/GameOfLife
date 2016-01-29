@@ -8,7 +8,7 @@ namespace WinFormsGameOfLife
 {
     public partial class LoadingForm : Form
     {
-        public LoadingForm(out List<FileReader.FileExtract> LoadedFiles)
+        public LoadingForm(out List<FileReader.FileExtract> loadedFiles)
         {
             InitializeComponent();
         }
