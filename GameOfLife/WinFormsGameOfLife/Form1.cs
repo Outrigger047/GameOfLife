@@ -28,6 +28,9 @@ namespace WinFormsGameOfLife
             InitializeComponent();
 
             fileLoadedLabel.Text = "";
+
+            importDialog.InitialDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                "Assets", "Patterns");
         }
         #endregion
 
@@ -65,7 +68,8 @@ namespace WinFormsGameOfLife
         #region Windows Forms event handlers
         private void generateButton_Click(object sender, EventArgs e)
         {
-            Form gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value), Convert.ToInt32(this.yUpDown.Value));
+            Form gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value), 
+                Convert.ToInt32(this.yUpDown.Value));
             gameForm.Show();
         }
 
@@ -102,7 +106,8 @@ namespace WinFormsGameOfLife
 
                     ImportedFileName = Path.GetFileName(importDialog.FileName);
 
-                    FileReader fr = new FileReader(fileData, FileReader.CoordExtractionOffsetModes.ScaleToZero);
+                    FileReader fr = new FileReader(fileData, 
+                        FileReader.CoordExtractionOffsetModes.ScaleToZero);
                     
                     InitLiveCells = fr.Extract.LiveCells;
 
@@ -125,7 +130,8 @@ namespace WinFormsGameOfLife
             {
                 if (ex.Message.Contains("not match requirements"))
                 {
-                    string extraInfo = "\n\n" + "Each line must be in the format: X,Y" + "\n\n" + "Positive values only";
+                    string extraInfo = "\n\n" + 
+                        "Each line must be in the format: X,Y" + "\n\n" + "Positive values only";
                     MessageBox.Show(ex.Message + extraInfo, 
                         "File Import Error", 
                         MessageBoxButtons.OK,

@@ -30,7 +30,7 @@ namespace WinFormsGameOfLife
             { "1 - Slow", 1000 },
             { "2 - Medium", 500 },
             { "3 - Fast", 250 },
-            { "9000 - Cheetah on coke", 30 }
+            { "9000 - Zoooooooom", 30 }
         };
         #endregion
 
@@ -57,7 +57,8 @@ namespace WinFormsGameOfLife
 
             autoPlayer = new BackgroundWorker();
             autoPlayer.DoWork += new DoWorkEventHandler(TickBackground);
-            autoPlayer.RunWorkerCompleted += new RunWorkerCompletedEventHandler(TickBackgroundUpdate);
+            autoPlayer.RunWorkerCompleted += 
+                new RunWorkerCompletedEventHandler(TickBackgroundUpdate);
             autoPlayer.WorkerSupportsCancellation = true;
             autoPlayerReset = new AutoResetEvent(true);
 
@@ -71,8 +72,12 @@ namespace WinFormsGameOfLife
         /// </summary>
         /// <param name="sizeX">Horizontal size of the universe</param>
         /// <param name="sizeY">Vertical size of the universe</param>
-        /// <param name="initLiveCells">List of CoordSet objects inidicating initial live cells</param>
-        public MainGameForm(int sizeX, int sizeY, List<Automaton.CoordSet> initLiveCells, string importFileName)
+        /// <param name="initLiveCells">List of CoordSet objects inidicating initial live 
+        /// cells</param>
+        public MainGameForm(int sizeX, 
+            int sizeY, 
+            List<Automaton.CoordSet> initLiveCells, 
+            string importFileName)
         {
             GameUniverseSizeX = sizeX;
             GameUniverseSizeY = sizeY;
@@ -81,12 +86,18 @@ namespace WinFormsGameOfLife
 
             autoPlayer = new BackgroundWorker();
             autoPlayer.DoWork += new DoWorkEventHandler(TickBackground);
-            autoPlayer.RunWorkerCompleted += new RunWorkerCompletedEventHandler(TickBackgroundUpdate);
+            autoPlayer.RunWorkerCompleted += 
+                new RunWorkerCompletedEventHandler(TickBackgroundUpdate);
             autoPlayer.WorkerSupportsCancellation = true;
             autoPlayerReset = new AutoResetEvent(true);
 
             InitializeComponent();
-            Text = "Game of Life - " + importFileName + " - " + GameUniverseSizeX + "x" + GameUniverseSizeY;
+            Text = "Game of Life - " + 
+                importFileName + 
+                " - " + 
+                GameUniverseSizeX + 
+                "x" + 
+                GameUniverseSizeY;
             InitGameGui();
         }
         #endregion
