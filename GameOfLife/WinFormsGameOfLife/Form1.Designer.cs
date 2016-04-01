@@ -256,7 +256,7 @@
             // importDialog
             // 
             this.importDialog.DefaultExt = "txt";
-            this.importDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.importDialog.Filter = "Lif files (*.lif)|*.lif|Text files (*.txt)|*.txt|All files (*.*)|*.*";
             this.importDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importDialog_FileOk);
             // 
             // SizeInputForm
