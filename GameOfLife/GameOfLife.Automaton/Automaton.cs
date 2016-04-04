@@ -55,16 +55,6 @@ namespace GameOfLife
         }
         #endregion
 
-        #region Enums
-        /// <summary>
-        /// Used for neighbor-finding
-        /// </summary>
-        enum Cardinals
-        {
-            N, NE, E, SE, S, SW, W, NW
-        }
-        #endregion
-
         #region Properties
         /// <summary>
         /// Stores, tracks, and returns the current age of the universe
@@ -96,7 +86,7 @@ namespace GameOfLife
                 {
                     for (int j = 0; j < sizeY; j++)
                     {
-                        if (universe[i,j].State == Cell.CellStateTypes.Alive)
+                        if (universe[i, j].State == Cell.CellStateTypes.Alive)
                         {
                             universeOut.Add(new CoordSet(i, j));
                         }
@@ -104,6 +94,16 @@ namespace GameOfLife
                 }
                 return universeOut;
             }
+        }
+        #endregion
+
+        #region Enums
+        /// <summary>
+        /// Used for neighbor-finding
+        /// </summary>
+        enum Cardinals
+        {
+            N, NE, E, SE, S, SW, W, NW
         }
         #endregion
 
