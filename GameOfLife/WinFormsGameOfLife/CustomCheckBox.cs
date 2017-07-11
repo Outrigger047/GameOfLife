@@ -7,6 +7,9 @@ namespace WinFormsGameOfLife
 {
     public class CustomCheckBox : CheckBox
     {
+        /// <summary>
+        /// Contains custom images for checkbox states
+        /// </summary>
         private ImageList _checkboxImages = new ImageList();
 
         public CustomCheckBox()
@@ -24,6 +27,11 @@ namespace WinFormsGameOfLife
             base.CheckedChanged += CheckedChanged;
         }
         
+        /// <summary>
+        /// Overrides base checkbox change event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckedChanged(object sender, EventArgs e)
         {
             if (Checked)
