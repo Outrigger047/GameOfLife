@@ -1,5 +1,9 @@
 ﻿using GameOfLife;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace WinFormsGameOfLife
 {
@@ -20,7 +24,7 @@ namespace WinFormsGameOfLife
         /// <summary>
         /// Used for dynamic checkbox generation
         /// </summary>
-        public System.Windows.Forms.CheckBox[,] UniverseGui { get; private set; }
+        public CheckBox[,] UniverseGui { get; private set; }
         /// <summary>
         /// Horizontal size of the universe
         /// </summary>
@@ -42,7 +46,7 @@ namespace WinFormsGameOfLife
             gameControls.Height = ControlPanelVerticalSize;
             startControls.Height = ControlPanelVerticalSize;
             gameControls.Visible = false;
-            startControls.Location = new System.Drawing.Point(12, 12);
+            startControls.Location = new Point(12, 12);
 
             foreach (var item in autoPlaySpeeds)
             {
@@ -53,26 +57,24 @@ namespace WinFormsGameOfLife
             int winYSize = (13 * GameUniverseSizeX) + ControlPanelVerticalSize + 20;
 
             // Resize the window to accommodate the grid
-            ClientSize = new System.Drawing.Size(
-                winXSize < 480 ? 480 : winXSize,
-                winYSize);
+            ClientSize = new Size(winXSize < 480 ? 480 : winXSize, winYSize);
 
             // Set up the grid of checkboxes
-            UniverseGui = new System.Windows.Forms.CheckBox[GameUniverseSizeX, GameUniverseSizeY];
+            UniverseGui = new CustomCheckBox[GameUniverseSizeX, GameUniverseSizeY];
             int drawPosX = 13;
             int drawPosY = 13 + ControlPanelVerticalSize;
             for (int i = 0; i < GameUniverseSizeX; i++)
             {
                 for (int j = 0; j < GameUniverseSizeY; j++)
                 {
-                    UniverseGui[i, j] = new System.Windows.Forms.CheckBox();
-                    UniverseGui[i, j].Margin = new System.Windows.Forms.Padding(0);
+                    UniverseGui[i, j] = new CustomCheckBox();
+                    UniverseGui[i, j].Margin = new Padding(0);
                     UniverseGui[i, j].CheckState = Universe.GetCellState(new Automaton.CoordSet(i, j)) == 
                         Automaton.Cell.CellStateTypes.Alive ? 
-                        System.Windows.Forms.CheckState.Checked : 
-                        System.Windows.Forms.CheckState.Unchecked;
-                    UniverseGui[i, j].Location = new System.Drawing.Point(drawPosX, drawPosY);
-                    UniverseGui[i, j].Size = new System.Drawing.Size(13, 13);
+                        CheckState.Checked : 
+                        CheckState.Unchecked;
+                    UniverseGui[i, j].Location = new Point(drawPosX, drawPosY);
+                    UniverseGui[i, j].Size = new Size(13, 13);
                     
                     Controls.Add(UniverseGui[i, j]);
 
