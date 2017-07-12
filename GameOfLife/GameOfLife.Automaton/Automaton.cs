@@ -11,6 +11,10 @@ namespace GameOfLife
         /// </summary>
         private Cell[,] universe;
         /// <summary>
+        /// Stores the state of the previous universe
+        /// </summary>
+        private Cell[,] previousUniverse;
+        /// <summary>
         /// Dimensions of the universe
         /// </summary>
         private readonly int sizeX, sizeY;
@@ -52,6 +56,9 @@ namespace GameOfLife
 
             // Initialize age of universe
             Age = 0;
+
+            // Initialize previous universe
+            previousUniverse = new Cell[sizeX, sizeY];
         }
         #endregion
 
@@ -93,6 +100,50 @@ namespace GameOfLife
                     }
                 }
                 return universeOut;
+            }
+        }
+        /// <summary>
+        /// Returns a list of live cells in the previous universe
+        /// </summary>
+        public List<CoordSet> PreviousUniverse
+        {
+            get
+            {
+                List<CoordSet> universeOut = new List<CoordSet>();
+                for (int i = 0; i < sizeX; i++)
+                {
+                    for (int j = 0; j < sizeY; j++)
+                    {
+                        if (previousUniverse[i, j].State == Cell.CellStateTypes.Alive)
+                        {
+                            universeOut.Add(new CoordSet(i, j));
+                        }
+                    }
+                }
+                return universeOut;
+            }
+        }
+        /// <summary>
+        /// Returns a list of cells that changed from the previous universe to the current one
+        /// </summary>
+        public List<CoordSet> GetDeltaCells
+        {
+            get
+            {
+                List<CoordSet> deltaCells = new List<CoordSet>();
+
+                for (int i = 0; i < sizeX; i++)
+                {
+                    for (int j = 0; j < sizeY; j++)
+                    {
+                        if (previousUniverse[i, j].State != universe[i, j].State)
+                        {
+                            deltaCells.Add(new CoordSet(i, j));
+                        }
+                    }
+                }
+
+                return deltaCells;
             }
         }
         #endregion
@@ -170,6 +221,8 @@ namespace GameOfLife
                     }
                 }
             }
+
+            previousUniverse = universe;
             universe = nextUniverse;
             Age++;
         }
