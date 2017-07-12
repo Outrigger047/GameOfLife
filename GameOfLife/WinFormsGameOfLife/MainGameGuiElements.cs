@@ -119,19 +119,6 @@ namespace WinFormsGameOfLife
         {
             SuspendLayout();
 
-            /*
-            List<Automaton.CoordSet> liveCells = Universe.Universe;
-            foreach (var cb in UniverseGui)
-            {
-                cb.Checked = false;
-            }
-
-            foreach (var cell in liveCells)
-            {
-                UniverseGui[cell.X, cell.Y].Checked = true;
-            }
-            */
-
             List<Automaton.CoordSet> deltaCells = Universe.GetDeltaCells;
 
             foreach (var cell in deltaCells)
