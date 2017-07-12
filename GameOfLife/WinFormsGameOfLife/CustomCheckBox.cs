@@ -8,20 +8,14 @@ namespace WinFormsGameOfLife
     public class CustomCheckBox : CheckBox
     {
         /// <summary>
-        /// Contains custom images for checkbox states
+        /// Parameterized constructor to instantiate a CustomCheckBox
         /// </summary>
-        private ImageList _checkboxImages = new ImageList();
-
-        public CustomCheckBox()
+        /// <param name="checkboxImages">ImageList containing custom images for checkbox states</param>
+        public CustomCheckBox(ImageList checkboxImages)
         {
-            string whiteImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "white.bmp");
-            string blackImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "black.bmp");
-            _checkboxImages.Images.Add(Image.FromFile(whiteImagePath));
-            _checkboxImages.Images.Add(Image.FromFile(blackImagePath));
-            _checkboxImages.ImageSize = new Size(13, 13);
             Appearance = Appearance.Button;
             FlatStyle = FlatStyle.Flat;
-            ImageList = _checkboxImages;
+            ImageList = checkboxImages;
             TextImageRelation = TextImageRelation.ImageAboveText;
 
             base.CheckedChanged += CheckedChanged;

@@ -18,13 +18,17 @@ namespace WinFormsGameOfLife
         /// Used to determine how to resize window when drawing game universe checkboxes
         /// </summary>
         private const int ControlPanelHorizontalSize = 421;
+        /// <summary>
+        /// Stores custom images for checkbox states
+        /// </summary>
+        private ImageList _customCheckboxImages = new ImageList();
         #endregion
 
         #region Properties
         /// <summary>
         /// Used for dynamic checkbox generation
         /// </summary>
-        public CheckBox[,] UniverseGui { get; private set; }
+        public CustomCheckBox[,] UniverseGui { get; private set; }
         /// <summary>
         /// Horizontal size of the universe
         /// </summary>
@@ -42,6 +46,11 @@ namespace WinFormsGameOfLife
         private void InitGameGui()
         {
             SuspendLayout();
+
+            // Load custom checkbox images
+            _customCheckboxImages.Images.Add(Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "white.bmp")));
+            _customCheckboxImages.Images.Add(Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "black.bmp")));
+            _customCheckboxImages.ImageSize = new Size(13, 13);
 
             gameControls.Height = ControlPanelVerticalSize;
             startControls.Height = ControlPanelVerticalSize;
@@ -67,7 +76,8 @@ namespace WinFormsGameOfLife
             {
                 for (int j = 0; j < GameUniverseSizeY; j++)
                 {
-                    UniverseGui[i, j] = new CustomCheckBox();
+                    // Pass the custom image list into checkbox constructor
+                    UniverseGui[i, j] = new CustomCheckBox(_customCheckboxImages);
                     UniverseGui[i, j].Margin = new Padding(0);
                     UniverseGui[i, j].CheckState = Universe.GetCellState(new Automaton.CoordSet(i, j)) == 
                         Automaton.Cell.CellStateTypes.Alive ? 
