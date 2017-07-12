@@ -119,6 +119,7 @@ namespace WinFormsGameOfLife
         {
             SuspendLayout();
 
+            /*
             List<Automaton.CoordSet> liveCells = Universe.Universe;
             foreach (var cb in UniverseGui)
             {
@@ -128,6 +129,21 @@ namespace WinFormsGameOfLife
             foreach (var cell in liveCells)
             {
                 UniverseGui[cell.X, cell.Y].Checked = true;
+            }
+            */
+
+            List<Automaton.CoordSet> deltaCells = Universe.GetDeltaCells;
+
+            foreach (var cell in deltaCells)
+            {
+                if (UniverseGui[cell.X, cell.Y].Checked)
+                {
+                    UniverseGui[cell.X, cell.Y].Checked = false;
+                }
+                else
+                {
+                    UniverseGui[cell.X, cell.Y].Checked = true;
+                }
             }
 
             iterationsLabel.Text = "Time: " + Universe.Age;
