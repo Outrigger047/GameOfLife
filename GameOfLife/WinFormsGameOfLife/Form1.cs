@@ -87,6 +87,46 @@ namespace WinFormsGameOfLife
             gameForm.Show();
         }
 
+        private void yUpDown_Enter(object sender, EventArgs e)
+        {
+            yUpDown.Select(0, yUpDown.Value.ToString().Length);
+        }
+
+        private void xUpDown_Enter(object sender, EventArgs e)
+        {
+            xUpDown.Select(0, xUpDown.Value.ToString().Length);
+        }
+
+        private void importHorizUpDown_Enter(object sender, EventArgs e)
+        {
+            importHorizUpDown.Select(0, importHorizUpDown.Value.ToString().Length);
+        }
+
+        private void importVertUpDown_Enter(object sender, EventArgs e)
+        {
+            importVertUpDown.Select(0, importVertUpDown.Value.ToString().Length);
+        }
+
+        private void yUpDown_Click(object sender, EventArgs e)
+        {
+            yUpDown.Select(0, yUpDown.Value.ToString().Length);
+        }
+
+        private void xUpDown_Click(object sender, EventArgs e)
+        {
+            xUpDown.Select(0, xUpDown.Value.ToString().Length);
+        }
+
+        private void importHorizUpDown_Click(object sender, EventArgs e)
+        {
+            importHorizUpDown.Select(0, importHorizUpDown.Value.ToString().Length);
+        }
+
+        private void importVertUpDown_Click(object sender, EventArgs e)
+        {
+            importVertUpDown.Select(0, importVertUpDown.Value.ToString().Length);
+        }
+
         private void importDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Stream s = null;

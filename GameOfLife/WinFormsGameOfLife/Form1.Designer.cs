@@ -78,6 +78,8 @@
             0,
             0,
             0});
+            this.xUpDown.Click += new System.EventHandler(this.xUpDown_Click);
+            this.xUpDown.Enter += new System.EventHandler(this.xUpDown_Enter);
             // 
             // yLabel
             // 
@@ -104,6 +106,8 @@
             0,
             0,
             0});
+            this.yUpDown.Click += new System.EventHandler(this.yUpDown_Click);
+            this.yUpDown.Enter += new System.EventHandler(this.yUpDown_Enter);
             // 
             // generateButton
             // 
@@ -152,7 +156,7 @@
             this.importGroupBox.Controls.Add(this.importVertUpDown);
             this.importGroupBox.Location = new System.Drawing.Point(13, 158);
             this.importGroupBox.Name = "importGroupBox";
-            this.importGroupBox.Size = new System.Drawing.Size(236, 163);
+            this.importGroupBox.Size = new System.Drawing.Size(236, 183);
             this.importGroupBox.TabIndex = 6;
             this.importGroupBox.TabStop = false;
             this.importGroupBox.Text = "Import Game State";
@@ -160,7 +164,7 @@
             // fileLoadedLabel
             // 
             this.fileLoadedLabel.AutoSize = true;
-            this.fileLoadedLabel.Location = new System.Drawing.Point(100, 62);
+            this.fileLoadedLabel.Location = new System.Drawing.Point(16, 88);
             this.fileLoadedLabel.Name = "fileLoadedLabel";
             this.fileLoadedLabel.Size = new System.Drawing.Size(20, 13);
             this.fileLoadedLabel.TabIndex = 12;
@@ -169,20 +173,20 @@
             // importStartButton
             // 
             this.importStartButton.Enabled = false;
-            this.importStartButton.Location = new System.Drawing.Point(141, 111);
+            this.importStartButton.Location = new System.Drawing.Point(141, 123);
             this.importStartButton.Name = "importStartButton";
             this.importStartButton.Size = new System.Drawing.Size(75, 23);
-            this.importStartButton.TabIndex = 6;
+            this.importStartButton.TabIndex = 7;
             this.importStartButton.Text = "Generate";
             this.importStartButton.UseVisualStyleBackColor = true;
             this.importStartButton.Click += new System.EventHandler(this.importStartButton_Click);
             // 
             // importButton
             // 
-            this.importButton.Location = new System.Drawing.Point(19, 57);
+            this.importButton.Location = new System.Drawing.Point(19, 52);
             this.importButton.Name = "importButton";
             this.importButton.Size = new System.Drawing.Size(75, 23);
-            this.importButton.TabIndex = 7;
+            this.importButton.TabIndex = 4;
             this.importButton.Text = "Import File";
             this.importButton.UseVisualStyleBackColor = true;
             this.importButton.Click += new System.EventHandler(this.importButton_Click);
@@ -191,7 +195,7 @@
             // 
             this.importVertLabel.AutoSize = true;
             this.importVertLabel.Enabled = false;
-            this.importVertLabel.Location = new System.Drawing.Point(28, 127);
+            this.importVertLabel.Location = new System.Drawing.Point(28, 139);
             this.importVertLabel.Name = "importVertLabel";
             this.importVertLabel.Size = new System.Drawing.Size(42, 13);
             this.importVertLabel.TabIndex = 6;
@@ -210,7 +214,7 @@
             // importHorizUpDown
             // 
             this.importHorizUpDown.Enabled = false;
-            this.importHorizUpDown.Location = new System.Drawing.Point(76, 99);
+            this.importHorizUpDown.Location = new System.Drawing.Point(76, 111);
             this.importHorizUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -218,18 +222,20 @@
             0});
             this.importHorizUpDown.Name = "importHorizUpDown";
             this.importHorizUpDown.Size = new System.Drawing.Size(41, 20);
-            this.importHorizUpDown.TabIndex = 4;
+            this.importHorizUpDown.TabIndex = 5;
             this.importHorizUpDown.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.importHorizUpDown.Click += new System.EventHandler(this.importHorizUpDown_Click);
+            this.importHorizUpDown.Enter += new System.EventHandler(this.importHorizUpDown_Enter);
             // 
             // importHorizLabel
             // 
             this.importHorizLabel.AutoSize = true;
             this.importHorizLabel.Enabled = false;
-            this.importHorizLabel.Location = new System.Drawing.Point(16, 101);
+            this.importHorizLabel.Location = new System.Drawing.Point(16, 113);
             this.importHorizLabel.Name = "importHorizLabel";
             this.importHorizLabel.Size = new System.Drawing.Size(54, 13);
             this.importHorizLabel.TabIndex = 8;
@@ -238,7 +244,7 @@
             // importVertUpDown
             // 
             this.importVertUpDown.Enabled = false;
-            this.importVertUpDown.Location = new System.Drawing.Point(76, 125);
+            this.importVertUpDown.Location = new System.Drawing.Point(76, 137);
             this.importVertUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -246,12 +252,14 @@
             0});
             this.importVertUpDown.Name = "importVertUpDown";
             this.importVertUpDown.Size = new System.Drawing.Size(41, 20);
-            this.importVertUpDown.TabIndex = 5;
+            this.importVertUpDown.TabIndex = 6;
             this.importVertUpDown.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.importVertUpDown.Click += new System.EventHandler(this.importVertUpDown_Click);
+            this.importVertUpDown.Enter += new System.EventHandler(this.importVertUpDown_Enter);
             // 
             // importDialog
             // 
@@ -263,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 333);
+            this.ClientSize = new System.Drawing.Size(261, 353);
             this.Controls.Add(this.importGroupBox);
             this.Controls.Add(this.generateGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
