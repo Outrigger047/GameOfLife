@@ -256,11 +256,12 @@ namespace GameOfLife
         }
 
         /// <summary>
-        /// DEPRECATED: Extracts a valid set of coordinates from a line of encoded text
+        /// OBSOLETE: Extracts a valid set of coordinates from a line of encoded text
         /// </summary>
         /// <param name="encodedText">Text to search</param>
         /// <param name="fileType">File type of text</param>
         /// <returns>CoordSet object with any valid coordinates</returns>
+        [Obsolete("Handled automatically by ReadFile method", true)]
         private Automaton.CoordSet _ExtractCoordinates(Match currentMatch, string pattern, Flags options)
         {
             string[] coordinateMatches = new string[2];
