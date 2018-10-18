@@ -28,6 +28,7 @@ namespace WinFormsGameOfLife
             InitializeComponent();
 
             fileLoadedLabel.Text = "";
+            rotationComboBox.SelectedIndex = 0;
 
             importDialog.InitialDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                 "Assets", "Patterns");

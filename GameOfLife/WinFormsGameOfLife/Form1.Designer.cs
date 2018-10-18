@@ -45,6 +45,8 @@
             this.importHorizLabel = new System.Windows.Forms.Label();
             this.importVertUpDown = new System.Windows.Forms.NumericUpDown();
             this.importDialog = new System.Windows.Forms.OpenFileDialog();
+            this.rotationComboBox = new System.Windows.Forms.ComboBox();
+            this.rotationLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.xUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yUpDown)).BeginInit();
             this.generateGroupBox.SuspendLayout();
@@ -146,6 +148,8 @@
             // 
             // importGroupBox
             // 
+            this.importGroupBox.Controls.Add(this.rotationLabel);
+            this.importGroupBox.Controls.Add(this.rotationComboBox);
             this.importGroupBox.Controls.Add(this.fileLoadedLabel);
             this.importGroupBox.Controls.Add(this.importStartButton);
             this.importGroupBox.Controls.Add(this.importButton);
@@ -156,7 +160,7 @@
             this.importGroupBox.Controls.Add(this.importVertUpDown);
             this.importGroupBox.Location = new System.Drawing.Point(13, 158);
             this.importGroupBox.Name = "importGroupBox";
-            this.importGroupBox.Size = new System.Drawing.Size(236, 183);
+            this.importGroupBox.Size = new System.Drawing.Size(236, 205);
             this.importGroupBox.TabIndex = 6;
             this.importGroupBox.TabStop = false;
             this.importGroupBox.Text = "Import Game State";
@@ -176,7 +180,7 @@
             this.importStartButton.Location = new System.Drawing.Point(141, 123);
             this.importStartButton.Name = "importStartButton";
             this.importStartButton.Size = new System.Drawing.Size(75, 23);
-            this.importStartButton.TabIndex = 7;
+            this.importStartButton.TabIndex = 8;
             this.importStartButton.Text = "Generate";
             this.importStartButton.UseVisualStyleBackColor = true;
             this.importStartButton.Click += new System.EventHandler(this.importStartButton_Click);
@@ -267,11 +271,34 @@
             this.importDialog.Filter = "Lif files (*.lif)|*.lif|Text files (*.txt)|*.txt|All files (*.*)|*.*";
             this.importDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importDialog_FileOk);
             // 
+            // rotationComboBox
+            // 
+            this.rotationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.rotationComboBox.FormattingEnabled = true;
+            this.rotationComboBox.Items.AddRange(new object[] {
+            "None",
+            "90 deg CW",
+            "180 deg CW",
+            "270 deg CW"});
+            this.rotationComboBox.Location = new System.Drawing.Point(76, 163);
+            this.rotationComboBox.Name = "rotationComboBox";
+            this.rotationComboBox.Size = new System.Drawing.Size(93, 21);
+            this.rotationComboBox.TabIndex = 7;
+            // 
+            // rotationLabel
+            // 
+            this.rotationLabel.AutoSize = true;
+            this.rotationLabel.Location = new System.Drawing.Point(23, 166);
+            this.rotationLabel.Name = "rotationLabel";
+            this.rotationLabel.Size = new System.Drawing.Size(47, 13);
+            this.rotationLabel.TabIndex = 14;
+            this.rotationLabel.Text = "Rotation";
+            // 
             // SizeInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 353);
+            this.ClientSize = new System.Drawing.Size(261, 377);
             this.Controls.Add(this.importGroupBox);
             this.Controls.Add(this.generateGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -311,6 +338,8 @@
         private System.Windows.Forms.NumericUpDown importVertUpDown;
         private System.Windows.Forms.OpenFileDialog importDialog;
         private System.Windows.Forms.Label fileLoadedLabel;
+        private System.Windows.Forms.Label rotationLabel;
+        private System.Windows.Forms.ComboBox rotationComboBox;
     }
 }
 
