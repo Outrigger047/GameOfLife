@@ -64,6 +64,32 @@ namespace WinFormsGameOfLife
 
             return liveCellsFromFile;
         }
+
+        /// <summary>
+        /// Rotates the list of initial live cells based on the value in the UI dropdown
+        /// </summary>
+        private void DoRotation()
+            {
+            if (rotationComboBox.SelectedIndex != 1 && rotationComboBox.SelectedIndex != 2 && rotationComboBox.SelectedIndex != 3)
+                {
+                return;
+                }
+
+            List<Automaton.CoordSet> rotatedInitCells = new List<Automaton.CoordSet>();
+
+            switch (rotationComboBox.SelectedIndex)
+                {
+                // 90 deg CW
+                case 1:
+                    break;
+                // 180 deg CW
+                case 2:
+                    break;
+                // 270 deg CW
+                case 3:
+                    break;
+                }
+            }
         #endregion
 
         #region Windows Forms event handlers
@@ -153,10 +179,12 @@ namespace WinFormsGameOfLife
                     InitLiveCells = fr.Extract.LiveCells;
 
                     SuspendLayout();
-                    importHorizUpDown.Minimum = (decimal) fr.Extract.XMin + 1;
-                    importHorizUpDown.Value = (decimal) fr.Extract.XMin + 1;
-                    importVertUpDown.Minimum = (decimal) fr.Extract.YMin + 1;
-                    importVertUpDown.Value = (decimal) fr.Extract.YMin + 1;
+                    xMin = (int)fr.Extract.XMin + 1;
+                    yMin = (int)fr.Extract.YMin + 1;
+                    importHorizUpDown.Minimum = xMin;
+                    importHorizUpDown.Value = xMin;
+                    importVertUpDown.Minimum = yMin;
+                    importVertUpDown.Value = yMin;
                     importHorizUpDown.Enabled = true;
                     importHorizLabel.Enabled = true;
                     importVertUpDown.Enabled = true;
