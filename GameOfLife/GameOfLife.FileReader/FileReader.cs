@@ -255,56 +255,6 @@ namespace GameOfLife
             return EncodingTypes.UnknownOrInvalid;
         }
 
-        /// <summary>
-        /// OBSOLETE: Extracts a valid set of coordinates from a line of encoded text
-        /// </summary>
-        /// <param name="encodedText">Text to search</param>
-        /// <param name="fileType">File type of text</param>
-        /// <returns>CoordSet object with any valid coordinates</returns>
-        [Obsolete("Handled automatically by ReadFile method", true)]
-        private Automaton.CoordSet _ExtractCoordinates(Match currentMatch, string pattern, Flags options)
-        {
-            string[] coordinateMatches = new string[2];
-
-            switch (options.EncodingType)
-            {
-                case EncodingTypes.UnknownOrInvalid:
-                    break;
-                case EncodingTypes.Life106:
-                    string coordSetPattern;
-                    coordSetMatchByFileType.TryGetValue(options.EncodingType, out coordSetPattern);
-                    Regex.Matches(currentMatch.Value, coordSetPattern).CopyTo(coordinateMatches, 0);
-                    break;
-                case EncodingTypes.Life105:
-                    break;
-                case EncodingTypes.MCell:
-                    break;
-                case EncodingTypes.Plaintext:
-                    break;
-                case EncodingTypes.RLE:
-                    break;
-                case EncodingTypes.SOF:
-                    break;
-                default:
-                    coordinateMatches = null;
-                    break;
-            }
-
-            if (options.OffsetMode == CoordExtractionOffsetModes.RelativeToOrigin)
-            {
-                return new Automaton.CoordSet(Convert.ToInt32(coordinateMatches[0]), Convert.ToInt32(coordinateMatches[1]));
-            }
-            else if (options.OffsetMode == CoordExtractionOffsetModes.ScaleToZero)
-            {
-                // Handle rescaling coordinates
-                return new Automaton.CoordSet(Convert.ToInt32(coordinateMatches[0]), Convert.ToInt32(coordinateMatches[1]));
-            }
-            else
-            {
-                return new Automaton.CoordSet(Convert.ToInt32(coordinateMatches[0]), Convert.ToInt32(coordinateMatches[1]));
-            }
-        }
-
         #endregion
 
         #region Nested classes
