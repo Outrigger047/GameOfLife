@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -11,8 +12,10 @@ namespace WinFormsGameOfLife
     {
         #region Fields
         private List<Automaton.CoordSet> InitLiveCells;
+        private List<Automaton.CoordSet> InitLiveCellsNoAdjust;
         private string ImportedFileName;
         private int xMin, yMin;
+        private int xMaxImported, yMaxImported;
         private readonly Regex extDataFileValidLinePattern = new Regex(@"^[0-9]+\s*\,\s*[0-9]+$");
         private readonly Regex extDataFileValidHeaderPattern = new Regex(@"^#.*$+");
         private readonly Regex extDataFileXCoord = new Regex(@"^[0-9]+");
@@ -37,59 +40,73 @@ namespace WinFormsGameOfLife
 
         #region Private methods
         /// <summary>
-        /// Extracts valid coordinates for live cells from external file data
-        /// </summary>
-        /// <param name="targetFile">Path of the file</param>
-        /// <returns>CoordSet list of cells that should be initialized</returns>
-        private List<Automaton.CoordSet> GetInitLiveCellListFromExternalFile(HashSet<string> fileData)
-        {
-            List<Automaton.CoordSet> liveCellsFromFile = new List<Automaton.CoordSet>();
-            List<int> allX = new List<int>();
-            List<int> allY = new List<int>();
-
-            foreach (var line in fileData)
-            {
-                int xCoord = Convert.ToInt32(extDataFileXCoord.Match(line).Value);
-                int yCoord = Convert.ToInt32(extDataFileYCoord.Match(line).Value);
-
-                liveCellsFromFile.Add(new Automaton.CoordSet(xCoord, yCoord));
-                allX.Add(xCoord);
-                allY.Add(yCoord);
-            }
-
-            allX.Sort();
-            allY.Sort();
-            xMin = System.Linq.Enumerable.Last(allX) + 1;
-            yMin = System.Linq.Enumerable.Last(allY) + 1;
-
-            return liveCellsFromFile;
-        }
-
-        /// <summary>
         /// Rotates the list of initial live cells based on the value in the UI dropdown
         /// </summary>
         private void DoRotation()
-            {
+        {
             if (rotationComboBox.SelectedIndex != 1 && rotationComboBox.SelectedIndex != 2 && rotationComboBox.SelectedIndex != 3)
-                {
+            {
                 return;
-                }
+            }
 
             List<Automaton.CoordSet> rotatedInitCells = new List<Automaton.CoordSet>();
 
+            // Rotate unadjusted coordinates
             switch (rotationComboBox.SelectedIndex)
-                {
+            {
                 // 90 deg CW
                 case 1:
+                    foreach (var coord in InitLiveCellsNoAdjust)
+                    {
+                        rotatedInitCells.Add(new Automaton.CoordSet(coord.Y, -coord.X));
+                    }
+
                     break;
                 // 180 deg CW
                 case 2:
+                    foreach (var coord in InitLiveCellsNoAdjust)
+                    {
+                        rotatedInitCells.Add(new Automaton.CoordSet(-coord.X, -coord.Y));
+                    }
+
                     break;
                 // 270 deg CW
                 case 3:
+                    foreach (var coord in InitLiveCellsNoAdjust)
+                    {
+                        rotatedInitCells.Add(new Automaton.CoordSet(-coord.Y, coord.X));
+                    }
+
                     break;
-                }
             }
+
+            // Adjust uniformly so top left is 0,0
+            List<int> allXCoordsPreShift = new List<int>();
+            List<int> allYCoordsPreShift = new List<int>();
+
+            foreach (var coordSet in rotatedInitCells)
+            {
+                allXCoordsPreShift.Add(coordSet.X);
+                allYCoordsPreShift.Add(coordSet.Y);
+            }
+
+            allXCoordsPreShift.Sort();
+            allYCoordsPreShift.Sort();
+
+            int shiftDistanceX = Math.Abs(allXCoordsPreShift.First());
+            int shiftDistanceY = Math.Abs(allYCoordsPreShift.First());
+
+            List<Automaton.CoordSet> rotatedShifted = new List<Automaton.CoordSet>();
+
+            foreach (var coordSet in rotatedInitCells)
+            {
+                rotatedShifted.Add(
+                    new Automaton.CoordSet(coordSet.X + shiftDistanceX, coordSet.Y + shiftDistanceY));
+            }
+
+            // Copy rotated and scaled set into InitLiveCells
+            InitLiveCells = rotatedShifted;
+        }
         #endregion
 
         #region Windows Forms event handlers
@@ -160,6 +177,13 @@ namespace WinFormsGameOfLife
             DoRotation();
 
             // Update width and height values in UI elements
+            if (rotationComboBox.SelectedIndex == 1 || rotationComboBox.SelectedIndex == 3)
+            {
+                importHorizUpDown.Minimum = yMin;
+                importHorizUpDown.Value = yMin;
+                importVertUpDown.Minimum = xMin;
+                importVertUpDown.Value = xMin;
+            }
         }
 
         private void importDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
@@ -182,9 +206,12 @@ namespace WinFormsGameOfLife
                     ImportedFileName = Path.GetFileName(importDialog.FileName);
 
                     FileReader fr = new FileReader(fileData, 
-                        FileReader.CoordExtractionOffsetModes.ScaleToZero);
-                    
+                        FileReader.CoordExtractionOffsetModes.ScaleToZero);      
                     InitLiveCells = fr.Extract.LiveCells;
+
+                    FileReader frns = new FileReader(fileData, 
+                        FileReader.CoordExtractionOffsetModes.RelativeToOrigin);
+                    InitLiveCellsNoAdjust = frns.Extract.LiveCells;
 
                     SuspendLayout();
                     xMin = (int)fr.Extract.XMin + 1;
