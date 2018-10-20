@@ -95,9 +95,9 @@ namespace WinFormsGameOfLife
             Text = "Game of Life - " + 
                 importFileName + 
                 " - " + 
-                GameUniverseSizeX + 
+                GameUniverseSizeY + 
                 "x" + 
-                GameUniverseSizeY;
+                GameUniverseSizeX;
             InitGameGui();
         }
         #endregion

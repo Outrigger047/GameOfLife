@@ -224,11 +224,11 @@
             // 
             this.importVertLabel.AutoSize = true;
             this.importVertLabel.Enabled = false;
-            this.importVertLabel.Location = new System.Drawing.Point(28, 139);
+            this.importVertLabel.Location = new System.Drawing.Point(16, 113);
             this.importVertLabel.Name = "importVertLabel";
-            this.importVertLabel.Size = new System.Drawing.Size(42, 13);
+            this.importVertLabel.Size = new System.Drawing.Size(54, 13);
             this.importVertLabel.TabIndex = 6;
-            this.importVertLabel.Text = "Vertical";
+            this.importVertLabel.Text = "Horizontal";
             // 
             // importInfoLabel
             // 
@@ -243,7 +243,7 @@
             // importHorizUpDown
             // 
             this.importHorizUpDown.Enabled = false;
-            this.importHorizUpDown.Location = new System.Drawing.Point(76, 111);
+            this.importHorizUpDown.Location = new System.Drawing.Point(76, 137);
             this.importHorizUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -251,7 +251,7 @@
             0});
             this.importHorizUpDown.Name = "importHorizUpDown";
             this.importHorizUpDown.Size = new System.Drawing.Size(41, 20);
-            this.importHorizUpDown.TabIndex = 5;
+            this.importHorizUpDown.TabIndex = 6;
             this.importHorizUpDown.Value = new decimal(new int[] {
             1,
             0,
@@ -264,16 +264,16 @@
             // 
             this.importHorizLabel.AutoSize = true;
             this.importHorizLabel.Enabled = false;
-            this.importHorizLabel.Location = new System.Drawing.Point(16, 113);
+            this.importHorizLabel.Location = new System.Drawing.Point(28, 139);
             this.importHorizLabel.Name = "importHorizLabel";
-            this.importHorizLabel.Size = new System.Drawing.Size(54, 13);
+            this.importHorizLabel.Size = new System.Drawing.Size(42, 13);
             this.importHorizLabel.TabIndex = 8;
-            this.importHorizLabel.Text = "Horizontal";
+            this.importHorizLabel.Text = "Vertical";
             // 
             // importVertUpDown
             // 
             this.importVertUpDown.Enabled = false;
-            this.importVertUpDown.Location = new System.Drawing.Point(76, 137);
+            this.importVertUpDown.Location = new System.Drawing.Point(76, 111);
             this.importVertUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -281,7 +281,7 @@
             0});
             this.importVertUpDown.Name = "importVertUpDown";
             this.importVertUpDown.Size = new System.Drawing.Size(41, 20);
-            this.importVertUpDown.TabIndex = 6;
+            this.importVertUpDown.TabIndex = 5;
             this.importVertUpDown.Value = new decimal(new int[] {
             1,
             0,
