@@ -36,6 +36,8 @@
             this.generateGroupBox = new System.Windows.Forms.GroupBox();
             this.generateInfoLabel = new System.Windows.Forms.Label();
             this.importGroupBox = new System.Windows.Forms.GroupBox();
+            this.rotationLabel = new System.Windows.Forms.Label();
+            this.rotationComboBox = new System.Windows.Forms.ComboBox();
             this.fileLoadedLabel = new System.Windows.Forms.Label();
             this.importStartButton = new System.Windows.Forms.Button();
             this.importButton = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.importHorizLabel = new System.Windows.Forms.Label();
             this.importVertUpDown = new System.Windows.Forms.NumericUpDown();
             this.importDialog = new System.Windows.Forms.OpenFileDialog();
-            this.rotationComboBox = new System.Windows.Forms.ComboBox();
-            this.rotationLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.xUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yUpDown)).BeginInit();
             this.generateGroupBox.SuspendLayout();
@@ -165,6 +165,30 @@
             this.importGroupBox.TabStop = false;
             this.importGroupBox.Text = "Import Game State";
             // 
+            // rotationLabel
+            // 
+            this.rotationLabel.AutoSize = true;
+            this.rotationLabel.Location = new System.Drawing.Point(23, 166);
+            this.rotationLabel.Name = "rotationLabel";
+            this.rotationLabel.Size = new System.Drawing.Size(47, 13);
+            this.rotationLabel.TabIndex = 14;
+            this.rotationLabel.Text = "Rotation";
+            // 
+            // rotationComboBox
+            // 
+            this.rotationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.rotationComboBox.FormattingEnabled = true;
+            this.rotationComboBox.Items.AddRange(new object[] {
+            "None",
+            "90 deg CW",
+            "180 deg CW",
+            "270 deg CW"});
+            this.rotationComboBox.Location = new System.Drawing.Point(76, 163);
+            this.rotationComboBox.Name = "rotationComboBox";
+            this.rotationComboBox.Size = new System.Drawing.Size(93, 21);
+            this.rotationComboBox.TabIndex = 7;
+            this.rotationComboBox.SelectedIndexChanged += new System.EventHandler(this.rotationComboBox_SelectedIndexChanged);
+            // 
             // fileLoadedLabel
             // 
             this.fileLoadedLabel.AutoSize = true;
@@ -270,29 +294,6 @@
             this.importDialog.DefaultExt = "txt";
             this.importDialog.Filter = "Lif files (*.lif)|*.lif|Text files (*.txt)|*.txt|All files (*.*)|*.*";
             this.importDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importDialog_FileOk);
-            // 
-            // rotationComboBox
-            // 
-            this.rotationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.rotationComboBox.FormattingEnabled = true;
-            this.rotationComboBox.Items.AddRange(new object[] {
-            "None",
-            "90 deg CW",
-            "180 deg CW",
-            "270 deg CW"});
-            this.rotationComboBox.Location = new System.Drawing.Point(76, 163);
-            this.rotationComboBox.Name = "rotationComboBox";
-            this.rotationComboBox.Size = new System.Drawing.Size(93, 21);
-            this.rotationComboBox.TabIndex = 7;
-            // 
-            // rotationLabel
-            // 
-            this.rotationLabel.AutoSize = true;
-            this.rotationLabel.Location = new System.Drawing.Point(23, 166);
-            this.rotationLabel.Name = "rotationLabel";
-            this.rotationLabel.Size = new System.Drawing.Size(47, 13);
-            this.rotationLabel.TabIndex = 14;
-            this.rotationLabel.Text = "Rotation";
             // 
             // SizeInputForm
             // 

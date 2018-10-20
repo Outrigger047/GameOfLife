@@ -154,6 +154,14 @@ namespace WinFormsGameOfLife
             importVertUpDown.Select(0, importVertUpDown.Value.ToString().Length);
         }
 
+        private void rotationComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Do actual rotation of InitLiveCells
+            DoRotation();
+
+            // Update width and height values in UI elements
+        }
+
         private void importDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Stream s = null;
