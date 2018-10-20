@@ -11,11 +11,12 @@ namespace WinFormsGameOfLife
     public partial class SizeInputForm : Form
     {
         #region Fields
+        private bool fileLoaded;
+        private List<Automaton.CoordSet> ImportedLiveCells;
+        private List<Automaton.CoordSet> ImportedLiveCellsNoAdjust;
         private List<Automaton.CoordSet> InitLiveCells;
-        private List<Automaton.CoordSet> InitLiveCellsNoAdjust;
         private string ImportedFileName;
-        private int xMin, yMin;
-        private int xMaxImported, yMaxImported;
+        private int xMinSize, yMinSize;
         private readonly Regex extDataFileValidLinePattern = new Regex(@"^[0-9]+\s*\,\s*[0-9]+$");
         private readonly Regex extDataFileValidHeaderPattern = new Regex(@"^#.*$+");
         private readonly Regex extDataFileXCoord = new Regex(@"^[0-9]+");
@@ -44,35 +45,41 @@ namespace WinFormsGameOfLife
         /// </summary>
         private void DoRotation()
         {
-            if (rotationComboBox.SelectedIndex != 1 && rotationComboBox.SelectedIndex != 2 && rotationComboBox.SelectedIndex != 3)
-            {
-                return;
-            }
-
             List<Automaton.CoordSet> rotatedInitCells = new List<Automaton.CoordSet>();
 
             // Rotate unadjusted coordinates
             switch (rotationComboBox.SelectedIndex)
             {
+                // No rotation
+                case 0:
+                    foreach (var coord in ImportedLiveCellsNoAdjust)
+                    {
+                        rotatedInitCells.Add(new Automaton.CoordSet(coord.X, coord.Y));
+                    }
+
+                    break;
+
                 // 90 deg CW
                 case 1:
-                    foreach (var coord in InitLiveCellsNoAdjust)
+                    foreach (var coord in ImportedLiveCellsNoAdjust)
                     {
                         rotatedInitCells.Add(new Automaton.CoordSet(coord.Y, -coord.X));
                     }
 
                     break;
+
                 // 180 deg CW
                 case 2:
-                    foreach (var coord in InitLiveCellsNoAdjust)
+                    foreach (var coord in ImportedLiveCellsNoAdjust)
                     {
                         rotatedInitCells.Add(new Automaton.CoordSet(-coord.X, -coord.Y));
                     }
 
                     break;
+
                 // 270 deg CW
                 case 3:
-                    foreach (var coord in InitLiveCellsNoAdjust)
+                    foreach (var coord in ImportedLiveCellsNoAdjust)
                     {
                         rotatedInitCells.Add(new Automaton.CoordSet(-coord.Y, coord.X));
                     }
@@ -173,16 +180,26 @@ namespace WinFormsGameOfLife
 
         private void rotationComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Do actual rotation of InitLiveCells
-            DoRotation();
-
-            // Update width and height values in UI elements
-            if (rotationComboBox.SelectedIndex == 1 || rotationComboBox.SelectedIndex == 3)
+            if (fileLoaded)
             {
-                importHorizUpDown.Minimum = yMin;
-                importHorizUpDown.Value = yMin;
-                importVertUpDown.Minimum = xMin;
-                importVertUpDown.Value = xMin;
+                // Do actual rotation of InitLiveCells
+                DoRotation();
+
+                // Update width and height values in UI elements if necessary
+                if (rotationComboBox.SelectedIndex == 1 || rotationComboBox.SelectedIndex == 3)
+                {
+                    importHorizUpDown.Minimum = yMinSize;
+                    importHorizUpDown.Value = yMinSize;
+                    importVertUpDown.Minimum = xMinSize;
+                    importVertUpDown.Value = xMinSize;
+                }
+                else
+                {
+                    importHorizUpDown.Minimum = xMinSize;
+                    importHorizUpDown.Value = xMinSize;
+                    importVertUpDown.Minimum = yMinSize;
+                    importVertUpDown.Value = yMinSize;
+                } 
             }
         }
 
@@ -207,24 +224,28 @@ namespace WinFormsGameOfLife
 
                     FileReader fr = new FileReader(fileData, 
                         FileReader.CoordExtractionOffsetModes.ScaleToZero);      
-                    InitLiveCells = fr.Extract.LiveCells;
+                    ImportedLiveCells = fr.Extract.LiveCells;
 
                     FileReader frns = new FileReader(fileData, 
                         FileReader.CoordExtractionOffsetModes.RelativeToOrigin);
-                    InitLiveCellsNoAdjust = frns.Extract.LiveCells;
+                    ImportedLiveCellsNoAdjust = frns.Extract.LiveCells;
+
+                    InitLiveCells = ImportedLiveCells;
 
                     SuspendLayout();
-                    xMin = (int)fr.Extract.XMin + 1;
-                    yMin = (int)fr.Extract.YMin + 1;
-                    importHorizUpDown.Minimum = xMin;
-                    importHorizUpDown.Value = xMin;
-                    importVertUpDown.Minimum = yMin;
-                    importVertUpDown.Value = yMin;
+                    xMinSize = (int)fr.Extract.XMin + 1;
+                    yMinSize = (int)fr.Extract.YMin + 1;
+                    importHorizUpDown.Minimum = xMinSize;
+                    importHorizUpDown.Value = xMinSize;
+                    importVertUpDown.Minimum = yMinSize;
+                    importVertUpDown.Value = yMinSize;
                     importHorizUpDown.Enabled = true;
                     importHorizLabel.Enabled = true;
                     importVertUpDown.Enabled = true;
                     importVertLabel.Enabled = true;
                     importStartButton.Enabled = true;
+                    rotationComboBox.Enabled = true;
+                    fileLoaded = true;
                     fileLoadedLabel.Text = "Loaded " + ImportedFileName;
                     importButton.Text = "Import New File";
                     ResumeLayout(false);

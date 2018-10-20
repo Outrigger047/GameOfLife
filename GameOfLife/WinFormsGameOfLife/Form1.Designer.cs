@@ -177,6 +177,7 @@
             // rotationComboBox
             // 
             this.rotationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.rotationComboBox.Enabled = false;
             this.rotationComboBox.FormattingEnabled = true;
             this.rotationComboBox.Items.AddRange(new object[] {
             "None",
