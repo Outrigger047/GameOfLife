@@ -245,6 +245,7 @@ namespace WinFormsGameOfLife
                     importVertLabel.Enabled = true;
                     importStartButton.Enabled = true;
                     rotationComboBox.Enabled = true;
+                    rotationComboBox.SelectedIndex = 0;
                     fileLoaded = true;
                     fileLoadedLabel.Text = "Loaded " + ImportedFileName;
                     importButton.Text = "Import New File";
