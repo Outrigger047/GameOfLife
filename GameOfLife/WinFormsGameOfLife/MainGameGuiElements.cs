@@ -45,33 +45,39 @@ namespace WinFormsGameOfLife
         /// </summary>
         private void InitGameGui()
         {
+            const int cellLength = 13;
+            const int controlLocDistance = 12;
+            const int winMarginX = 30;
+            const int winMarginY = 20;
+            const int winMinSize = 480;
+
             SuspendLayout();
 
             // Load custom checkbox images
             _customCheckboxImages.Images.Add(Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "white.bmp")));
             _customCheckboxImages.Images.Add(Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "black.bmp")));
-            _customCheckboxImages.ImageSize = new Size(13, 13);
+            _customCheckboxImages.ImageSize = new Size(cellLength, cellLength);
 
             gameControls.Height = ControlPanelVerticalSize;
             startControls.Height = ControlPanelVerticalSize;
             gameControls.Visible = false;
-            startControls.Location = new Point(12, 12);
+            startControls.Location = new Point(controlLocDistance, controlLocDistance);
 
             foreach (var item in autoPlaySpeeds)
             {
                 autoSpeedComboBox.Items.Add(item.Key);
             }
 
-            int winXSize = (13 * GameUniverseSizeY) + 30;
-            int winYSize = (13 * GameUniverseSizeX) + ControlPanelVerticalSize + 20;
+            int winXSize = (cellLength * GameUniverseSizeY) + winMarginX;
+            int winYSize = (cellLength * GameUniverseSizeX) + ControlPanelVerticalSize + winMarginY;
 
             // Resize the window to accommodate the grid
-            ClientSize = new Size(winXSize < 480 ? 480 : winXSize, winYSize);
+            ClientSize = new Size(winXSize < winMinSize ? winMinSize : winXSize, winYSize);
 
             // Set up the grid of checkboxes
             UniverseGui = new CustomCheckBox[GameUniverseSizeX, GameUniverseSizeY];
-            int drawPosX = 13;
-            int drawPosY = 13 + ControlPanelVerticalSize;
+            int drawPosX = cellLength;
+            int drawPosY = cellLength + ControlPanelVerticalSize;
             for (int i = 0; i < GameUniverseSizeX; i++)
             {
                 for (int j = 0; j < GameUniverseSizeY; j++)
@@ -84,17 +90,18 @@ namespace WinFormsGameOfLife
                         CheckState.Checked : 
                         CheckState.Unchecked;
                     UniverseGui[i, j].Location = new Point(drawPosX, drawPosY);
-                    UniverseGui[i, j].Size = new Size(13, 13);
+                    UniverseGui[i, j].Size = new Size(cellLength, cellLength);
                     
                     Controls.Add(UniverseGui[i, j]);
 
                     if (j <= GameUniverseSizeY - 1)
                     {
-                        drawPosX += 13;
+                        drawPosX += cellLength;
                     }
                 }
-                drawPosX = 13;
-                drawPosY += 13;
+
+                drawPosX = cellLength;
+                drawPosY += cellLength;
             }
 
             ResumeLayout(false);
@@ -161,6 +168,7 @@ namespace WinFormsGameOfLife
                 {
                     cb.Checked = false;
                 }
+
                 ResumeLayout(false);
             }
         } 
