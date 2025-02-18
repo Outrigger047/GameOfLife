@@ -27,27 +27,14 @@ namespace GameOfLifeConsole
             #region Initialize and run simulation
             List<Automaton.CoordSet> liveCells = new List<Automaton.CoordSet>
             {
-                //Cool infinite loop at end
-                new Automaton.CoordSet(2, 2),
-                new Automaton.CoordSet(3, 2),
-                new Automaton.CoordSet(2, 3),
-                new Automaton.CoordSet(3, 3),
-                new Automaton.CoordSet(4, 3),
-                new Automaton.CoordSet(4, 4),
-                new Automaton.CoordSet(4, 5),
-                new Automaton.CoordSet(6, 2),
-                new Automaton.CoordSet(6, 3),
-                new Automaton.CoordSet(6, 4),
-                new Automaton.CoordSet(6, 5),
-                new Automaton.CoordSet(6, 6),
-                new Automaton.CoordSet(6, 7),
-                new Automaton.CoordSet(6, 8),
-                new Automaton.CoordSet(7, 6),
-                new Automaton.CoordSet(7, 7),
-                new Automaton.CoordSet(7, 8)
-
-
-            };
+                for (int y = 0; y < sizeY; y++)
+                {
+                    if (r.Next(0, 1) == 1)
+                    {
+                        liveCells.Add(new Automaton.CoordSet(x, y));
+                    }
+                }
+            }
 
             Automaton a = new Automaton(sizeX, sizeY, liveCells);
 
