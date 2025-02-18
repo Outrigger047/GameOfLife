@@ -25,11 +25,13 @@ namespace GameOfLifeConsole
             #endregion
 
             #region Initialize and run simulation
-            List<Automaton.CoordSet> liveCells = new List<Automaton.CoordSet>
+            var liveCells = new List<Automaton.CoordSet>();
+            var r = new Random();
+            for (int x = 0; x < sizeX; x++)
             {
                 for (int y = 0; y < sizeY; y++)
                 {
-                    if (r.Next(0, 1) == 1)
+                    if (r.Next(0, 2) == 1)
                     {
                         liveCells.Add(new Automaton.CoordSet(x, y));
                     }
@@ -49,7 +51,8 @@ namespace GameOfLifeConsole
             Console.WriteLine("Press any key to start simulation. Q quits.");
 
             ConsoleKeyInfo advanceKp = new ConsoleKeyInfo();
-            while (a.NumLiveCells > 0 && advanceKp.Key != ConsoleKey.Q)
+
+            do
             {
                 ConsoleKeyInfo newAdvanceKp = Console.ReadKey();
                 if (newAdvanceKp.Key == ConsoleKey.Q)
@@ -70,7 +73,7 @@ namespace GameOfLifeConsole
                 Console.WriteLine();
                 Console.WriteLine("Press any key to advance simulation. Q quits.");
                 advanceKp = newAdvanceKp;
-            }
+            } while (a.NumLiveCells > 0 && advanceKp.Key != ConsoleKey.Q);
             #endregion
         }
     }
