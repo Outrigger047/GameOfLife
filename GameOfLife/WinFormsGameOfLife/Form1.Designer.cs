@@ -131,7 +131,7 @@
             this.generateGroupBox.Controls.Add(this.yLabel);
             this.generateGroupBox.Location = new System.Drawing.Point(12, 12);
             this.generateGroupBox.Name = "generateGroupBox";
-            this.generateGroupBox.Size = new System.Drawing.Size(237, 140);
+            this.generateGroupBox.Size = new System.Drawing.Size(237, 161);
             this.generateGroupBox.TabIndex = 5;
             this.generateGroupBox.TabStop = false;
             this.generateGroupBox.Text = "Generate New Game";
@@ -158,7 +158,7 @@
             this.importGroupBox.Controls.Add(this.importHorizUpDown);
             this.importGroupBox.Controls.Add(this.importHorizLabel);
             this.importGroupBox.Controls.Add(this.importVertUpDown);
-            this.importGroupBox.Location = new System.Drawing.Point(13, 158);
+            this.importGroupBox.Location = new System.Drawing.Point(12, 179);
             this.importGroupBox.Name = "importGroupBox";
             this.importGroupBox.Size = new System.Drawing.Size(236, 205);
             this.importGroupBox.TabIndex = 6;
@@ -300,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 377);
+            this.ClientSize = new System.Drawing.Size(261, 396);
             this.Controls.Add(this.importGroupBox);
             this.Controls.Add(this.generateGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
