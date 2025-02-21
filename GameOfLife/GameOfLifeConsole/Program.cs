@@ -27,9 +27,9 @@ namespace GameOfLifeConsole
             #region Initialize and run simulation
             var liveCells = new List<Automaton.CoordSet>();
             var r = new Random();
-            for (int x = 0; x < sizeX; x++)
+            for (int y = 0; y < sizeY; y++)
             {
-                for (int y = 0; y < sizeY; y++)
+                for (int x = 0; x < sizeX; x++)
                 {
                     if (r.Next(0, 2) == 1)
                     {

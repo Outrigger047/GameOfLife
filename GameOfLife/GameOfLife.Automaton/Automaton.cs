@@ -37,11 +37,11 @@ namespace GameOfLife
 
             // Create universe and initialize cell states to dead
             universe = new Cell[sizeX, sizeY];
-            for (int i = 0; i < sizeX; i++)
+            for (int y = 0; y < sizeY; y++)
             {
-                for (int j = 0; j < sizeY; j++)
+                for (int x = 0; x < sizeX; x++)
                 {
-                    universe[i, j] = new Cell(Cell.CellStateTypes.Dead);
+                    universe[x, y] = new Cell(Cell.CellStateTypes.Dead);
                 }
             }
 
@@ -89,13 +89,13 @@ namespace GameOfLife
             get
             {
                 List<CoordSet> universeOut = new List<CoordSet>();
-                for (int i = 0; i < sizeX; i++)
+                for (int y = 0; y < sizeY; y++)
                 {
-                    for (int j = 0; j < sizeY; j++)
+                    for (int x = 0; x < sizeX; x++)
                     {
-                        if (universe[i, j].State == Cell.CellStateTypes.Alive)
+                        if (universe[x, y].State == Cell.CellStateTypes.Alive)
                         {
-                            universeOut.Add(new CoordSet(i, j));
+                            universeOut.Add(new CoordSet(x, y));
                         }
                     }
                 }
@@ -110,13 +110,13 @@ namespace GameOfLife
             get
             {
                 List<CoordSet> universeOut = new List<CoordSet>();
-                for (int i = 0; i < sizeX; i++)
+                for (int y = 0; y < sizeY; y++)
                 {
-                    for (int j = 0; j < sizeY; j++)
+                    for (int x = 0; x < sizeX; x++)
                     {
-                        if (previousUniverse[i, j].State == Cell.CellStateTypes.Alive)
+                        if (previousUniverse[x, y].State == Cell.CellStateTypes.Alive)
                         {
-                            universeOut.Add(new CoordSet(i, j));
+                            universeOut.Add(new CoordSet(x, y));
                         }
                     }
                 }
@@ -132,13 +132,13 @@ namespace GameOfLife
             {
                 List<CoordSet> deltaCells = new List<CoordSet>();
 
-                for (int i = 0; i < sizeX; i++)
+                for (int y = 0; y < sizeY; y++)
                 {
-                    for (int j = 0; j < sizeY; j++)
+                    for (int x = 0; x < sizeX; x++)
                     {
-                        if (previousUniverse[i, j].State != universe[i, j].State)
+                        if (previousUniverse[x, y].State != universe[x, y].State)
                         {
-                            deltaCells.Add(new CoordSet(i, j));
+                            deltaCells.Add(new CoordSet(x, y));
                         }
                     }
                 }
@@ -168,55 +168,55 @@ namespace GameOfLife
             NumLiveCells = 0;
             // Store/initialize data for the next iteration
             Cell[,] nextUniverse = new Cell[sizeX, sizeY];
-            for (int i = 0; i < sizeX; i++)
+            for (int y = 0; y < sizeY; y++)
             {
-                for (int j = 0; j < sizeY; j++)
+                for (int x = 0; x < sizeX; x++)
                 {
-                    nextUniverse[i, j] = new Cell(Cell.CellStateTypes.Invalid);
+                    nextUniverse[x, y] = new Cell(Cell.CellStateTypes.Invalid);
                 }
             }
 
             // Run core game logic
-            for (int i = 0; i < sizeX; i++)
+            for (int y = 0; y < sizeY; y++)
             {
-                for (int j = 0; j < sizeY; j++)
+                for (int x = 0; x < sizeX; x++)
                 {
-                    CoordSet currentPos = new CoordSet(i, j);
+                    CoordSet currentPos = new CoordSet(x, y);
                     int numLiveNeighbors = CountLiveNeighbors(currentPos);
                     switch (numLiveNeighbors)
                     {
                         case 2:
                             // Living cells with 2 adjacent living cells continue living
-                            if (universe[i, j].State == Cell.CellStateTypes.Alive)
+                            if (universe[x, y].State == Cell.CellStateTypes.Alive)
                             {
-                                nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                                nextUniverse[x, y].State = Cell.CellStateTypes.Alive;
                                 NumLiveCells++;
                             }
                             else
                             {
-                                nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
+                                nextUniverse[x, y].State = Cell.CellStateTypes.Dead;
                             }
                             break;
                         case 3:
                             // Living cells with 3 adjacent living cells continue living
-                            if (universe[i, j].State == Cell.CellStateTypes.Alive)
+                            if (universe[x, y].State == Cell.CellStateTypes.Alive)
                             {
-                                nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                                nextUniverse[x, y].State = Cell.CellStateTypes.Alive;
                                 NumLiveCells++;
                             }
                             // Dead cells with 3 adjacent living cells come to life
-                            else if (universe[i, j].State == Cell.CellStateTypes.Dead)
+                            else if (universe[x, y].State == Cell.CellStateTypes.Dead)
                             {
-                                nextUniverse[i, j].State = Cell.CellStateTypes.Alive;
+                                nextUniverse[x, y].State = Cell.CellStateTypes.Alive;
                                 NumLiveCells++;
                             }
                             else
                             {
-                                nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
+                                nextUniverse[x, y].State = Cell.CellStateTypes.Dead;
                             }
                             break;
                         default:
-                            nextUniverse[i, j].State = Cell.CellStateTypes.Dead;
+                            nextUniverse[x, y].State = Cell.CellStateTypes.Dead;
                             break;
                     }
                 }

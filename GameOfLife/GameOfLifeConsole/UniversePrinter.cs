@@ -13,14 +13,14 @@ namespace GameOfLife
             List<Automaton.CoordSet> liveCells,
             DisplayModes displayMode)
         {
-            for (int i = 0; i < sizeX; i++)
+            for (int y = 0; y < sizeY; y++)
             {
-                for (int j = 0; j < sizeY; j++)
+                for (int x = 0; x < sizeX; x++)
                 {
                     bool foundLiveCell = false;
                     foreach (var cell in liveCells)
                     {
-                        if (cell.X == i & cell.Y == j)
+                        if (cell.X == y & cell.Y == x)
                         {
                             Console.Write("X");
                             foundLiveCell = true;
