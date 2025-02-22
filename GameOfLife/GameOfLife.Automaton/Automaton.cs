@@ -29,19 +29,32 @@ namespace GameOfLife
         /// <param name="sizeYIn">Vertical dimension of the universe</param>
         /// <param name="initLiveCells">List of coordinates indicating which 
         /// cells are alive initially</param>
-        public Automaton(int sizeXIn, int sizeYIn, List<CoordSet> initLiveCells)
+        /// <param name="randomize">Set initial cell states randomly before
+        /// setting from <paramref name="initLiveCells"/></param>
+        public Automaton(int sizeXIn, int sizeYIn, List<CoordSet> initLiveCells, bool randomize = false)
         {
             // Set size of universe
             sizeX = sizeXIn;
             sizeY = sizeYIn;
 
-            // Create universe and initialize cell states to dead
+            // RNG
+            var r = new Random();
+
+            // Create universe and initialize cell states
             universe = new Cell[sizeX, sizeY];
+
             for (int y = 0; y < sizeY; y++)
             {
                 for (int x = 0; x < sizeX; x++)
                 {
-                    universe[x, y] = new Cell(Cell.CellStateTypes.Dead);
+                    if (randomize)
+                    {
+                        universe[x, y] = new Cell(r.Next(0, 2) == 0 ? Cell.CellStateTypes.Dead : Cell.CellStateTypes.Alive);
+                    }
+                    else
+                    {
+                        universe[x, y] = new Cell(Cell.CellStateTypes.Dead); 
+                    }
                 }
             }
 
