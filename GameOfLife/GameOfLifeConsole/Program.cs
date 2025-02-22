@@ -26,19 +26,8 @@ namespace GameOfLifeConsole
 
             #region Initialize and run simulation
             var liveCells = new List<Automaton.CoordSet>();
-            var r = new Random();
-            for (int y = 0; y < sizeY; y++)
-            {
-                for (int x = 0; x < sizeX; x++)
-                {
-                    if (r.Next(0, 2) == 1)
-                    {
-                        liveCells.Add(new Automaton.CoordSet(x, y));
-                    }
-                }
-            }
 
-            Automaton a = new Automaton(sizeX, sizeY, liveCells);
+            var a = new Automaton(sizeX, sizeY, liveCells, randomize: true);
 
             Console.Clear();
             UniversePrinter.DisplayUniverse(sizeX,
