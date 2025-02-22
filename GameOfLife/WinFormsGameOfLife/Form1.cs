@@ -119,8 +119,18 @@ namespace WinFormsGameOfLife
         #region Windows Forms event handlers
         private void generateButton_Click(object sender, EventArgs e)
         {
-            Form gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value), 
-                Convert.ToInt32(this.yUpDown.Value));
+            Form gameForm;
+            if (randomizeCheckbox.Checked)
+            {
+                gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value),
+                        Convert.ToInt32(this.yUpDown.Value), true); 
+            }
+            else
+            {
+                gameForm = new MainGameForm(Convert.ToInt32(this.xUpDown.Value),
+                        Convert.ToInt32(this.yUpDown.Value));
+            }
+                
             gameForm.Show();
         }
 

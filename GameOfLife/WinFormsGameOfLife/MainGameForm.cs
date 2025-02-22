@@ -47,13 +47,21 @@ namespace WinFormsGameOfLife
         /// </summary>
         /// <param name="sizeX">Horizontal size of the universe</param>
         /// <param name="sizeY">Vertical size of the universe</param>
-        public MainGameForm(int sizeX, int sizeY)
+        /// <param name="randomizeIn">Randomize initial cell states</param>
+        public MainGameForm(int sizeX, int sizeY, bool randomizeIn = false)
         {
             GameUniverseSizeX = sizeX;
             GameUniverseSizeY = sizeY;
 
             List<Automaton.CoordSet> emptyDead = new List<Automaton.CoordSet>();
-            Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead);
+            if (randomizeIn)
+            {
+                Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead, randomize: true);
+            }
+            else
+            {
+                Universe = new Automaton(GameUniverseSizeX, GameUniverseSizeY, emptyDead); 
+            }
 
             autoPlayer = new BackgroundWorker();
             autoPlayer.DoWork += new DoWorkEventHandler(TickBackground);

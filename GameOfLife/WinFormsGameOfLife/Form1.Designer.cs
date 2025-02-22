@@ -47,6 +47,7 @@
             this.importHorizLabel = new System.Windows.Forms.Label();
             this.importVertUpDown = new System.Windows.Forms.NumericUpDown();
             this.importDialog = new System.Windows.Forms.OpenFileDialog();
+            this.randomizeCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.xUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yUpDown)).BeginInit();
             this.generateGroupBox.SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             // generateGroupBox
             // 
+            this.generateGroupBox.Controls.Add(this.randomizeCheckbox);
             this.generateGroupBox.Controls.Add(this.generateInfoLabel);
             this.generateGroupBox.Controls.Add(this.generateButton);
             this.generateGroupBox.Controls.Add(this.xLabel);
@@ -296,6 +298,17 @@
             this.importDialog.Filter = "Lif files (*.lif)|*.lif|Text files (*.txt)|*.txt|All files (*.*)|*.*";
             this.importDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importDialog_FileOk);
             // 
+            // randomizeCheckbox
+            // 
+            this.randomizeCheckbox.AutoSize = true;
+            this.randomizeCheckbox.Location = new System.Drawing.Point(38, 125);
+            this.randomizeCheckbox.Name = "randomizeCheckbox";
+            this.randomizeCheckbox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.randomizeCheckbox.Size = new System.Drawing.Size(79, 17);
+            this.randomizeCheckbox.TabIndex = 6;
+            this.randomizeCheckbox.Text = "Randomize";
+            this.randomizeCheckbox.UseVisualStyleBackColor = true;
+            // 
             // SizeInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +355,7 @@
         private System.Windows.Forms.Label fileLoadedLabel;
         private System.Windows.Forms.Label rotationLabel;
         private System.Windows.Forms.ComboBox rotationComboBox;
+        private System.Windows.Forms.CheckBox randomizeCheckbox;
     }
 }
 
