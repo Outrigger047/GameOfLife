@@ -38,18 +38,20 @@ namespace GameOfLife
             sizeY = sizeYIn;
 
             // RNG
-            var r = new Random();
+            var rng = new Random();
 
             // Create universe and initialize cell states
+            NumLiveCells = 0;
             universe = new Cell[sizeX, sizeY];
 
             for (int y = 0; y < sizeY; y++)
             {
                 for (int x = 0; x < sizeX; x++)
                 {
-                    if (randomize)
+                    if (randomize && rng.Next(0, 2) == 1)
                     {
-                        universe[x, y] = new Cell(r.Next(0, 2) == 0 ? Cell.CellStateTypes.Dead : Cell.CellStateTypes.Alive);
+                        universe[x, y] = new Cell(Cell.CellStateTypes.Alive);
+                        NumLiveCells += 1;
                     }
                     else
                     {
@@ -61,11 +63,12 @@ namespace GameOfLife
             // Set live cells from argument
             foreach (var coords in initLiveCells)
             {
-                universe[coords.X, coords.Y].State = Cell.CellStateTypes.Alive;
+                if (universe[coords.X, coords.Y].State != Cell.CellStateTypes.Alive)
+                {
+                    universe[coords.X, coords.Y].State = Cell.CellStateTypes.Alive;
+                    NumLiveCells += 1;
+                }
             }
-
-            // Set number of live cells in the universe
-            NumLiveCells = initLiveCells.Count;
 
             // Initialize age of universe
             Age = 0;
